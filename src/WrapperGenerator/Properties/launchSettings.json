@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WrapperGenerator": {
+      "commandName": "Project",
+      "workingDirectory": "$(SolutionDir)"
+    }
+  }
+}
