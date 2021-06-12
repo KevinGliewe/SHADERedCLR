@@ -73,10 +73,10 @@ namespace WrapperGenerator.Helper
                 return "IntPtr";
 
             if (self is CppClass cppClass)
-                throw new Exception("CppClass not supported!");
+                return cppClass.Name;
 
             if (self is CppTypedef cppTypedef)
-                throw new Exception("CppTypedef not supported!");
+                return cppTypedef.ElementType.GetFullyQualifiedCS(name);
 
             return self.ToString();
         }

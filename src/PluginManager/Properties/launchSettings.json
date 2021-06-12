@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PluginManager": {
+      "commandName": "Executable",
+      "executablePath": "$(SolutionDir)..\\..\\SHADERed\\build\\bin\\Debug\\SHADERed.exe",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

@@ -58,8 +58,8 @@ namespace WrapperGenerator
             File.WriteAllText(Path.Combine(csOutPath, "InteropData/" + CS_MPC_Class.ClassName + ".cs"), csMCPCode);
             File.WriteAllText(Path.Combine(csOutPath, "InteropData/" + CS_UPC_Class.ClassName + ".cs"), csUCPCode);
 
-            var csNECode = new CS_NE_Document(null, compilation).Render();
-            File.WriteAllText(Path.Combine(csOutPath, "NativeEnums.cs"), csNECode);
+            var csNDCode = new CS_ND_Document(null, compilation).Render();
+            File.WriteAllText(Path.Combine(csOutPath, "NativeData.cs"), csNDCode);
 
             var csPWCode = new CS_PW_Document(null, compilation).Render();
             File.WriteAllText(Path.Combine(csOutPath, CS_PW_Class.ClassName + ".gen.cs"), csPWCode);

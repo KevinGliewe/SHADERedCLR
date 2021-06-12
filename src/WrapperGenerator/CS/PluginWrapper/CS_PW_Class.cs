@@ -25,7 +25,7 @@ namespace WrapperGenerator.CS.PluginWrapper
             }
 
             counter = 0;
-            foreach (var cppFunction in cppClass.CollectFunctions().Where(f => f.Name != "GetVersion")) {
+            foreach (var cppFunction in cppClass.CollectFunctions()) {
                 this.Add(new CS_PW_Function(this, cppFunction, counter++));
             }
         }
@@ -38,7 +38,7 @@ namespace WrapperGenerator.CS.PluginWrapper
             using (new IndentContext(writer))
             {
                 writer.WriteLine(
-                    "protected void InitDelegates(PluginManager.InteropData.ManagedPointerCollection a_MPC) {");
+                    "protected void __SetDelegates(PluginManager.InteropData.ManagedPointerCollection a_MPC) {");
 
                 using (new IndentContext(writer))
                 {
@@ -62,6 +62,36 @@ namespace WrapperGenerator.CS.PluginWrapper
 
                         counter++;
                     }
+                }
+
+                writer.WriteLine("}");
+
+                writer.WriteLine(
+                    "protected PluginManager.InteropData.UnmanagedPointerCollection __GetFunctionPointers() {");
+
+                using (new IndentContext(writer))
+                {
+                    writer.WriteLine("var upc = new PluginManager.InteropData.UnmanagedPointerCollection();");
+
+                    var counter = 0;
+                    foreach (var function in _cppClass.CollectFunctions()) {
+                        if(function.Name == "GetVersion")
+                            continue;
+
+                        var delegateType = $"{function.Name}Delegate_{counter:D3}";
+                        var upcMember = $"{function.Name}_{counter:D3}";
+
+                        writer.Write("upc.");
+                        writer.Write(upcMember);
+                        writer.Write(" = Marshal.GetFunctionPointerForDelegate(new ");
+                        writer.Write(delegateType);
+                        writer.Write("(this.");
+                        writer.Write(function.Name);
+                        writer.WriteLine("));");
+
+                        counter++;
+                    }
+                    writer.WriteLine("return upc;");
                 }
 
                 writer.WriteLine("}");

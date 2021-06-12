@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 using CppAst;
 
@@ -18,6 +19,28 @@ namespace WrapperGenerator.Helper
 
             if (self.ReturnType is CppEnum cppEnum)
                 return $"({cppEnum.GetFullyQualified()})0";
+
+            return "0";
+        }
+
+        public static string GetDefaultReturnDataCS(this CppFunction self) {
+            if (self.ReturnType.TypeKind == CppTypeKind.Pointer)
+                return "IntPtr.Zero";
+
+            if (self.ReturnType is CppEnum cppEnum)
+                return $"({cppEnum.GetFullyQualifiedCS()})0";
+
+            if (self.ReturnType is CppPrimitiveType cppPrimitive)
+            {
+                return cppPrimitive.Kind switch
+                {
+                    CppPrimitiveKind.Bool => "false",
+                    CppPrimitiveKind.Int => "0",
+                    CppPrimitiveKind.UnsignedInt => "0",
+                    CppPrimitiveKind.Float => "0",
+                    _ => throw new Exception(cppPrimitive.Kind + " is not implemented!"),
+                };
+            }
 
             return "0";
         }
@@ -46,6 +69,8 @@ namespace WrapperGenerator.Helper
             var delName = name is null ? self.Name + "Delegate" : name;
 
             sb.Append($"delegate ");
+            sb.Append(self.ReturnType.GetFullyQualifiedCS());
+            sb.Append(" ");
             sb.Append(delName);
             sb.Append("(");
             sb.Append(string.Join(", ", self.Parameters.Select(p => p.GetFullyQualifiedCS())));

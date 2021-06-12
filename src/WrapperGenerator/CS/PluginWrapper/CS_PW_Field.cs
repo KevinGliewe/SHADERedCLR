@@ -42,12 +42,6 @@ namespace WrapperGenerator.CS.PluginWrapper
 
                 writer.WriteLine($"public {funcType.GetDelegateDefinitionCS(delegateType)};");
 
-                //writer.Write($"public delegate ");
-                //writer.Write(funcType.ReturnType.GetFullyQualifiedCS());
-                //writer.Write($" {delegateType}(");
-                //writer.Write(string.Join(", ", funcType.Parameters.Select(p => p.GetFullyQualifiedCS())));
-                //writer.WriteLine(");");
-
                 writer.WriteLine($"public {delegateType} {_cppField.Name} {{ get; protected set; }}");
             }
             else throw new Exception(_cppField + " Type not supported!");

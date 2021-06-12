@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace PluginManager {
     // ed::plugin::PipelineItemType
@@ -109,5 +110,18 @@ namespace PluginManager {
         DebuggerStarted = 4,
         DebuggerStepped = 5,
         DebuggerStopped = 6,
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public unsafe struct InputLayoutItem {
+        // Value - PluginManager.InputLayoutValue
+        // Semantic - IntPtr
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public unsafe struct ShaderMacro {
+        // Active - bool
+        // Name - IntPtr
+        // Value - IntPtr
     }
 }

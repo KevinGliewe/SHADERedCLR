@@ -19,7 +19,7 @@ namespace WrapperGenerator.CPP.PluginWrapper.Header
         {
             _cppClass = cppClass;
 
-            foreach (var cppFunction in cppClass.CollectFunctions().Where( f => f.Name != "GetVersion"))
+            foreach (var cppFunction in cppClass.CollectFunctions())
             {
                 this.Add(new CPP_PW_H_Function(this, cppFunction));
             }
@@ -51,7 +51,7 @@ namespace WrapperGenerator.CPP.PluginWrapper.Header
                 counter = 0;
                 writer.WriteLine("struct ManagedPointerCollection {");
                 using (new IndentContext(writer)) {
-                    foreach (var func in _cppClass.CollectFunctions().Where(f => f.Name != "GetVersion")) {
+                    foreach (var func in _cppClass.CollectFunctions()) {
                         writer.WriteLine($"void* {func.Name}_{counter++:D3} = nullptr;");
                     }
                 }
@@ -62,12 +62,10 @@ namespace WrapperGenerator.CPP.PluginWrapper.Header
                 UnmanagedPointerCollection  m_sUPC;
                 ManagedPointerCollection*   m_pMPC;
 
-                unsigned int m_uManagedInstance = 0;
-
                 void InitUPC();
                 ".TrimLines());
 
-                writer.WriteLine($"{ClassName}(ManagedPointerCollection* a_pMPC, unsigned int a_uManagedInstance);");
+                writer.WriteLine($"{ClassName}(ManagedPointerCollection* a_pMPC);");
                 writer.WriteLine($"~{ClassName}();");
             }
 

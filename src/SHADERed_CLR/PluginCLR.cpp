@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "PluginCLR.h"
 #include "SecondPlugin.h"
+#include "PluginWrapper.h"
 
 #include <dotnet_runtime.h>
 
@@ -17,6 +18,19 @@ inline bool exists (string_t name) {
 }
 
 void* sc::p_pModuleHandle;
+
+PluginWrapper::UnmanagedPointerCollection FP_CreateNativePlugin(PluginWrapper::ManagedPointerCollection a_sMPC)
+{
+    auto* plugin = new PluginWrapper(&a_sMPC);
+    plugin->InitUPC();
+    return plugin->m_sUPC;
+}
+
+void FP_DestroyNativePlugin(void* a_pPlugin)
+{
+    auto plugin = (PluginWrapper*)(a_pPlugin);
+    delete(plugin);
+}
 
 bool sc::PluginCLR::Init(bool isWeb, int sedVersion)
 {
@@ -65,12 +79,18 @@ bool sc::PluginCLR::Init(bool isWeb, int sedVersion)
     {
         void* m_hostHandle;
         void* m_pluginPtr;
+        void* m_createNativePlugin;
+        void* m_destroyNativePlugin;
     } _initHost_arg;
 
     _initHost_arg.m_hostHandle = p_pModuleHandle;
     _initHost_arg.m_pluginPtr = this;
+    _initHost_arg.m_createNativePlugin = &FP_CreateNativePlugin;
+    _initHost_arg.m_destroyNativePlugin = &FP_DestroyNativePlugin;
 
     _initHost(&_initHost_arg, sizeof(_initHost_arg));
+
+    this->m_pManagedPluginManager = _initHost_arg.m_pluginPtr;
 
     //PluginManager* pm = (PluginManager*)this->Plugins;
 
@@ -89,6 +109,7 @@ void sc::PluginCLR::PluginManager_RegisterPlugins()
 {
     auto p = new SecondPlugin();
     this->RegisterPlugin(this->Plugins, p, "SecondPlugin", 3, 1, 0);
+    this->RegisterPlugin(this->Plugins, this->m_pManagedPluginManager, "ManagedPluginManager", 3, 1, 0);
 }
 
 sc::PluginCLR::~PluginCLR()

@@ -11,6 +11,7 @@ namespace sc
 
     class PluginCLR : public ed::IPlugin3
     {
+		void* m_pManagedPluginManager = nullptr;
     public:
 		virtual bool Init(bool isWeb, int sedVersion);
 		virtual void InitUI(void* ctx) { }

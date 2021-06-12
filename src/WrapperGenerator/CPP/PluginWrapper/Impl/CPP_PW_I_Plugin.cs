@@ -19,7 +19,7 @@ namespace WrapperGenerator.CPP.PluginWrapper.Impl
             _cppClass = cppClass;
             int counter = 0;
 
-            foreach (var cppFunction in cppClass.CollectFunctions().Where(f => f.Name != "GetVersion"))
+            foreach (var cppFunction in cppClass.CollectFunctions())
             {
                 this.Add(new CPP_PW_I_Function(this, cppFunction, CPP_PW_H_Plugin.ClassName, counter++));
             }
@@ -46,11 +46,10 @@ namespace WrapperGenerator.CPP.PluginWrapper.Impl
             writer.WriteLine();
 
             writer.WriteLine(
-                $"{CPP_PW_H_Plugin.ClassName}::{CPP_PW_H_Plugin.ClassName}(ManagedPointerCollection* a_pMPC, unsigned int a_uManagedInstance) {{");
+                $"{CPP_PW_H_Plugin.ClassName}::{CPP_PW_H_Plugin.ClassName}(ManagedPointerCollection* a_pMPC) {{");
             using (new IndentContext(writer))
             {
                 writer.WriteLine("this->m_pMPC = a_pMPC;");
-                writer.WriteLine("this->m_uManagedInstance = a_uManagedInstance;");
             }
             writer.WriteLine("}");
             writer.WriteLine();

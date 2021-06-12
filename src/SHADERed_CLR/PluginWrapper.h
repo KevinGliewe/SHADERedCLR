@@ -303,11 +303,9 @@ public:
     UnmanagedPointerCollection  m_sUPC;
     ManagedPointerCollection*   m_pMPC;
 
-    unsigned int m_uManagedInstance = 0;
-
     void InitUPC();
 
-    PluginWrapper(ManagedPointerCollection* a_pMPC, unsigned int a_uManagedInstance);
+    PluginWrapper(ManagedPointerCollection* a_pMPC);
     ~PluginWrapper();
     bool Init(bool isWeb, int sedVersion) override;
 

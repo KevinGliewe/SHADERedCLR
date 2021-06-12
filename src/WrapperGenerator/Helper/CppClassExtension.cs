@@ -18,7 +18,8 @@ namespace WrapperGenerator.Helper
             
             foreach (var function in self.Functions)
             {
-                yield return function;
+                if(function.Name != "GetVersion")
+                    yield return function;
             }
         }
 

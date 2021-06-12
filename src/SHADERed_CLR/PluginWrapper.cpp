@@ -1298,9 +1298,8 @@ void PluginWrapper::InitUPC() {
     m_sUPC.PluginInstance = (void*)this;
 }
 
-PluginWrapper::PluginWrapper(ManagedPointerCollection* a_pMPC, unsigned int a_uManagedInstance) {
+PluginWrapper::PluginWrapper(ManagedPointerCollection* a_pMPC) {
     this->m_pMPC = a_pMPC;
-    this->m_uManagedInstance = a_uManagedInstance;
 }
 
 PluginWrapper::~PluginWrapper() {

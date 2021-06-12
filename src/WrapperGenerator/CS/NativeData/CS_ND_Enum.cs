@@ -6,11 +6,11 @@ using WrapperGenerator.Helper;
 
 namespace WrapperGenerator.CS.NativeEnums
 {
-    public class CS_NE_Enum : SourceElement
+    public class CS_ND_Enum : SourceElement
     {
         private CppEnum _cppEnum;
 
-        public CS_NE_Enum(SourceElement? parent, CppEnum cppEnum) : base(parent, cppEnum.Name)
+        public CS_ND_Enum(SourceElement? parent, CppEnum cppEnum) : base(parent, cppEnum.Name)
         {
             _cppEnum = cppEnum;
             Indent = 4;
