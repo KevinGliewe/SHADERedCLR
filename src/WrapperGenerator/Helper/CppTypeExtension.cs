@@ -42,7 +42,7 @@ namespace WrapperGenerator.Helper
 
         public static string GetFullyQualifiedCS(this CppType self, string name = null) {
             if (self is CppEnum cppEnum)
-                return "PluginManager." + cppEnum.Name;
+                return "SHADERedCLR.Wrapper." + cppEnum.Name;
 
             if (self is CppPointerType cppPointer)
                 return "IntPtr";

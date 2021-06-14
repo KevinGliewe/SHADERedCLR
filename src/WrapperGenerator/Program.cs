@@ -7,11 +7,12 @@ using GCore.Extensions.ObjectEx;
 using GCore.Source.Generators.Extensions;
 using WrapperGenerator.CPP.PluginWrapper.Header;
 using WrapperGenerator.CPP.PluginWrapper.Impl;
-using WrapperGenerator.CS.ManagedPointerCollection;
+using WrapperGenerator.CS.UnmanagedPointerCollection;
 using WrapperGenerator.CS.NativeEnums;
 using WrapperGenerator.CS.PluginWrapper;
-using WrapperGenerator.CS.UnmanagedPointerCollection;
+using WrapperGenerator.CS.ManagedPointerCollection;
 using WrapperGenerator.Helper;
+using CS_MPC_Document = WrapperGenerator.CS.ManagedPointerCollection.CS_MPC_Document;
 
 namespace WrapperGenerator
 {
@@ -27,9 +28,9 @@ namespace WrapperGenerator
             var pluginHeaderFile = Path.Combine(includePath, "Plugin.h");
             var include = Path.Combine(includePath, "PluginData.h");
 
-            var cppOutPath = Path.Join(repoRoot, "src/SHADERed_CLR");
+            var cppOutPath = Path.Join(repoRoot, "src/SHADERedCLR");
 
-            var csOutPath = Path.Join(repoRoot, "src/PluginManager");
+            var csOutPath = Path.Join(repoRoot, "src/SHADERedCLR.Wrapper");
 
             var options = new CppParserOptions()
             {
@@ -52,11 +53,11 @@ namespace WrapperGenerator
             File.WriteAllText(Path.Combine(cppOutPath, CPP_PW_H_Plugin.ClassName + ".h"), cppHeaderCode);
             File.WriteAllText(Path.Combine(cppOutPath, CPP_PW_H_Plugin.ClassName + ".cpp"), cppImplCode);
 
-            var csMCPCode = new CS_MPC_Document(null, compilation).Render();
-            var csUCPCode = new CS_UPC_Document(null, compilation).Render();
+            var csMCPCode = new CS.UnmanagedPointerCollection.CS_UPC_Document(null, compilation).Render();
+            var csUCPCode = new CS_MPC_Document(null, compilation).Render();
 
-            File.WriteAllText(Path.Combine(csOutPath, "InteropData/" + CS_MPC_Class.ClassName + ".cs"), csMCPCode);
-            File.WriteAllText(Path.Combine(csOutPath, "InteropData/" + CS_UPC_Class.ClassName + ".cs"), csUCPCode);
+            File.WriteAllText(Path.Combine(csOutPath, "InteropData/" + CS_UPC_Class.ClassName + ".cs"), csMCPCode);
+            File.WriteAllText(Path.Combine(csOutPath, "InteropData/" + CS_MPC_Class.ClassName + ".cs"), csUCPCode);
 
             var csNDCode = new CS_ND_Document(null, compilation).Render();
             File.WriteAllText(Path.Combine(csOutPath, "NativeData.cs"), csNDCode);

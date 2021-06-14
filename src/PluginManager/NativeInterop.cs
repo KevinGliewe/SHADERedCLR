@@ -6,14 +6,14 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using PluginManager.InteropData;
+using SHADERedCLR.Wrapper;
+using SHADERedCLR.Wrapper.InteropData;
 
 namespace PluginManager
 {
     public partial class NativeInterop
     {
-        public delegate UnmanagedPointerCollection CreateNativePluginDelegate(ManagedPointerCollection a_MPC);
-        public delegate void DestroyNativePluginDelegate(IntPtr a_pPlugin);
+
 
 
 
@@ -29,9 +29,6 @@ namespace PluginManager
         {
             get { return s_pluginPtr; }
         }
-
-        public static CreateNativePluginDelegate CreateNativePlugin { get; private set; }
-        public static DestroyNativePluginDelegate DestroyNativePlugin { get; private set; }
 
         private static ManagedPluginManager _pluginManager;
 
@@ -65,11 +62,11 @@ namespace PluginManager
             s_pluginPtr = Arg.m_pluginPtr;
 
             Debug.WriteLine("CreateNativePlugin  = " + string.Format("{0:X8}", Arg.m_createNativePlugin));
-            CreateNativePlugin = Marshal.GetDelegateForFunctionPointer<CreateNativePluginDelegate>(
+            PluginWrapper.CreateNativePlugin = Marshal.GetDelegateForFunctionPointer<PluginWrapper.CreateNativePluginDelegate>(
                 Arg.m_createNativePlugin);
 
             Debug.WriteLine("DestroyNativePlugin = " + string.Format("{0:X8}", Arg.m_destroyNativePlugin));
-            DestroyNativePlugin = Marshal.GetDelegateForFunctionPointer<DestroyNativePluginDelegate>(
+            PluginWrapper.DestroyNativePlugin = Marshal.GetDelegateForFunctionPointer<PluginWrapper.DestroyNativePluginDelegate>(
                 Arg.m_destroyNativePlugin);
 
             NativeLibrary.SetDllImportResolver(typeof(NativeInterop).Assembly, ImportResolver);

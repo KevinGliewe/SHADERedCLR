@@ -54,18 +54,20 @@ namespace WrapperGenerator.CPP.PluginWrapper.Header
                     foreach (var func in _cppClass.CollectFunctions()) {
                         writer.WriteLine($"void* {func.Name}_{counter++:D3} = nullptr;");
                     }
+
+                    writer.WriteLine("void* __SetUPC = nullptr;");
                 }
                 writer.WriteLine("};");
 
                 writer.WriteLine(@"
 
                 UnmanagedPointerCollection  m_sUPC;
-                ManagedPointerCollection*   m_pMPC;
+                ManagedPointerCollection    m_pMPC;
 
                 void InitUPC();
                 ".TrimLines());
 
-                writer.WriteLine($"{ClassName}(ManagedPointerCollection* a_pMPC);");
+                writer.WriteLine($"{ClassName}(ManagedPointerCollection& a_pMPC);");
                 writer.WriteLine($"~{ClassName}();");
             }
 

@@ -3,1172 +3,1007 @@
 #include "PluginWrapper.h"
 
 bool PluginWrapper::Init(bool isWeb, int sedVersion) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Init_000)
+    this->InitUPC();
+    ((void(*)(UnmanagedPointerCollection))this->m_pMPC.__SetUPC)(this->m_sUPC);
+    if(!this->m_pMPC.Init_000)
         return 0;
-    return ((bool(*)(bool, int))this->m_pMPC->Init_000)(isWeb, sedVersion);
+    return ((bool(*)(bool, int))this->m_pMPC.Init_000)(isWeb, sedVersion);
 } // Function Init
 
 void PluginWrapper::InitUI(void* ctx) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->InitUI_001)
+    if(!this->m_pMPC.InitUI_001)
         return;
-    ((void(*)(void*))this->m_pMPC->InitUI_001)(ctx);
+    ((void(*)(void*))this->m_pMPC.InitUI_001)(ctx);
 } // Function InitUI
 
 void PluginWrapper::OnEvent(void* e) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->OnEvent_002)
+    if(!this->m_pMPC.OnEvent_002)
         return;
-    ((void(*)(void*))this->m_pMPC->OnEvent_002)(e);
+    ((void(*)(void*))this->m_pMPC.OnEvent_002)(e);
 } // Function OnEvent
 
 void PluginWrapper::Update(float delta) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Update_003)
+    if(!this->m_pMPC.Update_003)
         return;
-    ((void(*)(float))this->m_pMPC->Update_003)(delta);
+    ((void(*)(float))this->m_pMPC.Update_003)(delta);
 } // Function Update
 
 void PluginWrapper::Destroy() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Destroy_004)
+    if(!this->m_pMPC.Destroy_004)
         return;
-    ((void(*)())this->m_pMPC->Destroy_004)();
+    ((void(*)())this->m_pMPC.Destroy_004)();
 } // Function Destroy
 
 bool PluginWrapper::IsRequired() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->IsRequired_005)
+    if(!this->m_pMPC.IsRequired_005)
         return 0;
-    return ((bool(*)())this->m_pMPC->IsRequired_005)();
+    return ((bool(*)())this->m_pMPC.IsRequired_005)();
 } // Function IsRequired
 
 bool PluginWrapper::IsVersionCompatible(int version) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->IsVersionCompatible_006)
+    if(!this->m_pMPC.IsVersionCompatible_006)
         return 0;
-    return ((bool(*)(int))this->m_pMPC->IsVersionCompatible_006)(version);
+    return ((bool(*)(int))this->m_pMPC.IsVersionCompatible_006)(version);
 } // Function IsVersionCompatible
 
 void PluginWrapper::BeginRender() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->BeginRender_007)
+    if(!this->m_pMPC.BeginRender_007)
         return;
-    ((void(*)())this->m_pMPC->BeginRender_007)();
+    ((void(*)())this->m_pMPC.BeginRender_007)();
 } // Function BeginRender
 
 void PluginWrapper::EndRender() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->EndRender_008)
+    if(!this->m_pMPC.EndRender_008)
         return;
-    ((void(*)())this->m_pMPC->EndRender_008)();
+    ((void(*)())this->m_pMPC.EndRender_008)();
 } // Function EndRender
 
 void PluginWrapper::Project_BeginLoad() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_BeginLoad_009)
+    if(!this->m_pMPC.Project_BeginLoad_009)
         return;
-    ((void(*)())this->m_pMPC->Project_BeginLoad_009)();
+    ((void(*)())this->m_pMPC.Project_BeginLoad_009)();
 } // Function Project_BeginLoad
 
 void PluginWrapper::Project_EndLoad() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_EndLoad_010)
+    if(!this->m_pMPC.Project_EndLoad_010)
         return;
-    ((void(*)())this->m_pMPC->Project_EndLoad_010)();
+    ((void(*)())this->m_pMPC.Project_EndLoad_010)();
 } // Function Project_EndLoad
 
 void PluginWrapper::Project_BeginSave() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_BeginSave_011)
+    if(!this->m_pMPC.Project_BeginSave_011)
         return;
-    ((void(*)())this->m_pMPC->Project_BeginSave_011)();
+    ((void(*)())this->m_pMPC.Project_BeginSave_011)();
 } // Function Project_BeginSave
 
 void PluginWrapper::Project_EndSave() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_EndSave_012)
+    if(!this->m_pMPC.Project_EndSave_012)
         return;
-    ((void(*)())this->m_pMPC->Project_EndSave_012)();
+    ((void(*)())this->m_pMPC.Project_EndSave_012)();
 } // Function Project_EndSave
 
 bool PluginWrapper::Project_HasAdditionalData() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_HasAdditionalData_013)
+    if(!this->m_pMPC.Project_HasAdditionalData_013)
         return 0;
-    return ((bool(*)())this->m_pMPC->Project_HasAdditionalData_013)();
+    return ((bool(*)())this->m_pMPC.Project_HasAdditionalData_013)();
 } // Function Project_HasAdditionalData
 
 const char* PluginWrapper::Project_ExportAdditionalData() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_ExportAdditionalData_014)
+    if(!this->m_pMPC.Project_ExportAdditionalData_014)
         return nullptr;
-    return ((const char*(*)())this->m_pMPC->Project_ExportAdditionalData_014)();
+    return ((const char*(*)())this->m_pMPC.Project_ExportAdditionalData_014)();
 } // Function Project_ExportAdditionalData
 
 void PluginWrapper::Project_ImportAdditionalData(const char* xml) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_ImportAdditionalData_015)
+    if(!this->m_pMPC.Project_ImportAdditionalData_015)
         return;
-    ((void(*)(const char*))this->m_pMPC->Project_ImportAdditionalData_015)(xml);
+    ((void(*)(const char*))this->m_pMPC.Project_ImportAdditionalData_015)(xml);
 } // Function Project_ImportAdditionalData
 
 void PluginWrapper::Project_CopyFilesOnSave(const char* dir) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Project_CopyFilesOnSave_016)
+    if(!this->m_pMPC.Project_CopyFilesOnSave_016)
         return;
-    ((void(*)(const char*))this->m_pMPC->Project_CopyFilesOnSave_016)(dir);
+    ((void(*)(const char*))this->m_pMPC.Project_CopyFilesOnSave_016)(dir);
 } // Function Project_CopyFilesOnSave
 
 bool PluginWrapper::HasCustomMenuItem() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HasCustomMenuItem_017)
+    if(!this->m_pMPC.HasCustomMenuItem_017)
         return 0;
-    return ((bool(*)())this->m_pMPC->HasCustomMenuItem_017)();
+    return ((bool(*)())this->m_pMPC.HasCustomMenuItem_017)();
 } // Function HasCustomMenuItem
 
 bool PluginWrapper::HasMenuItems(const char* name) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HasMenuItems_018)
+    if(!this->m_pMPC.HasMenuItems_018)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->HasMenuItems_018)(name);
+    return ((bool(*)(const char*))this->m_pMPC.HasMenuItems_018)(name);
 } // Function HasMenuItems
 
 void PluginWrapper::ShowMenuItems(const char* name) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShowMenuItems_019)
+    if(!this->m_pMPC.ShowMenuItems_019)
         return;
-    ((void(*)(const char*))this->m_pMPC->ShowMenuItems_019)(name);
+    ((void(*)(const char*))this->m_pMPC.ShowMenuItems_019)(name);
 } // Function ShowMenuItems
 
 bool PluginWrapper::HasContextItems(const char* name) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HasContextItems_020)
+    if(!this->m_pMPC.HasContextItems_020)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->HasContextItems_020)(name);
+    return ((bool(*)(const char*))this->m_pMPC.HasContextItems_020)(name);
 } // Function HasContextItems
 
 void PluginWrapper::ShowContextItems(const char* name, void* owner, void* extraData) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShowContextItems_021)
+    if(!this->m_pMPC.ShowContextItems_021)
         return;
-    ((void(*)(const char*, void*, void*))this->m_pMPC->ShowContextItems_021)(name, owner, extraData);
+    ((void(*)(const char*, void*, void*))this->m_pMPC.ShowContextItems_021)(name, owner, extraData);
 } // Function ShowContextItems
 
 int PluginWrapper::SystemVariables_GetNameCount(ed::plugin::VariableType varType) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->SystemVariables_GetNameCount_022)
+    if(!this->m_pMPC.SystemVariables_GetNameCount_022)
         return 0;
-    return ((int(*)(ed::plugin::VariableType))this->m_pMPC->SystemVariables_GetNameCount_022)(varType);
+    return ((int(*)(ed::plugin::VariableType))this->m_pMPC.SystemVariables_GetNameCount_022)(varType);
 } // Function SystemVariables_GetNameCount
 
 const char* PluginWrapper::SystemVariables_GetName(ed::plugin::VariableType varType, int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->SystemVariables_GetName_023)
+    if(!this->m_pMPC.SystemVariables_GetName_023)
         return nullptr;
-    return ((const char*(*)(ed::plugin::VariableType, int))this->m_pMPC->SystemVariables_GetName_023)(varType, index);
+    return ((const char*(*)(ed::plugin::VariableType, int))this->m_pMPC.SystemVariables_GetName_023)(varType, index);
 } // Function SystemVariables_GetName
 
 bool PluginWrapper::SystemVariables_HasLastFrame(char* name, ed::plugin::VariableType varType) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->SystemVariables_HasLastFrame_024)
+    if(!this->m_pMPC.SystemVariables_HasLastFrame_024)
         return 0;
-    return ((bool(*)(char*, ed::plugin::VariableType))this->m_pMPC->SystemVariables_HasLastFrame_024)(name, varType);
+    return ((bool(*)(char*, ed::plugin::VariableType))this->m_pMPC.SystemVariables_HasLastFrame_024)(name, varType);
 } // Function SystemVariables_HasLastFrame
 
 void PluginWrapper::SystemVariables_UpdateValue(char* data, char* name, ed::plugin::VariableType varType, bool isLastFrame) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->SystemVariables_UpdateValue_025)
+    if(!this->m_pMPC.SystemVariables_UpdateValue_025)
         return;
-    ((void(*)(char*, char*, ed::plugin::VariableType, bool))this->m_pMPC->SystemVariables_UpdateValue_025)(data, name, varType, isLastFrame);
+    ((void(*)(char*, char*, ed::plugin::VariableType, bool))this->m_pMPC.SystemVariables_UpdateValue_025)(data, name, varType, isLastFrame);
 } // Function SystemVariables_UpdateValue
 
 int PluginWrapper::VariableFunctions_GetNameCount(ed::plugin::VariableType vtype) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_GetNameCount_026)
+    if(!this->m_pMPC.VariableFunctions_GetNameCount_026)
         return 0;
-    return ((int(*)(ed::plugin::VariableType))this->m_pMPC->VariableFunctions_GetNameCount_026)(vtype);
+    return ((int(*)(ed::plugin::VariableType))this->m_pMPC.VariableFunctions_GetNameCount_026)(vtype);
 } // Function VariableFunctions_GetNameCount
 
 const char* PluginWrapper::VariableFunctions_GetName(ed::plugin::VariableType varType, int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_GetName_027)
+    if(!this->m_pMPC.VariableFunctions_GetName_027)
         return nullptr;
-    return ((const char*(*)(ed::plugin::VariableType, int))this->m_pMPC->VariableFunctions_GetName_027)(varType, index);
+    return ((const char*(*)(ed::plugin::VariableType, int))this->m_pMPC.VariableFunctions_GetName_027)(varType, index);
 } // Function VariableFunctions_GetName
 
 bool PluginWrapper::VariableFunctions_ShowArgumentEdit(char* fname, char* args, ed::plugin::VariableType vtype) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_ShowArgumentEdit_028)
+    if(!this->m_pMPC.VariableFunctions_ShowArgumentEdit_028)
         return 0;
-    return ((bool(*)(char*, char*, ed::plugin::VariableType))this->m_pMPC->VariableFunctions_ShowArgumentEdit_028)(fname, args, vtype);
+    return ((bool(*)(char*, char*, ed::plugin::VariableType))this->m_pMPC.VariableFunctions_ShowArgumentEdit_028)(fname, args, vtype);
 } // Function VariableFunctions_ShowArgumentEdit
 
 void PluginWrapper::VariableFunctions_UpdateValue(char* data, char* args, char* fname, ed::plugin::VariableType varType) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_UpdateValue_029)
+    if(!this->m_pMPC.VariableFunctions_UpdateValue_029)
         return;
-    ((void(*)(char*, char*, char*, ed::plugin::VariableType))this->m_pMPC->VariableFunctions_UpdateValue_029)(data, args, fname, varType);
+    ((void(*)(char*, char*, char*, ed::plugin::VariableType))this->m_pMPC.VariableFunctions_UpdateValue_029)(data, args, fname, varType);
 } // Function VariableFunctions_UpdateValue
 
 int PluginWrapper::VariableFunctions_GetArgsSize(char* fname, ed::plugin::VariableType varType) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_GetArgsSize_030)
+    if(!this->m_pMPC.VariableFunctions_GetArgsSize_030)
         return 0;
-    return ((int(*)(char*, ed::plugin::VariableType))this->m_pMPC->VariableFunctions_GetArgsSize_030)(fname, varType);
+    return ((int(*)(char*, ed::plugin::VariableType))this->m_pMPC.VariableFunctions_GetArgsSize_030)(fname, varType);
 } // Function VariableFunctions_GetArgsSize
 
 void PluginWrapper::VariableFunctions_InitArguments(char* args, char* fname, ed::plugin::VariableType vtype) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_InitArguments_031)
+    if(!this->m_pMPC.VariableFunctions_InitArguments_031)
         return;
-    ((void(*)(char*, char*, ed::plugin::VariableType))this->m_pMPC->VariableFunctions_InitArguments_031)(args, fname, vtype);
+    ((void(*)(char*, char*, ed::plugin::VariableType))this->m_pMPC.VariableFunctions_InitArguments_031)(args, fname, vtype);
 } // Function VariableFunctions_InitArguments
 
 const char* PluginWrapper::VariableFunctions_ExportArguments(char* fname, ed::plugin::VariableType vtype, char* args) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_ExportArguments_032)
+    if(!this->m_pMPC.VariableFunctions_ExportArguments_032)
         return nullptr;
-    return ((const char*(*)(char*, ed::plugin::VariableType, char*))this->m_pMPC->VariableFunctions_ExportArguments_032)(fname, vtype, args);
+    return ((const char*(*)(char*, ed::plugin::VariableType, char*))this->m_pMPC.VariableFunctions_ExportArguments_032)(fname, vtype, args);
 } // Function VariableFunctions_ExportArguments
 
 void PluginWrapper::VariableFunctions_ImportArguments(char* fname, ed::plugin::VariableType vtype, char* args, const char* argsString) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->VariableFunctions_ImportArguments_033)
+    if(!this->m_pMPC.VariableFunctions_ImportArguments_033)
         return;
-    ((void(*)(char*, ed::plugin::VariableType, char*, const char*))this->m_pMPC->VariableFunctions_ImportArguments_033)(fname, vtype, args, argsString);
+    ((void(*)(char*, ed::plugin::VariableType, char*, const char*))this->m_pMPC.VariableFunctions_ImportArguments_033)(fname, vtype, args, argsString);
 } // Function VariableFunctions_ImportArguments
 
 bool PluginWrapper::Object_HasPreview(const char* type) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_HasPreview_034)
+    if(!this->m_pMPC.Object_HasPreview_034)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->Object_HasPreview_034)(type);
+    return ((bool(*)(const char*))this->m_pMPC.Object_HasPreview_034)(type);
 } // Function Object_HasPreview
 
 void PluginWrapper::Object_ShowPreview(const char* type, void* data, unsigned int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_ShowPreview_035)
+    if(!this->m_pMPC.Object_ShowPreview_035)
         return;
-    ((void(*)(const char*, void*, unsigned int))this->m_pMPC->Object_ShowPreview_035)(type, data, id);
+    ((void(*)(const char*, void*, unsigned int))this->m_pMPC.Object_ShowPreview_035)(type, data, id);
 } // Function Object_ShowPreview
 
 bool PluginWrapper::Object_IsBindable(const char* type) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_IsBindable_036)
+    if(!this->m_pMPC.Object_IsBindable_036)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->Object_IsBindable_036)(type);
+    return ((bool(*)(const char*))this->m_pMPC.Object_IsBindable_036)(type);
 } // Function Object_IsBindable
 
 bool PluginWrapper::Object_IsBindableUAV(const char* type) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_IsBindableUAV_037)
+    if(!this->m_pMPC.Object_IsBindableUAV_037)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->Object_IsBindableUAV_037)(type);
+    return ((bool(*)(const char*))this->m_pMPC.Object_IsBindableUAV_037)(type);
 } // Function Object_IsBindableUAV
 
 void PluginWrapper::Object_Remove(const char* name, const char* type, void* data, unsigned int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_Remove_038)
+    if(!this->m_pMPC.Object_Remove_038)
         return;
-    ((void(*)(const char*, const char*, void*, unsigned int))this->m_pMPC->Object_Remove_038)(name, type, data, id);
+    ((void(*)(const char*, const char*, void*, unsigned int))this->m_pMPC.Object_Remove_038)(name, type, data, id);
 } // Function Object_Remove
 
 bool PluginWrapper::Object_HasExtendedPreview(const char* type) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_HasExtendedPreview_039)
+    if(!this->m_pMPC.Object_HasExtendedPreview_039)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->Object_HasExtendedPreview_039)(type);
+    return ((bool(*)(const char*))this->m_pMPC.Object_HasExtendedPreview_039)(type);
 } // Function Object_HasExtendedPreview
 
 void PluginWrapper::Object_ShowExtendedPreview(const char* type, void* data, unsigned int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_ShowExtendedPreview_040)
+    if(!this->m_pMPC.Object_ShowExtendedPreview_040)
         return;
-    ((void(*)(const char*, void*, unsigned int))this->m_pMPC->Object_ShowExtendedPreview_040)(type, data, id);
+    ((void(*)(const char*, void*, unsigned int))this->m_pMPC.Object_ShowExtendedPreview_040)(type, data, id);
 } // Function Object_ShowExtendedPreview
 
 bool PluginWrapper::Object_HasProperties(const char* type) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_HasProperties_041)
+    if(!this->m_pMPC.Object_HasProperties_041)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->Object_HasProperties_041)(type);
+    return ((bool(*)(const char*))this->m_pMPC.Object_HasProperties_041)(type);
 } // Function Object_HasProperties
 
 void PluginWrapper::Object_ShowProperties(const char* type, void* data, unsigned int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_ShowProperties_042)
+    if(!this->m_pMPC.Object_ShowProperties_042)
         return;
-    ((void(*)(const char*, void*, unsigned int))this->m_pMPC->Object_ShowProperties_042)(type, data, id);
+    ((void(*)(const char*, void*, unsigned int))this->m_pMPC.Object_ShowProperties_042)(type, data, id);
 } // Function Object_ShowProperties
 
 void PluginWrapper::Object_Bind(const char* type, void* data, unsigned int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_Bind_043)
+    if(!this->m_pMPC.Object_Bind_043)
         return;
-    ((void(*)(const char*, void*, unsigned int))this->m_pMPC->Object_Bind_043)(type, data, id);
+    ((void(*)(const char*, void*, unsigned int))this->m_pMPC.Object_Bind_043)(type, data, id);
 } // Function Object_Bind
 
 const char* PluginWrapper::Object_Export(char* type, void* data, unsigned int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_Export_044)
+    if(!this->m_pMPC.Object_Export_044)
         return nullptr;
-    return ((const char*(*)(char*, void*, unsigned int))this->m_pMPC->Object_Export_044)(type, data, id);
+    return ((const char*(*)(char*, void*, unsigned int))this->m_pMPC.Object_Export_044)(type, data, id);
 } // Function Object_Export
 
 void PluginWrapper::Object_Import(const char* name, const char* type, const char* argsString) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_Import_045)
+    if(!this->m_pMPC.Object_Import_045)
         return;
-    ((void(*)(const char*, const char*, const char*))this->m_pMPC->Object_Import_045)(name, type, argsString);
+    ((void(*)(const char*, const char*, const char*))this->m_pMPC.Object_Import_045)(name, type, argsString);
 } // Function Object_Import
 
 bool PluginWrapper::Object_HasContext(const char* type) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_HasContext_046)
+    if(!this->m_pMPC.Object_HasContext_046)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->Object_HasContext_046)(type);
+    return ((bool(*)(const char*))this->m_pMPC.Object_HasContext_046)(type);
 } // Function Object_HasContext
 
 void PluginWrapper::Object_ShowContext(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Object_ShowContext_047)
+    if(!this->m_pMPC.Object_ShowContext_047)
         return;
-    ((void(*)(const char*, void*))this->m_pMPC->Object_ShowContext_047)(type, data);
+    ((void(*)(const char*, void*))this->m_pMPC.Object_ShowContext_047)(type, data);
 } // Function Object_ShowContext
 
 bool PluginWrapper::PipelineItem_HasProperties(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_HasProperties_048)
+    if(!this->m_pMPC.PipelineItem_HasProperties_048)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_HasProperties_048)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_HasProperties_048)(type, data);
 } // Function PipelineItem_HasProperties
 
 void PluginWrapper::PipelineItem_ShowProperties(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_ShowProperties_049)
+    if(!this->m_pMPC.PipelineItem_ShowProperties_049)
         return;
-    ((void(*)(const char*, void*))this->m_pMPC->PipelineItem_ShowProperties_049)(type, data);
+    ((void(*)(const char*, void*))this->m_pMPC.PipelineItem_ShowProperties_049)(type, data);
 } // Function PipelineItem_ShowProperties
 
 bool PluginWrapper::PipelineItem_IsPickable(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_IsPickable_050)
+    if(!this->m_pMPC.PipelineItem_IsPickable_050)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_IsPickable_050)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_IsPickable_050)(type, data);
 } // Function PipelineItem_IsPickable
 
 bool PluginWrapper::PipelineItem_HasShaders(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_HasShaders_051)
+    if(!this->m_pMPC.PipelineItem_HasShaders_051)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_HasShaders_051)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_HasShaders_051)(type, data);
 } // Function PipelineItem_HasShaders
 
 void PluginWrapper::PipelineItem_OpenInEditor(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_OpenInEditor_052)
+    if(!this->m_pMPC.PipelineItem_OpenInEditor_052)
         return;
-    ((void(*)(const char*, void*))this->m_pMPC->PipelineItem_OpenInEditor_052)(type, data);
+    ((void(*)(const char*, void*))this->m_pMPC.PipelineItem_OpenInEditor_052)(type, data);
 } // Function PipelineItem_OpenInEditor
 
 bool PluginWrapper::PipelineItem_CanHaveChild(const char* type, void* data, ed::plugin::PipelineItemType itemType) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_CanHaveChild_053)
+    if(!this->m_pMPC.PipelineItem_CanHaveChild_053)
         return 0;
-    return ((bool(*)(const char*, void*, ed::plugin::PipelineItemType))this->m_pMPC->PipelineItem_CanHaveChild_053)(type, data, itemType);
+    return ((bool(*)(const char*, void*, ed::plugin::PipelineItemType))this->m_pMPC.PipelineItem_CanHaveChild_053)(type, data, itemType);
 } // Function PipelineItem_CanHaveChild
 
 int PluginWrapper::PipelineItem_GetInputLayoutSize(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetInputLayoutSize_054)
+    if(!this->m_pMPC.PipelineItem_GetInputLayoutSize_054)
         return 0;
-    return ((int(*)(const char*, void*))this->m_pMPC->PipelineItem_GetInputLayoutSize_054)(type, data);
+    return ((int(*)(const char*, void*))this->m_pMPC.PipelineItem_GetInputLayoutSize_054)(type, data);
 } // Function PipelineItem_GetInputLayoutSize
 
 void PluginWrapper::PipelineItem_GetInputLayoutItem(const char* type, void* data, int index, ed::plugin::InputLayoutItem& out) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetInputLayoutItem_055)
+    if(!this->m_pMPC.PipelineItem_GetInputLayoutItem_055)
         return;
-    ((void(*)(const char*, void*, int, ed::plugin::InputLayoutItem&))this->m_pMPC->PipelineItem_GetInputLayoutItem_055)(type, data, index, out);
+    ((void(*)(const char*, void*, int, ed::plugin::InputLayoutItem&))this->m_pMPC.PipelineItem_GetInputLayoutItem_055)(type, data, index, out);
 } // Function PipelineItem_GetInputLayoutItem
 
 void PluginWrapper::PipelineItem_Remove(const char* itemName, const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_Remove_056)
+    if(!this->m_pMPC.PipelineItem_Remove_056)
         return;
-    ((void(*)(const char*, const char*, void*))this->m_pMPC->PipelineItem_Remove_056)(itemName, type, data);
+    ((void(*)(const char*, const char*, void*))this->m_pMPC.PipelineItem_Remove_056)(itemName, type, data);
 } // Function PipelineItem_Remove
 
 void PluginWrapper::PipelineItem_Rename(const char* oldName, const char* newName) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_Rename_057)
+    if(!this->m_pMPC.PipelineItem_Rename_057)
         return;
-    ((void(*)(const char*, const char*))this->m_pMPC->PipelineItem_Rename_057)(oldName, newName);
+    ((void(*)(const char*, const char*))this->m_pMPC.PipelineItem_Rename_057)(oldName, newName);
 } // Function PipelineItem_Rename
 
 void PluginWrapper::PipelineItem_AddChild(const char* owner, const char* name, ed::plugin::PipelineItemType type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_AddChild_058)
+    if(!this->m_pMPC.PipelineItem_AddChild_058)
         return;
-    ((void(*)(const char*, const char*, ed::plugin::PipelineItemType, void*))this->m_pMPC->PipelineItem_AddChild_058)(owner, name, type, data);
+    ((void(*)(const char*, const char*, ed::plugin::PipelineItemType, void*))this->m_pMPC.PipelineItem_AddChild_058)(owner, name, type, data);
 } // Function PipelineItem_AddChild
 
 bool PluginWrapper::PipelineItem_CanHaveChildren(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_CanHaveChildren_059)
+    if(!this->m_pMPC.PipelineItem_CanHaveChildren_059)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_CanHaveChildren_059)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_CanHaveChildren_059)(type, data);
 } // Function PipelineItem_CanHaveChildren
 
 void* PluginWrapper::PipelineItem_CopyData(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_CopyData_060)
+    if(!this->m_pMPC.PipelineItem_CopyData_060)
         return nullptr;
-    return ((void*(*)(const char*, void*))this->m_pMPC->PipelineItem_CopyData_060)(type, data);
+    return ((void*(*)(const char*, void*))this->m_pMPC.PipelineItem_CopyData_060)(type, data);
 } // Function PipelineItem_CopyData
 
 void PluginWrapper::PipelineItem_Execute(void* Owner, ed::plugin::PipelineItemType OwnerType, const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_Execute_061)
+    if(!this->m_pMPC.PipelineItem_Execute_061)
         return;
-    ((void(*)(void*, ed::plugin::PipelineItemType, const char*, void*))this->m_pMPC->PipelineItem_Execute_061)(Owner, OwnerType, type, data);
+    ((void(*)(void*, ed::plugin::PipelineItemType, const char*, void*))this->m_pMPC.PipelineItem_Execute_061)(Owner, OwnerType, type, data);
 } // Function PipelineItem_Execute
 
 void PluginWrapper::PipelineItem_Execute(const char* type, void* data, void* children, int count) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_Execute_062)
+    if(!this->m_pMPC.PipelineItem_Execute_062)
         return;
-    ((void(*)(const char*, void*, void*, int))this->m_pMPC->PipelineItem_Execute_062)(type, data, children, count);
+    ((void(*)(const char*, void*, void*, int))this->m_pMPC.PipelineItem_Execute_062)(type, data, children, count);
 } // Function PipelineItem_Execute
 
 void PluginWrapper::PipelineItem_GetWorldMatrix(const char* type, void* data, float (&pMat)[16]) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetWorldMatrix_063)
+    if(!this->m_pMPC.PipelineItem_GetWorldMatrix_063)
         return;
-    ((void(*)(const char*, void*, float*))this->m_pMPC->PipelineItem_GetWorldMatrix_063)(type, data, pMat);
+    ((void(*)(const char*, void*, float*))this->m_pMPC.PipelineItem_GetWorldMatrix_063)(type, data, pMat);
 } // Function PipelineItem_GetWorldMatrix
 
 bool PluginWrapper::PipelineItem_Intersect(const char* type, void* data, const float* rayOrigin, const float* rayDir, float& hitDist) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_Intersect_064)
+    if(!this->m_pMPC.PipelineItem_Intersect_064)
         return 0;
-    return ((bool(*)(const char*, void*, const float*, const float*, float&))this->m_pMPC->PipelineItem_Intersect_064)(type, data, rayOrigin, rayDir, hitDist);
+    return ((bool(*)(const char*, void*, const float*, const float*, float&))this->m_pMPC.PipelineItem_Intersect_064)(type, data, rayOrigin, rayDir, hitDist);
 } // Function PipelineItem_Intersect
 
 void PluginWrapper::PipelineItem_GetBoundingBox(const char* type, void* data, float (&minPos)[3], float (&maxPos)[3]) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetBoundingBox_065)
+    if(!this->m_pMPC.PipelineItem_GetBoundingBox_065)
         return;
-    ((void(*)(const char*, void*, float*, float*))this->m_pMPC->PipelineItem_GetBoundingBox_065)(type, data, minPos, maxPos);
+    ((void(*)(const char*, void*, float*, float*))this->m_pMPC.PipelineItem_GetBoundingBox_065)(type, data, minPos, maxPos);
 } // Function PipelineItem_GetBoundingBox
 
 bool PluginWrapper::PipelineItem_HasContext(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_HasContext_066)
+    if(!this->m_pMPC.PipelineItem_HasContext_066)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_HasContext_066)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_HasContext_066)(type, data);
 } // Function PipelineItem_HasContext
 
 void PluginWrapper::PipelineItem_ShowContext(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_ShowContext_067)
+    if(!this->m_pMPC.PipelineItem_ShowContext_067)
         return;
-    ((void(*)(const char*, void*))this->m_pMPC->PipelineItem_ShowContext_067)(type, data);
+    ((void(*)(const char*, void*))this->m_pMPC.PipelineItem_ShowContext_067)(type, data);
 } // Function PipelineItem_ShowContext
 
 const char* PluginWrapper::PipelineItem_Export(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_Export_068)
+    if(!this->m_pMPC.PipelineItem_Export_068)
         return nullptr;
-    return ((const char*(*)(const char*, void*))this->m_pMPC->PipelineItem_Export_068)(type, data);
+    return ((const char*(*)(const char*, void*))this->m_pMPC.PipelineItem_Export_068)(type, data);
 } // Function PipelineItem_Export
 
 void* PluginWrapper::PipelineItem_Import(const char* ownerName, const char* name, const char* type, const char* argsString) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_Import_069)
+    if(!this->m_pMPC.PipelineItem_Import_069)
         return nullptr;
-    return ((void*(*)(const char*, const char*, const char*, const char*))this->m_pMPC->PipelineItem_Import_069)(ownerName, name, type, argsString);
+    return ((void*(*)(const char*, const char*, const char*, const char*))this->m_pMPC.PipelineItem_Import_069)(ownerName, name, type, argsString);
 } // Function PipelineItem_Import
 
 void PluginWrapper::PipelineItem_MoveDown(void* ownerData, const char* ownerType, const char* itemName) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_MoveDown_070)
+    if(!this->m_pMPC.PipelineItem_MoveDown_070)
         return;
-    ((void(*)(void*, const char*, const char*))this->m_pMPC->PipelineItem_MoveDown_070)(ownerData, ownerType, itemName);
+    ((void(*)(void*, const char*, const char*))this->m_pMPC.PipelineItem_MoveDown_070)(ownerData, ownerType, itemName);
 } // Function PipelineItem_MoveDown
 
 void PluginWrapper::PipelineItem_MoveUp(void* ownerData, const char* ownerType, const char* itemName) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_MoveUp_071)
+    if(!this->m_pMPC.PipelineItem_MoveUp_071)
         return;
-    ((void(*)(void*, const char*, const char*))this->m_pMPC->PipelineItem_MoveUp_071)(ownerData, ownerType, itemName);
+    ((void(*)(void*, const char*, const char*))this->m_pMPC.PipelineItem_MoveUp_071)(ownerData, ownerType, itemName);
 } // Function PipelineItem_MoveUp
 
 void PluginWrapper::PipelineItem_ApplyGizmoTransform(const char* type, void* data, float* transl, float* scale, float* rota) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_ApplyGizmoTransform_072)
+    if(!this->m_pMPC.PipelineItem_ApplyGizmoTransform_072)
         return;
-    ((void(*)(const char*, void*, float*, float*, float*))this->m_pMPC->PipelineItem_ApplyGizmoTransform_072)(type, data, transl, scale, rota);
+    ((void(*)(const char*, void*, float*, float*, float*))this->m_pMPC.PipelineItem_ApplyGizmoTransform_072)(type, data, transl, scale, rota);
 } // Function PipelineItem_ApplyGizmoTransform
 
 void PluginWrapper::PipelineItem_GetTransform(const char* type, void* data, float* transl, float* scale, float* rota) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetTransform_073)
+    if(!this->m_pMPC.PipelineItem_GetTransform_073)
         return;
-    ((void(*)(const char*, void*, float*, float*, float*))this->m_pMPC->PipelineItem_GetTransform_073)(type, data, transl, scale, rota);
+    ((void(*)(const char*, void*, float*, float*, float*))this->m_pMPC.PipelineItem_GetTransform_073)(type, data, transl, scale, rota);
 } // Function PipelineItem_GetTransform
 
 void PluginWrapper::PipelineItem_DebugVertexExecute(void* Owner, ed::plugin::PipelineItemType OwnerType, const char* type, void* data, unsigned int colorVarLoc) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugVertexExecute_074)
+    if(!this->m_pMPC.PipelineItem_DebugVertexExecute_074)
         return;
-    ((void(*)(void*, ed::plugin::PipelineItemType, const char*, void*, unsigned int))this->m_pMPC->PipelineItem_DebugVertexExecute_074)(Owner, OwnerType, type, data, colorVarLoc);
+    ((void(*)(void*, ed::plugin::PipelineItemType, const char*, void*, unsigned int))this->m_pMPC.PipelineItem_DebugVertexExecute_074)(Owner, OwnerType, type, data, colorVarLoc);
 } // Function PipelineItem_DebugVertexExecute
 
 int PluginWrapper::PipelineItem_DebugVertexExecute(const char* type, void* data, const char* childName, float rx, float ry, int vertexGroup) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugVertexExecute_075)
+    if(!this->m_pMPC.PipelineItem_DebugVertexExecute_075)
         return 0;
-    return ((int(*)(const char*, void*, const char*, float, float, int))this->m_pMPC->PipelineItem_DebugVertexExecute_075)(type, data, childName, rx, ry, vertexGroup);
+    return ((int(*)(const char*, void*, const char*, float, float, int))this->m_pMPC.PipelineItem_DebugVertexExecute_075)(type, data, childName, rx, ry, vertexGroup);
 } // Function PipelineItem_DebugVertexExecute
 
 void PluginWrapper::PipelineItem_DebugInstanceExecute(void* Owner, ed::plugin::PipelineItemType OwnerType, const char* type, void* data, unsigned int colorVarLoc) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugInstanceExecute_076)
+    if(!this->m_pMPC.PipelineItem_DebugInstanceExecute_076)
         return;
-    ((void(*)(void*, ed::plugin::PipelineItemType, const char*, void*, unsigned int))this->m_pMPC->PipelineItem_DebugInstanceExecute_076)(Owner, OwnerType, type, data, colorVarLoc);
+    ((void(*)(void*, ed::plugin::PipelineItemType, const char*, void*, unsigned int))this->m_pMPC.PipelineItem_DebugInstanceExecute_076)(Owner, OwnerType, type, data, colorVarLoc);
 } // Function PipelineItem_DebugInstanceExecute
 
 int PluginWrapper::PipelineItem_DebugInstanceExecute(const char* type, void* data, const char* childName, float rx, float ry, int vertexGroup) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugInstanceExecute_077)
+    if(!this->m_pMPC.PipelineItem_DebugInstanceExecute_077)
         return 0;
-    return ((int(*)(const char*, void*, const char*, float, float, int))this->m_pMPC->PipelineItem_DebugInstanceExecute_077)(type, data, childName, rx, ry, vertexGroup);
+    return ((int(*)(const char*, void*, const char*, float, float, int))this->m_pMPC.PipelineItem_DebugInstanceExecute_077)(type, data, childName, rx, ry, vertexGroup);
 } // Function PipelineItem_DebugInstanceExecute
 
 unsigned int PluginWrapper::PipelineItem_GetVBO(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVBO_078)
+    if(!this->m_pMPC.PipelineItem_GetVBO_078)
         return 0;
-    return ((unsigned int(*)(const char*, void*))this->m_pMPC->PipelineItem_GetVBO_078)(type, data);
+    return ((unsigned int(*)(const char*, void*))this->m_pMPC.PipelineItem_GetVBO_078)(type, data);
 } // Function PipelineItem_GetVBO
 
 unsigned int PluginWrapper::PipelineItem_GetVBOStride(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVBOStride_079)
+    if(!this->m_pMPC.PipelineItem_GetVBOStride_079)
         return 0;
-    return ((unsigned int(*)(const char*, void*))this->m_pMPC->PipelineItem_GetVBOStride_079)(type, data);
+    return ((unsigned int(*)(const char*, void*))this->m_pMPC.PipelineItem_GetVBOStride_079)(type, data);
 } // Function PipelineItem_GetVBOStride
 
 bool PluginWrapper::PipelineItem_CanChangeVariables(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_CanChangeVariables_080)
+    if(!this->m_pMPC.PipelineItem_CanChangeVariables_080)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_CanChangeVariables_080)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_CanChangeVariables_080)(type, data);
 } // Function PipelineItem_CanChangeVariables
 
 bool PluginWrapper::PipelineItem_IsDebuggable(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_IsDebuggable_081)
+    if(!this->m_pMPC.PipelineItem_IsDebuggable_081)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_IsDebuggable_081)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_IsDebuggable_081)(type, data);
 } // Function PipelineItem_IsDebuggable
 
 bool PluginWrapper::PipelineItem_IsStageDebuggable(const char* type, void* data, ed::plugin::ShaderStage stage) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_IsStageDebuggable_082)
+    if(!this->m_pMPC.PipelineItem_IsStageDebuggable_082)
         return 0;
-    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC->PipelineItem_IsStageDebuggable_082)(type, data, stage);
+    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC.PipelineItem_IsStageDebuggable_082)(type, data, stage);
 } // Function PipelineItem_IsStageDebuggable
 
 void PluginWrapper::PipelineItem_DebugExecute(const char* type, void* data, void* children, int count, int* debugID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugExecute_083)
+    if(!this->m_pMPC.PipelineItem_DebugExecute_083)
         return;
-    ((void(*)(const char*, void*, void*, int, int*))this->m_pMPC->PipelineItem_DebugExecute_083)(type, data, children, count, debugID);
+    ((void(*)(const char*, void*, void*, int, int*))this->m_pMPC.PipelineItem_DebugExecute_083)(type, data, children, count, debugID);
 } // Function PipelineItem_DebugExecute
 
 unsigned int PluginWrapper::PipelineItem_GetTopology(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetTopology_084)
+    if(!this->m_pMPC.PipelineItem_GetTopology_084)
         return 0;
-    return ((unsigned int(*)(const char*, void*))this->m_pMPC->PipelineItem_GetTopology_084)(type, data);
+    return ((unsigned int(*)(const char*, void*))this->m_pMPC.PipelineItem_GetTopology_084)(type, data);
 } // Function PipelineItem_GetTopology
 
 unsigned int PluginWrapper::PipelineItem_GetVariableCount(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVariableCount_085)
+    if(!this->m_pMPC.PipelineItem_GetVariableCount_085)
         return 0;
-    return ((unsigned int(*)(const char*, void*))this->m_pMPC->PipelineItem_GetVariableCount_085)(type, data);
+    return ((unsigned int(*)(const char*, void*))this->m_pMPC.PipelineItem_GetVariableCount_085)(type, data);
 } // Function PipelineItem_GetVariableCount
 
 const char* PluginWrapper::PipelineItem_GetVariableName(const char* type, void* data, unsigned int variable) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVariableName_086)
+    if(!this->m_pMPC.PipelineItem_GetVariableName_086)
         return nullptr;
-    return ((const char*(*)(const char*, void*, unsigned int))this->m_pMPC->PipelineItem_GetVariableName_086)(type, data, variable);
+    return ((const char*(*)(const char*, void*, unsigned int))this->m_pMPC.PipelineItem_GetVariableName_086)(type, data, variable);
 } // Function PipelineItem_GetVariableName
 
 ed::plugin::VariableType PluginWrapper::PipelineItem_GetVariableType(const char* type, void* data, unsigned int variable) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVariableType_087)
+    if(!this->m_pMPC.PipelineItem_GetVariableType_087)
         return (ed::plugin::VariableType)0;
-    return ((ed::plugin::VariableType(*)(const char*, void*, unsigned int))this->m_pMPC->PipelineItem_GetVariableType_087)(type, data, variable);
+    return ((ed::plugin::VariableType(*)(const char*, void*, unsigned int))this->m_pMPC.PipelineItem_GetVariableType_087)(type, data, variable);
 } // Function PipelineItem_GetVariableType
 
 float PluginWrapper::PipelineItem_GetVariableValueFloat(const char* type, void* data, unsigned int variable, int col, int row) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVariableValueFloat_088)
+    if(!this->m_pMPC.PipelineItem_GetVariableValueFloat_088)
         return 0;
-    return ((float(*)(const char*, void*, unsigned int, int, int))this->m_pMPC->PipelineItem_GetVariableValueFloat_088)(type, data, variable, col, row);
+    return ((float(*)(const char*, void*, unsigned int, int, int))this->m_pMPC.PipelineItem_GetVariableValueFloat_088)(type, data, variable, col, row);
 } // Function PipelineItem_GetVariableValueFloat
 
 int PluginWrapper::PipelineItem_GetVariableValueInteger(const char* type, void* data, unsigned int variable, int col) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVariableValueInteger_089)
+    if(!this->m_pMPC.PipelineItem_GetVariableValueInteger_089)
         return 0;
-    return ((int(*)(const char*, void*, unsigned int, int))this->m_pMPC->PipelineItem_GetVariableValueInteger_089)(type, data, variable, col);
+    return ((int(*)(const char*, void*, unsigned int, int))this->m_pMPC.PipelineItem_GetVariableValueInteger_089)(type, data, variable, col);
 } // Function PipelineItem_GetVariableValueInteger
 
 bool PluginWrapper::PipelineItem_GetVariableValueBoolean(const char* type, void* data, unsigned int variable, int col) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetVariableValueBoolean_090)
+    if(!this->m_pMPC.PipelineItem_GetVariableValueBoolean_090)
         return 0;
-    return ((bool(*)(const char*, void*, unsigned int, int))this->m_pMPC->PipelineItem_GetVariableValueBoolean_090)(type, data, variable, col);
+    return ((bool(*)(const char*, void*, unsigned int, int))this->m_pMPC.PipelineItem_GetVariableValueBoolean_090)(type, data, variable, col);
 } // Function PipelineItem_GetVariableValueBoolean
 
 unsigned int PluginWrapper::PipelineItem_GetSPIRVSize(const char* type, void* data, ed::plugin::ShaderStage stage) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetSPIRVSize_091)
+    if(!this->m_pMPC.PipelineItem_GetSPIRVSize_091)
         return 0;
-    return ((unsigned int(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC->PipelineItem_GetSPIRVSize_091)(type, data, stage);
+    return ((unsigned int(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC.PipelineItem_GetSPIRVSize_091)(type, data, stage);
 } // Function PipelineItem_GetSPIRVSize
 
 unsigned int* PluginWrapper::PipelineItem_GetSPIRV(const char* type, void* data, ed::plugin::ShaderStage stage) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_GetSPIRV_092)
+    if(!this->m_pMPC.PipelineItem_GetSPIRV_092)
         return nullptr;
-    return ((unsigned int*(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC->PipelineItem_GetSPIRV_092)(type, data, stage);
+    return ((unsigned int*(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC.PipelineItem_GetSPIRV_092)(type, data, stage);
 } // Function PipelineItem_GetSPIRV
 
 void PluginWrapper::PipelineItem_DebugPrepareVariables(const char* type, void* data, const char* name) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugPrepareVariables_093)
+    if(!this->m_pMPC.PipelineItem_DebugPrepareVariables_093)
         return;
-    ((void(*)(const char*, void*, const char*))this->m_pMPC->PipelineItem_DebugPrepareVariables_093)(type, data, name);
+    ((void(*)(const char*, void*, const char*))this->m_pMPC.PipelineItem_DebugPrepareVariables_093)(type, data, name);
 } // Function PipelineItem_DebugPrepareVariables
 
 bool PluginWrapper::PipelineItem_DebugUsesCustomTextures(const char* type, void* data) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugUsesCustomTextures_094)
+    if(!this->m_pMPC.PipelineItem_DebugUsesCustomTextures_094)
         return 0;
-    return ((bool(*)(const char*, void*))this->m_pMPC->PipelineItem_DebugUsesCustomTextures_094)(type, data);
+    return ((bool(*)(const char*, void*))this->m_pMPC.PipelineItem_DebugUsesCustomTextures_094)(type, data);
 } // Function PipelineItem_DebugUsesCustomTextures
 
 unsigned int PluginWrapper::PipelineItem_DebugGetTexture(const char* type, void* data, int loc, const char* variableName) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugGetTexture_095)
+    if(!this->m_pMPC.PipelineItem_DebugGetTexture_095)
         return 0;
-    return ((unsigned int(*)(const char*, void*, int, const char*))this->m_pMPC->PipelineItem_DebugGetTexture_095)(type, data, loc, variableName);
+    return ((unsigned int(*)(const char*, void*, int, const char*))this->m_pMPC.PipelineItem_DebugGetTexture_095)(type, data, loc, variableName);
 } // Function PipelineItem_DebugGetTexture
 
 void PluginWrapper::PipelineItem_DebugGetTextureSize(const char* type, void* data, int loc, const char* variableName, int& x, int& y, int& z) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_DebugGetTextureSize_096)
+    if(!this->m_pMPC.PipelineItem_DebugGetTextureSize_096)
         return;
-    ((void(*)(const char*, void*, int, const char*, int&, int&, int&))this->m_pMPC->PipelineItem_DebugGetTextureSize_096)(type, data, loc, variableName, x, y, z);
+    ((void(*)(const char*, void*, int, const char*, int&, int&, int&))this->m_pMPC.PipelineItem_DebugGetTextureSize_096)(type, data, loc, variableName, x, y, z);
 } // Function PipelineItem_DebugGetTextureSize
 
 bool PluginWrapper::Options_HasSection() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Options_HasSection_097)
+    if(!this->m_pMPC.Options_HasSection_097)
         return 0;
-    return ((bool(*)())this->m_pMPC->Options_HasSection_097)();
+    return ((bool(*)())this->m_pMPC.Options_HasSection_097)();
 } // Function Options_HasSection
 
 void PluginWrapper::Options_RenderSection() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Options_RenderSection_098)
+    if(!this->m_pMPC.Options_RenderSection_098)
         return;
-    ((void(*)())this->m_pMPC->Options_RenderSection_098)();
+    ((void(*)())this->m_pMPC.Options_RenderSection_098)();
 } // Function Options_RenderSection
 
 void PluginWrapper::Options_Parse(const char* key, const char* val) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Options_Parse_099)
+    if(!this->m_pMPC.Options_Parse_099)
         return;
-    ((void(*)(const char*, const char*))this->m_pMPC->Options_Parse_099)(key, val);
+    ((void(*)(const char*, const char*))this->m_pMPC.Options_Parse_099)(key, val);
 } // Function Options_Parse
 
 int PluginWrapper::Options_GetCount() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Options_GetCount_100)
+    if(!this->m_pMPC.Options_GetCount_100)
         return 0;
-    return ((int(*)())this->m_pMPC->Options_GetCount_100)();
+    return ((int(*)())this->m_pMPC.Options_GetCount_100)();
 } // Function Options_GetCount
 
 const char* PluginWrapper::Options_GetKey(int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Options_GetKey_101)
+    if(!this->m_pMPC.Options_GetKey_101)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->Options_GetKey_101)(index);
+    return ((const char*(*)(int))this->m_pMPC.Options_GetKey_101)(index);
 } // Function Options_GetKey
 
 const char* PluginWrapper::Options_GetValue(int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Options_GetValue_102)
+    if(!this->m_pMPC.Options_GetValue_102)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->Options_GetValue_102)(index);
+    return ((const char*(*)(int))this->m_pMPC.Options_GetValue_102)(index);
 } // Function Options_GetValue
 
 int PluginWrapper::CustomLanguage_GetCount() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CustomLanguage_GetCount_103)
+    if(!this->m_pMPC.CustomLanguage_GetCount_103)
         return 0;
-    return ((int(*)())this->m_pMPC->CustomLanguage_GetCount_103)();
+    return ((int(*)())this->m_pMPC.CustomLanguage_GetCount_103)();
 } // Function CustomLanguage_GetCount
 
 const char* PluginWrapper::CustomLanguage_GetName(int langID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CustomLanguage_GetName_104)
+    if(!this->m_pMPC.CustomLanguage_GetName_104)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->CustomLanguage_GetName_104)(langID);
+    return ((const char*(*)(int))this->m_pMPC.CustomLanguage_GetName_104)(langID);
 } // Function CustomLanguage_GetName
 
 const unsigned int* PluginWrapper::CustomLanguage_CompileToSPIRV(int langID, const char* src, size_t src_len, ed::plugin::ShaderStage stage, const char* entry, ed::plugin::ShaderMacro* macros, size_t macroCount, size_t* spv_length, bool* compiled) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CustomLanguage_CompileToSPIRV_105)
+    if(!this->m_pMPC.CustomLanguage_CompileToSPIRV_105)
         return nullptr;
-    return ((const unsigned int*(*)(int, const char*, size_t, ed::plugin::ShaderStage, const char*, ed::plugin::ShaderMacro*, size_t, size_t*, bool*))this->m_pMPC->CustomLanguage_CompileToSPIRV_105)(langID, src, src_len, stage, entry, macros, macroCount, spv_length, compiled);
+    return ((const unsigned int*(*)(int, const char*, size_t, ed::plugin::ShaderStage, const char*, ed::plugin::ShaderMacro*, size_t, size_t*, bool*))this->m_pMPC.CustomLanguage_CompileToSPIRV_105)(langID, src, src_len, stage, entry, macros, macroCount, spv_length, compiled);
 } // Function CustomLanguage_CompileToSPIRV
 
 const char* PluginWrapper::CustomLanguage_ProcessGeneratedGLSL(int langID, const char* src) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CustomLanguage_ProcessGeneratedGLSL_106)
+    if(!this->m_pMPC.CustomLanguage_ProcessGeneratedGLSL_106)
         return nullptr;
-    return ((const char*(*)(int, const char*))this->m_pMPC->CustomLanguage_ProcessGeneratedGLSL_106)(langID, src);
+    return ((const char*(*)(int, const char*))this->m_pMPC.CustomLanguage_ProcessGeneratedGLSL_106)(langID, src);
 } // Function CustomLanguage_ProcessGeneratedGLSL
 
 bool PluginWrapper::CustomLanguage_SupportsAutoUniforms(int langID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CustomLanguage_SupportsAutoUniforms_107)
+    if(!this->m_pMPC.CustomLanguage_SupportsAutoUniforms_107)
         return 0;
-    return ((bool(*)(int))this->m_pMPC->CustomLanguage_SupportsAutoUniforms_107)(langID);
+    return ((bool(*)(int))this->m_pMPC.CustomLanguage_SupportsAutoUniforms_107)(langID);
 } // Function CustomLanguage_SupportsAutoUniforms
 
 bool PluginWrapper::CustomLanguage_IsDebuggable(int langID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CustomLanguage_IsDebuggable_108)
+    if(!this->m_pMPC.CustomLanguage_IsDebuggable_108)
         return 0;
-    return ((bool(*)(int))this->m_pMPC->CustomLanguage_IsDebuggable_108)(langID);
+    return ((bool(*)(int))this->m_pMPC.CustomLanguage_IsDebuggable_108)(langID);
 } // Function CustomLanguage_IsDebuggable
 
 const char* PluginWrapper::CustomLanguage_GetDefaultExtension(int langID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CustomLanguage_GetDefaultExtension_109)
+    if(!this->m_pMPC.CustomLanguage_GetDefaultExtension_109)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->CustomLanguage_GetDefaultExtension_109)(langID);
+    return ((const char*(*)(int))this->m_pMPC.CustomLanguage_GetDefaultExtension_109)(langID);
 } // Function CustomLanguage_GetDefaultExtension
 
 bool PluginWrapper::ShaderEditor_Supports(int langID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Supports_110)
+    if(!this->m_pMPC.ShaderEditor_Supports_110)
         return 0;
-    return ((bool(*)(int))this->m_pMPC->ShaderEditor_Supports_110)(langID);
+    return ((bool(*)(int))this->m_pMPC.ShaderEditor_Supports_110)(langID);
 } // Function ShaderEditor_Supports
 
 void PluginWrapper::ShaderEditor_Open(int langID, int editorID, const char* data, int dataLen) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Open_111)
+    if(!this->m_pMPC.ShaderEditor_Open_111)
         return;
-    ((void(*)(int, int, const char*, int))this->m_pMPC->ShaderEditor_Open_111)(langID, editorID, data, dataLen);
+    ((void(*)(int, int, const char*, int))this->m_pMPC.ShaderEditor_Open_111)(langID, editorID, data, dataLen);
 } // Function ShaderEditor_Open
 
 void PluginWrapper::ShaderEditor_Render(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Render_112)
+    if(!this->m_pMPC.ShaderEditor_Render_112)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_Render_112)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_Render_112)(langID, editorID);
 } // Function ShaderEditor_Render
 
 void PluginWrapper::ShaderEditor_Close(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Close_113)
+    if(!this->m_pMPC.ShaderEditor_Close_113)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_Close_113)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_Close_113)(langID, editorID);
 } // Function ShaderEditor_Close
 
 const char* PluginWrapper::ShaderEditor_GetContent(int langID, int editorID, size_t* dataLength) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_GetContent_114)
+    if(!this->m_pMPC.ShaderEditor_GetContent_114)
         return nullptr;
-    return ((const char*(*)(int, int, size_t*))this->m_pMPC->ShaderEditor_GetContent_114)(langID, editorID, dataLength);
+    return ((const char*(*)(int, int, size_t*))this->m_pMPC.ShaderEditor_GetContent_114)(langID, editorID, dataLength);
 } // Function ShaderEditor_GetContent
 
 bool PluginWrapper::ShaderEditor_IsChanged(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_IsChanged_115)
+    if(!this->m_pMPC.ShaderEditor_IsChanged_115)
         return 0;
-    return ((bool(*)(int, int))this->m_pMPC->ShaderEditor_IsChanged_115)(langID, editorID);
+    return ((bool(*)(int, int))this->m_pMPC.ShaderEditor_IsChanged_115)(langID, editorID);
 } // Function ShaderEditor_IsChanged
 
 void PluginWrapper::ShaderEditor_ResetChangeState(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_ResetChangeState_116)
+    if(!this->m_pMPC.ShaderEditor_ResetChangeState_116)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_ResetChangeState_116)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_ResetChangeState_116)(langID, editorID);
 } // Function ShaderEditor_ResetChangeState
 
 bool PluginWrapper::ShaderEditor_CanUndo(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_CanUndo_117)
+    if(!this->m_pMPC.ShaderEditor_CanUndo_117)
         return 0;
-    return ((bool(*)(int, int))this->m_pMPC->ShaderEditor_CanUndo_117)(langID, editorID);
+    return ((bool(*)(int, int))this->m_pMPC.ShaderEditor_CanUndo_117)(langID, editorID);
 } // Function ShaderEditor_CanUndo
 
 bool PluginWrapper::ShaderEditor_CanRedo(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_CanRedo_118)
+    if(!this->m_pMPC.ShaderEditor_CanRedo_118)
         return 0;
-    return ((bool(*)(int, int))this->m_pMPC->ShaderEditor_CanRedo_118)(langID, editorID);
+    return ((bool(*)(int, int))this->m_pMPC.ShaderEditor_CanRedo_118)(langID, editorID);
 } // Function ShaderEditor_CanRedo
 
 void PluginWrapper::ShaderEditor_Undo(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Undo_119)
+    if(!this->m_pMPC.ShaderEditor_Undo_119)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_Undo_119)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_Undo_119)(langID, editorID);
 } // Function ShaderEditor_Undo
 
 void PluginWrapper::ShaderEditor_Redo(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Redo_120)
+    if(!this->m_pMPC.ShaderEditor_Redo_120)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_Redo_120)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_Redo_120)(langID, editorID);
 } // Function ShaderEditor_Redo
 
 void PluginWrapper::ShaderEditor_Cut(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Cut_121)
+    if(!this->m_pMPC.ShaderEditor_Cut_121)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_Cut_121)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_Cut_121)(langID, editorID);
 } // Function ShaderEditor_Cut
 
 void PluginWrapper::ShaderEditor_Paste(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Paste_122)
+    if(!this->m_pMPC.ShaderEditor_Paste_122)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_Paste_122)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_Paste_122)(langID, editorID);
 } // Function ShaderEditor_Paste
 
 void PluginWrapper::ShaderEditor_Copy(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_Copy_123)
+    if(!this->m_pMPC.ShaderEditor_Copy_123)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_Copy_123)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_Copy_123)(langID, editorID);
 } // Function ShaderEditor_Copy
 
 void PluginWrapper::ShaderEditor_SelectAll(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_SelectAll_124)
+    if(!this->m_pMPC.ShaderEditor_SelectAll_124)
         return;
-    ((void(*)(int, int))this->m_pMPC->ShaderEditor_SelectAll_124)(langID, editorID);
+    ((void(*)(int, int))this->m_pMPC.ShaderEditor_SelectAll_124)(langID, editorID);
 } // Function ShaderEditor_SelectAll
 
 bool PluginWrapper::ShaderEditor_HasStats(int langID, int editorID) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderEditor_HasStats_125)
+    if(!this->m_pMPC.ShaderEditor_HasStats_125)
         return 0;
-    return ((bool(*)(int, int))this->m_pMPC->ShaderEditor_HasStats_125)(langID, editorID);
+    return ((bool(*)(int, int))this->m_pMPC.ShaderEditor_HasStats_125)(langID, editorID);
 } // Function ShaderEditor_HasStats
 
 void PluginWrapper::CodeEditor_SaveItem(const char* src, int srcLen, const char* path) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CodeEditor_SaveItem_126)
+    if(!this->m_pMPC.CodeEditor_SaveItem_126)
         return;
-    ((void(*)(const char*, int, const char*))this->m_pMPC->CodeEditor_SaveItem_126)(src, srcLen, path);
+    ((void(*)(const char*, int, const char*))this->m_pMPC.CodeEditor_SaveItem_126)(src, srcLen, path);
 } // Function CodeEditor_SaveItem
 
 void PluginWrapper::CodeEditor_CloseItem(const char* path) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->CodeEditor_CloseItem_127)
+    if(!this->m_pMPC.CodeEditor_CloseItem_127)
         return;
-    ((void(*)(const char*))this->m_pMPC->CodeEditor_CloseItem_127)(path);
+    ((void(*)(const char*))this->m_pMPC.CodeEditor_CloseItem_127)(path);
 } // Function CodeEditor_CloseItem
 
 bool PluginWrapper::LanguageDefinition_Exists(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_Exists_128)
+    if(!this->m_pMPC.LanguageDefinition_Exists_128)
         return 0;
-    return ((bool(*)(int))this->m_pMPC->LanguageDefinition_Exists_128)(id);
+    return ((bool(*)(int))this->m_pMPC.LanguageDefinition_Exists_128)(id);
 } // Function LanguageDefinition_Exists
 
 int PluginWrapper::LanguageDefinition_GetKeywordCount(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetKeywordCount_129)
+    if(!this->m_pMPC.LanguageDefinition_GetKeywordCount_129)
         return 0;
-    return ((int(*)(int))this->m_pMPC->LanguageDefinition_GetKeywordCount_129)(id);
+    return ((int(*)(int))this->m_pMPC.LanguageDefinition_GetKeywordCount_129)(id);
 } // Function LanguageDefinition_GetKeywordCount
 
 const char** PluginWrapper::LanguageDefinition_GetKeywords(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetKeywords_130)
+    if(!this->m_pMPC.LanguageDefinition_GetKeywords_130)
         return nullptr;
-    return ((const char**(*)(int))this->m_pMPC->LanguageDefinition_GetKeywords_130)(id);
+    return ((const char**(*)(int))this->m_pMPC.LanguageDefinition_GetKeywords_130)(id);
 } // Function LanguageDefinition_GetKeywords
 
 int PluginWrapper::LanguageDefinition_GetTokenRegexCount(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetTokenRegexCount_131)
+    if(!this->m_pMPC.LanguageDefinition_GetTokenRegexCount_131)
         return 0;
-    return ((int(*)(int))this->m_pMPC->LanguageDefinition_GetTokenRegexCount_131)(id);
+    return ((int(*)(int))this->m_pMPC.LanguageDefinition_GetTokenRegexCount_131)(id);
 } // Function LanguageDefinition_GetTokenRegexCount
 
 const char* PluginWrapper::LanguageDefinition_GetTokenRegex(int index, ed::plugin::TextEditorPaletteIndex& palIndex, int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetTokenRegex_132)
+    if(!this->m_pMPC.LanguageDefinition_GetTokenRegex_132)
         return nullptr;
-    return ((const char*(*)(int, ed::plugin::TextEditorPaletteIndex&, int))this->m_pMPC->LanguageDefinition_GetTokenRegex_132)(index, palIndex, id);
+    return ((const char*(*)(int, ed::plugin::TextEditorPaletteIndex&, int))this->m_pMPC.LanguageDefinition_GetTokenRegex_132)(index, palIndex, id);
 } // Function LanguageDefinition_GetTokenRegex
 
 int PluginWrapper::LanguageDefinition_GetIdentifierCount(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetIdentifierCount_133)
+    if(!this->m_pMPC.LanguageDefinition_GetIdentifierCount_133)
         return 0;
-    return ((int(*)(int))this->m_pMPC->LanguageDefinition_GetIdentifierCount_133)(id);
+    return ((int(*)(int))this->m_pMPC.LanguageDefinition_GetIdentifierCount_133)(id);
 } // Function LanguageDefinition_GetIdentifierCount
 
 const char* PluginWrapper::LanguageDefinition_GetIdentifier(int index, int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetIdentifier_134)
+    if(!this->m_pMPC.LanguageDefinition_GetIdentifier_134)
         return nullptr;
-    return ((const char*(*)(int, int))this->m_pMPC->LanguageDefinition_GetIdentifier_134)(index, id);
+    return ((const char*(*)(int, int))this->m_pMPC.LanguageDefinition_GetIdentifier_134)(index, id);
 } // Function LanguageDefinition_GetIdentifier
 
 const char* PluginWrapper::LanguageDefinition_GetIdentifierDesc(int index, int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetIdentifierDesc_135)
+    if(!this->m_pMPC.LanguageDefinition_GetIdentifierDesc_135)
         return nullptr;
-    return ((const char*(*)(int, int))this->m_pMPC->LanguageDefinition_GetIdentifierDesc_135)(index, id);
+    return ((const char*(*)(int, int))this->m_pMPC.LanguageDefinition_GetIdentifierDesc_135)(index, id);
 } // Function LanguageDefinition_GetIdentifierDesc
 
 const char* PluginWrapper::LanguageDefinition_GetCommentStart(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetCommentStart_136)
+    if(!this->m_pMPC.LanguageDefinition_GetCommentStart_136)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->LanguageDefinition_GetCommentStart_136)(id);
+    return ((const char*(*)(int))this->m_pMPC.LanguageDefinition_GetCommentStart_136)(id);
 } // Function LanguageDefinition_GetCommentStart
 
 const char* PluginWrapper::LanguageDefinition_GetCommentEnd(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetCommentEnd_137)
+    if(!this->m_pMPC.LanguageDefinition_GetCommentEnd_137)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->LanguageDefinition_GetCommentEnd_137)(id);
+    return ((const char*(*)(int))this->m_pMPC.LanguageDefinition_GetCommentEnd_137)(id);
 } // Function LanguageDefinition_GetCommentEnd
 
 const char* PluginWrapper::LanguageDefinition_GetLineComment(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetLineComment_138)
+    if(!this->m_pMPC.LanguageDefinition_GetLineComment_138)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->LanguageDefinition_GetLineComment_138)(id);
+    return ((const char*(*)(int))this->m_pMPC.LanguageDefinition_GetLineComment_138)(id);
 } // Function LanguageDefinition_GetLineComment
 
 bool PluginWrapper::LanguageDefinition_IsCaseSensitive(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_IsCaseSensitive_139)
+    if(!this->m_pMPC.LanguageDefinition_IsCaseSensitive_139)
         return 0;
-    return ((bool(*)(int))this->m_pMPC->LanguageDefinition_IsCaseSensitive_139)(id);
+    return ((bool(*)(int))this->m_pMPC.LanguageDefinition_IsCaseSensitive_139)(id);
 } // Function LanguageDefinition_IsCaseSensitive
 
 bool PluginWrapper::LanguageDefinition_GetAutoIndent(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetAutoIndent_140)
+    if(!this->m_pMPC.LanguageDefinition_GetAutoIndent_140)
         return 0;
-    return ((bool(*)(int))this->m_pMPC->LanguageDefinition_GetAutoIndent_140)(id);
+    return ((bool(*)(int))this->m_pMPC.LanguageDefinition_GetAutoIndent_140)(id);
 } // Function LanguageDefinition_GetAutoIndent
 
 const char* PluginWrapper::LanguageDefinition_GetName(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetName_141)
+    if(!this->m_pMPC.LanguageDefinition_GetName_141)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->LanguageDefinition_GetName_141)(id);
+    return ((const char*(*)(int))this->m_pMPC.LanguageDefinition_GetName_141)(id);
 } // Function LanguageDefinition_GetName
 
 const char* PluginWrapper::LanguageDefinition_GetNameAbbreviation(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->LanguageDefinition_GetNameAbbreviation_142)
+    if(!this->m_pMPC.LanguageDefinition_GetNameAbbreviation_142)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->LanguageDefinition_GetNameAbbreviation_142)(id);
+    return ((const char*(*)(int))this->m_pMPC.LanguageDefinition_GetNameAbbreviation_142)(id);
 } // Function LanguageDefinition_GetNameAbbreviation
 
 int PluginWrapper::Autocomplete_GetCount(ed::plugin::ShaderStage stage) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Autocomplete_GetCount_143)
+    if(!this->m_pMPC.Autocomplete_GetCount_143)
         return 0;
-    return ((int(*)(ed::plugin::ShaderStage))this->m_pMPC->Autocomplete_GetCount_143)(stage);
+    return ((int(*)(ed::plugin::ShaderStage))this->m_pMPC.Autocomplete_GetCount_143)(stage);
 } // Function Autocomplete_GetCount
 
 const char* PluginWrapper::Autocomplete_GetDisplayString(ed::plugin::ShaderStage stage, int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Autocomplete_GetDisplayString_144)
+    if(!this->m_pMPC.Autocomplete_GetDisplayString_144)
         return nullptr;
-    return ((const char*(*)(ed::plugin::ShaderStage, int))this->m_pMPC->Autocomplete_GetDisplayString_144)(stage, index);
+    return ((const char*(*)(ed::plugin::ShaderStage, int))this->m_pMPC.Autocomplete_GetDisplayString_144)(stage, index);
 } // Function Autocomplete_GetDisplayString
 
 const char* PluginWrapper::Autocomplete_GetSearchString(ed::plugin::ShaderStage stage, int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Autocomplete_GetSearchString_145)
+    if(!this->m_pMPC.Autocomplete_GetSearchString_145)
         return nullptr;
-    return ((const char*(*)(ed::plugin::ShaderStage, int))this->m_pMPC->Autocomplete_GetSearchString_145)(stage, index);
+    return ((const char*(*)(ed::plugin::ShaderStage, int))this->m_pMPC.Autocomplete_GetSearchString_145)(stage, index);
 } // Function Autocomplete_GetSearchString
 
 const char* PluginWrapper::Autocomplete_GetValue(ed::plugin::ShaderStage stage, int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->Autocomplete_GetValue_146)
+    if(!this->m_pMPC.Autocomplete_GetValue_146)
         return nullptr;
-    return ((const char*(*)(ed::plugin::ShaderStage, int))this->m_pMPC->Autocomplete_GetValue_146)(stage, index);
+    return ((const char*(*)(ed::plugin::ShaderStage, int))this->m_pMPC.Autocomplete_GetValue_146)(stage, index);
 } // Function Autocomplete_GetValue
 
 int PluginWrapper::ShaderFilePath_GetCount() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderFilePath_GetCount_147)
+    if(!this->m_pMPC.ShaderFilePath_GetCount_147)
         return 0;
-    return ((int(*)())this->m_pMPC->ShaderFilePath_GetCount_147)();
+    return ((int(*)())this->m_pMPC.ShaderFilePath_GetCount_147)();
 } // Function ShaderFilePath_GetCount
 
 const char* PluginWrapper::ShaderFilePath_Get(int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderFilePath_Get_148)
+    if(!this->m_pMPC.ShaderFilePath_Get_148)
         return nullptr;
-    return ((const char*(*)(int))this->m_pMPC->ShaderFilePath_Get_148)(index);
+    return ((const char*(*)(int))this->m_pMPC.ShaderFilePath_Get_148)(index);
 } // Function ShaderFilePath_Get
 
 bool PluginWrapper::ShaderFilePath_HasChanged() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderFilePath_HasChanged_149)
+    if(!this->m_pMPC.ShaderFilePath_HasChanged_149)
         return 0;
-    return ((bool(*)())this->m_pMPC->ShaderFilePath_HasChanged_149)();
+    return ((bool(*)())this->m_pMPC.ShaderFilePath_HasChanged_149)();
 } // Function ShaderFilePath_HasChanged
 
 void PluginWrapper::ShaderFilePath_Update() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ShaderFilePath_Update_150)
+    if(!this->m_pMPC.ShaderFilePath_Update_150)
         return;
-    ((void(*)())this->m_pMPC->ShaderFilePath_Update_150)();
+    ((void(*)())this->m_pMPC.ShaderFilePath_Update_150)();
 } // Function ShaderFilePath_Update
 
 bool PluginWrapper::HandleDropFile(const char* filename) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HandleDropFile_151)
+    if(!this->m_pMPC.HandleDropFile_151)
         return 0;
-    return ((bool(*)(const char*))this->m_pMPC->HandleDropFile_151)(filename);
+    return ((bool(*)(const char*))this->m_pMPC.HandleDropFile_151)(filename);
 } // Function HandleDropFile
 
 void PluginWrapper::HandleRecompile(const char* itemName) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HandleRecompile_152)
+    if(!this->m_pMPC.HandleRecompile_152)
         return;
-    ((void(*)(const char*))this->m_pMPC->HandleRecompile_152)(itemName);
+    ((void(*)(const char*))this->m_pMPC.HandleRecompile_152)(itemName);
 } // Function HandleRecompile
 
 void PluginWrapper::HandleRecompileFromSource(const char* itemName, int sid, const char* shaderCode, int shaderSize) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HandleRecompileFromSource_153)
+    if(!this->m_pMPC.HandleRecompileFromSource_153)
         return;
-    ((void(*)(const char*, int, const char*, int))this->m_pMPC->HandleRecompileFromSource_153)(itemName, sid, shaderCode, shaderSize);
+    ((void(*)(const char*, int, const char*, int))this->m_pMPC.HandleRecompileFromSource_153)(itemName, sid, shaderCode, shaderSize);
 } // Function HandleRecompileFromSource
 
 void PluginWrapper::HandleShortcut(const char* name) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HandleShortcut_154)
+    if(!this->m_pMPC.HandleShortcut_154)
         return;
-    ((void(*)(const char*))this->m_pMPC->HandleShortcut_154)(name);
+    ((void(*)(const char*))this->m_pMPC.HandleShortcut_154)(name);
 } // Function HandleShortcut
 
 void PluginWrapper::HandlePluginMessage(const char* sender, char* msg, int msgLen) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HandlePluginMessage_155)
+    if(!this->m_pMPC.HandlePluginMessage_155)
         return;
-    ((void(*)(const char*, char*, int))this->m_pMPC->HandlePluginMessage_155)(sender, msg, msgLen);
+    ((void(*)(const char*, char*, int))this->m_pMPC.HandlePluginMessage_155)(sender, msg, msgLen);
 } // Function HandlePluginMessage
 
 void PluginWrapper::HandleApplicationEvent(ed::plugin::ApplicationEvent event, void* data1, void* data2) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HandleApplicationEvent_156)
+    if(!this->m_pMPC.HandleApplicationEvent_156)
         return;
-    ((void(*)(ed::plugin::ApplicationEvent, void*, void*))this->m_pMPC->HandleApplicationEvent_156)(event, data1, data2);
+    ((void(*)(ed::plugin::ApplicationEvent, void*, void*))this->m_pMPC.HandleApplicationEvent_156)(event, data1, data2);
 } // Function HandleApplicationEvent
 
 void PluginWrapper::HandleNotification(int id) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->HandleNotification_157)
+    if(!this->m_pMPC.HandleNotification_157)
         return;
-    ((void(*)(int))this->m_pMPC->HandleNotification_157)(id);
+    ((void(*)(int))this->m_pMPC.HandleNotification_157)(id);
 } // Function HandleNotification
 
 bool PluginWrapper::PipelineItem_SupportsImmediateMode(const char* type, void* data, ed::plugin::ShaderStage stage) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_SupportsImmediateMode_158)
+    if(!this->m_pMPC.PipelineItem_SupportsImmediateMode_158)
         return 0;
-    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC->PipelineItem_SupportsImmediateMode_158)(type, data, stage);
+    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC.PipelineItem_SupportsImmediateMode_158)(type, data, stage);
 } // Function PipelineItem_SupportsImmediateMode
 
 bool PluginWrapper::PipelineItem_HasCustomImmediateModeCompiler(const char* type, void* data, ed::plugin::ShaderStage stage) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_HasCustomImmediateModeCompiler_159)
+    if(!this->m_pMPC.PipelineItem_HasCustomImmediateModeCompiler_159)
         return 0;
-    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC->PipelineItem_HasCustomImmediateModeCompiler_159)(type, data, stage);
+    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage))this->m_pMPC.PipelineItem_HasCustomImmediateModeCompiler_159)(type, data, stage);
 } // Function PipelineItem_HasCustomImmediateModeCompiler
 
 bool PluginWrapper::PipelineItem_ImmediateModeCompile(const char* type, void* data, ed::plugin::ShaderStage stage, const char* expression) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PipelineItem_ImmediateModeCompile_160)
+    if(!this->m_pMPC.PipelineItem_ImmediateModeCompile_160)
         return 0;
-    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage, const char*))this->m_pMPC->PipelineItem_ImmediateModeCompile_160)(type, data, stage, expression);
+    return ((bool(*)(const char*, void*, ed::plugin::ShaderStage, const char*))this->m_pMPC.PipelineItem_ImmediateModeCompile_160)(type, data, stage, expression);
 } // Function PipelineItem_ImmediateModeCompile
 
 unsigned int PluginWrapper::ImmediateMode_GetSPIRVSize() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ImmediateMode_GetSPIRVSize_161)
+    if(!this->m_pMPC.ImmediateMode_GetSPIRVSize_161)
         return 0;
-    return ((unsigned int(*)())this->m_pMPC->ImmediateMode_GetSPIRVSize_161)();
+    return ((unsigned int(*)())this->m_pMPC.ImmediateMode_GetSPIRVSize_161)();
 } // Function ImmediateMode_GetSPIRVSize
 
 unsigned int* PluginWrapper::ImmediateMode_GetSPIRV() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ImmediateMode_GetSPIRV_162)
+    if(!this->m_pMPC.ImmediateMode_GetSPIRV_162)
         return nullptr;
-    return ((unsigned int*(*)())this->m_pMPC->ImmediateMode_GetSPIRV_162)();
+    return ((unsigned int*(*)())this->m_pMPC.ImmediateMode_GetSPIRV_162)();
 } // Function ImmediateMode_GetSPIRV
 
 unsigned int PluginWrapper::ImmediateMode_GetVariableCount() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ImmediateMode_GetVariableCount_163)
+    if(!this->m_pMPC.ImmediateMode_GetVariableCount_163)
         return 0;
-    return ((unsigned int(*)())this->m_pMPC->ImmediateMode_GetVariableCount_163)();
+    return ((unsigned int(*)())this->m_pMPC.ImmediateMode_GetVariableCount_163)();
 } // Function ImmediateMode_GetVariableCount
 
 const char* PluginWrapper::ImmediateMode_GetVariableName(unsigned int index) {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ImmediateMode_GetVariableName_164)
+    if(!this->m_pMPC.ImmediateMode_GetVariableName_164)
         return nullptr;
-    return ((const char*(*)(unsigned int))this->m_pMPC->ImmediateMode_GetVariableName_164)(index);
+    return ((const char*(*)(unsigned int))this->m_pMPC.ImmediateMode_GetVariableName_164)(index);
 } // Function ImmediateMode_GetVariableName
 
 int PluginWrapper::ImmediateMode_GetResultID() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->ImmediateMode_GetResultID_165)
+    if(!this->m_pMPC.ImmediateMode_GetResultID_165)
         return 0;
-    return ((int(*)())this->m_pMPC->ImmediateMode_GetResultID_165)();
+    return ((int(*)())this->m_pMPC.ImmediateMode_GetResultID_165)();
 } // Function ImmediateMode_GetResultID
 
 void PluginWrapper::PluginManager_RegisterPlugins() {
-    assert(this->m_pMPC);
-    if(!this->m_pMPC->PluginManager_RegisterPlugins_166)
+    if(!this->m_pMPC.PluginManager_RegisterPlugins_166)
         return;
-    ((void(*)())this->m_pMPC->PluginManager_RegisterPlugins_166)();
+    ((void(*)())this->m_pMPC.PluginManager_RegisterPlugins_166)();
 } // Function PluginManager_RegisterPlugins
 
 void PluginWrapper::InitUPC() {
@@ -1298,7 +1133,7 @@ void PluginWrapper::InitUPC() {
     m_sUPC.PluginInstance = (void*)this;
 }
 
-PluginWrapper::PluginWrapper(ManagedPointerCollection* a_pMPC) {
+PluginWrapper::PluginWrapper(ManagedPointerCollection& a_pMPC) {
     this->m_pMPC = a_pMPC;
 }
 

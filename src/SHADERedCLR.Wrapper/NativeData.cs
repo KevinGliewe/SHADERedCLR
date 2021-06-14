@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace PluginManager {
+namespace SHADERedCLR.Wrapper {
     // ed::plugin::PipelineItemType
     public enum PipelineItemType {
         ShaderPass = 0,
@@ -114,7 +114,7 @@ namespace PluginManager {
 
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct InputLayoutItem {
-        // Value - PluginManager.InputLayoutValue
+        // Value - SHADERedCLR.Wrapper.InputLayoutValue
         // Semantic - IntPtr
     }
 

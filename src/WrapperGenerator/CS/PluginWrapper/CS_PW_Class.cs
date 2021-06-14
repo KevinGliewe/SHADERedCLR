@@ -38,7 +38,7 @@ namespace WrapperGenerator.CS.PluginWrapper
             using (new IndentContext(writer))
             {
                 writer.WriteLine(
-                    "protected void __SetDelegates(PluginManager.InteropData.ManagedPointerCollection a_MPC) {");
+                    "protected void __SetDelegates(SHADERedCLR.Wrapper.InteropData.UnmanagedPointerCollection a_UPC) {");
 
                 using (new IndentContext(writer))
                 {
@@ -53,10 +53,13 @@ namespace WrapperGenerator.CS.PluginWrapper
                             var ptrType = typedefType.ElementType as CppPointerType;
                             if (ptrType.ElementType is CppFunctionType funcType)
                             {
+                                var upcMember = $"a_UPC.{field.Name}_{counter:D3}";
                                 var delegateType = $"{field.Name}Delegate";
+                                writer.WriteLine($"if({upcMember} != IntPtr.Zero)");
+                                writer.Write("    ");
                                 writer.Write($"this.{field.Name} = ({delegateType})");
                                 writer.Write("Marshal.GetDelegateForFunctionPointer(");
-                                writer.WriteLine($"a_MPC.{field.Name}_{counter:D3},typeof({delegateType}));");
+                                writer.WriteLine($"{upcMember},typeof({delegateType}));");
                             }
                         }
 
@@ -67,11 +70,11 @@ namespace WrapperGenerator.CS.PluginWrapper
                 writer.WriteLine("}");
 
                 writer.WriteLine(
-                    "protected PluginManager.InteropData.UnmanagedPointerCollection __GetFunctionPointers() {");
+                    "protected SHADERedCLR.Wrapper.InteropData.ManagedPointerCollection __GetFunctionPointers() {");
 
                 using (new IndentContext(writer))
                 {
-                    writer.WriteLine("var upc = new PluginManager.InteropData.UnmanagedPointerCollection();");
+                    writer.WriteLine("var mpc = new SHADERedCLR.Wrapper.InteropData.ManagedPointerCollection();");
 
                     var counter = 0;
                     foreach (var function in _cppClass.CollectFunctions()) {
@@ -81,7 +84,7 @@ namespace WrapperGenerator.CS.PluginWrapper
                         var delegateType = $"{function.Name}Delegate_{counter:D3}";
                         var upcMember = $"{function.Name}_{counter:D3}";
 
-                        writer.Write("upc.");
+                        writer.Write("mpc.");
                         writer.Write(upcMember);
                         writer.Write(" = Marshal.GetFunctionPointerForDelegate(new ");
                         writer.Write(delegateType);
@@ -91,7 +94,7 @@ namespace WrapperGenerator.CS.PluginWrapper
 
                         counter++;
                     }
-                    writer.WriteLine("return upc;");
+                    writer.WriteLine("return mpc;");
                 }
 
                 writer.WriteLine("}");

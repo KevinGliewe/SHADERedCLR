@@ -167,7 +167,6 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="PluginCLR.h" />
     <ClInclude Include="PluginWrapper.h" />
-    <ClInclude Include="SecondPlugin.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

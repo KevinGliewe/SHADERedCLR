@@ -25,7 +25,7 @@ namespace WrapperGenerator.CPP.PluginWrapper.Impl
 
         public override void Render(CodeWriter writer)
         {
-            var pointerMember = $"{MCP}->{_cppFunction.Name}_{_counter:D3}";
+            var pointerMember = $"{MCP}.{_cppFunction.Name}_{_counter:D3}";
 
             writer.Write(_cppFunction.ReturnType.GetFullyQualified());
             writer.Write(' ');
@@ -38,7 +38,13 @@ namespace WrapperGenerator.CPP.PluginWrapper.Impl
 
             using (new IndentContext(writer, this.Indent))
             {
-                writer.WriteLine($"assert({MCP});");
+                //writer.WriteLine($"assert({MCP});");
+
+                if (_cppFunction.Name == "Init")
+                {
+                    writer.WriteLine("this->InitUPC();");
+                    writer.WriteLine($"((void(*)(UnmanagedPointerCollection))this->m_pMPC.__SetUPC)(this->m_sUPC);");
+                }
 
                 writer.WriteLine($"if(!{pointerMember})");
 

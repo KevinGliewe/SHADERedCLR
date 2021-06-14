@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "PluginCLR.h"
-#include "SecondPlugin.h"
 #include "PluginWrapper.h"
 
 #include <dotnet_runtime.h>
@@ -19,11 +18,10 @@ inline bool exists (string_t name) {
 
 void* sc::p_pModuleHandle;
 
-PluginWrapper::UnmanagedPointerCollection FP_CreateNativePlugin(PluginWrapper::ManagedPointerCollection a_sMPC)
+void* FP_CreateNativePlugin(PluginWrapper::ManagedPointerCollection a_sMPC)
 {
-    auto* plugin = new PluginWrapper(&a_sMPC);
-    plugin->InitUPC();
-    return plugin->m_sUPC;
+    auto* plugin = new PluginWrapper(a_sMPC);
+    return plugin;
 }
 
 void FP_DestroyNativePlugin(void* a_pPlugin)
@@ -47,8 +45,6 @@ bool sc::PluginCLR::Init(bool isWeb, int sedVersion)
     string_t lib_path =
         plugin_path +
         STR("PluginManager")
-        DIR_SEPARATOR
-        STR("net5.0")
         DIR_SEPARATOR;
 
     string_t libDll_path = 
@@ -92,23 +88,12 @@ bool sc::PluginCLR::Init(bool isWeb, int sedVersion)
 
     this->m_pManagedPluginManager = _initHost_arg.m_pluginPtr;
 
-    //PluginManager* pm = (PluginManager*)this->Plugins;
-
-
-
-	//pm->m_plugins.push_back(new SecondPlugin());
-	//pm->m_proc.push_back((void*)(666));
-	//pm->m_names.push_back("SecondPlugin");
-	//pm->m_apiVersion.push_back(1);
-	//pm->m_pluginVersion.push_back(1);
 
     return true;
 }
 
 void sc::PluginCLR::PluginManager_RegisterPlugins()
 {
-    auto p = new SecondPlugin();
-    this->RegisterPlugin(this->Plugins, p, "SecondPlugin", 3, 1, 0);
     this->RegisterPlugin(this->Plugins, this->m_pManagedPluginManager, "ManagedPluginManager", 3, 1, 0);
 }
 

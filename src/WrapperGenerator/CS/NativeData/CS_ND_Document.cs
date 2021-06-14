@@ -30,7 +30,7 @@ namespace WrapperGenerator.CS.NativeEnums
             writer.WriteLine("using System;");
             writer.WriteLine("using System.Runtime.InteropServices;");
             writer.WriteLine();
-            writer.WriteLine("namespace PluginManager {");
+            writer.WriteLine("namespace SHADERedCLR.Wrapper {");
             using(new IndentContext(writer))
                 base.Render(writer);
             writer.WriteLine("}");

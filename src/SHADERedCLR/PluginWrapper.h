@@ -297,15 +297,16 @@ public:
         void* ImmediateMode_GetVariableName_164 = nullptr;
         void* ImmediateMode_GetResultID_165 = nullptr;
         void* PluginManager_RegisterPlugins_166 = nullptr;
+        void* __SetUPC = nullptr;
     };
 
 
     UnmanagedPointerCollection  m_sUPC;
-    ManagedPointerCollection*   m_pMPC;
+    ManagedPointerCollection    m_pMPC;
 
     void InitUPC();
 
-    PluginWrapper(ManagedPointerCollection* a_pMPC);
+    PluginWrapper(ManagedPointerCollection& a_pMPC);
     ~PluginWrapper();
     bool Init(bool isWeb, int sedVersion) override;
 

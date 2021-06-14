@@ -24,9 +24,6 @@
     <ClInclude Include="PluginCLR.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="SecondPlugin.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="PluginWrapper.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
