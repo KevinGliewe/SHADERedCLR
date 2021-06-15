@@ -164,7 +164,7 @@ namespace SHADERedCLR.Wrapper {
         public SetTimeDelegate SetTime { get; protected set; }
 
         // field SetGeometryTransform
-        public delegate void SetGeometryTransformDelegate(IntPtr item, IntPtr scale, IntPtr rota, IntPtr pos);
+        public delegate void SetGeometryTransformDelegate(IntPtr item, ArrPointer3<float> scale, ArrPointer3<float> rota, ArrPointer3<float> pos);
         public SetGeometryTransformDelegate SetGeometryTransform { get; protected set; }
 
         // field SetMousePosition
@@ -825,8 +825,8 @@ namespace SHADERedCLR.Wrapper {
         }
 
         // function PipelineItem_GetWorldMatrix
-        public delegate void PipelineItem_GetWorldMatrixDelegate_063(IntPtr type, IntPtr data, IntPtr pMat);
-        public virtual void PipelineItem_GetWorldMatrix(IntPtr type, IntPtr data, IntPtr pMat) {
+        public delegate void PipelineItem_GetWorldMatrixDelegate_063(IntPtr type, IntPtr data, ArrPointer16<float> pMat);
+        public virtual void PipelineItem_GetWorldMatrix(IntPtr type, IntPtr data, ArrPointer16<float> pMat) {
         }
 
         // function PipelineItem_Intersect
@@ -836,8 +836,8 @@ namespace SHADERedCLR.Wrapper {
         }
 
         // function PipelineItem_GetBoundingBox
-        public delegate void PipelineItem_GetBoundingBoxDelegate_065(IntPtr type, IntPtr data, IntPtr minPos, IntPtr maxPos);
-        public virtual void PipelineItem_GetBoundingBox(IntPtr type, IntPtr data, IntPtr minPos, IntPtr maxPos) {
+        public delegate void PipelineItem_GetBoundingBoxDelegate_065(IntPtr type, IntPtr data, ArrPointer3<float> minPos, ArrPointer3<float> maxPos);
+        public virtual void PipelineItem_GetBoundingBox(IntPtr type, IntPtr data, ArrPointer3<float> minPos, ArrPointer3<float> maxPos) {
         }
 
         // function PipelineItem_HasContext

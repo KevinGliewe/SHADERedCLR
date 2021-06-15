@@ -8,7 +8,17 @@ namespace TestPlugin
     {
         public override void Update(float delta)
         {
-            Console.WriteLine($"TestPluginImpl.Update({delta})");
+            var data = new float[16];
+
+            unsafe
+            {
+                fixed (float* p = data)
+                {
+                    GetViewMatrix((IntPtr)p);
+                }
+            }
+
+            Console.WriteLine(string.Join(", ", data));
         }
     }
 }

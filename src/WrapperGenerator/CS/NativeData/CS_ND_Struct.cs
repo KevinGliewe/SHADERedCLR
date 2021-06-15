@@ -25,7 +25,14 @@ namespace WrapperGenerator.CS.NativeEnums
             {
                 foreach (var field in _cppClass.Fields)
                 {
-                    writer.WriteLine($"// {field.Name} - {field.Type.GetFullyQualifiedCS()}");
+                    if (field.Type is CppArrayType cppArray)
+                    {
+                        writer.WriteLine($"public fixed {cppArray.ElementType.GetFullyQualifiedCS()} {field.Name}[{cppArray.Size}];");
+                    }
+                    else
+                    {
+                        writer.WriteLine($"public {field.Type.GetFullyQualifiedCS()} {field.Name};");
+                    }
                 }
             }
 

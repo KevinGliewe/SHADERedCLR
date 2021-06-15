@@ -53,7 +53,7 @@ namespace WrapperGenerator.Helper
                     CppPrimitiveKind.Void => "void",
                     CppPrimitiveKind.Bool => "bool",
                     CppPrimitiveKind.WChar => "char",
-                    CppPrimitiveKind.Char => "char",
+                    CppPrimitiveKind.Char => "byte",
                     CppPrimitiveKind.Short => "Int16",
                     CppPrimitiveKind.Int => "Int32",
                     CppPrimitiveKind.LongLong => "Int64",
@@ -70,7 +70,7 @@ namespace WrapperGenerator.Helper
                 return cppReference.ElementType.GetFullyQualifiedCS(name);
 
             if (self is CppArrayType cppArray)
-                return "IntPtr";
+                return $"ArrPointer{cppArray.Size}<{cppArray.ElementType.GetFullyQualifiedCS()}>";
 
             if (self is CppClass cppClass)
                 return cppClass.Name;

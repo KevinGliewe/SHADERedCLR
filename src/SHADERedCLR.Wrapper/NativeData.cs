@@ -114,14 +114,14 @@ namespace SHADERedCLR.Wrapper {
 
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct InputLayoutItem {
-        // Value - SHADERedCLR.Wrapper.InputLayoutValue
-        // Semantic - IntPtr
+        public SHADERedCLR.Wrapper.InputLayoutValue Value;
+        public fixed byte Semantic[64];
     }
 
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct ShaderMacro {
-        // Active - bool
-        // Name - IntPtr
-        // Value - IntPtr
+        public bool Active;
+        public fixed byte Name[32];
+        public fixed byte Value[512];
     }
 }
