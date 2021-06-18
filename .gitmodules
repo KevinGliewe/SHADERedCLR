@@ -1,3 +1,3 @@
-[submodule ".\\dep\\CppAst.NET"]
-	path = .\\dep\\CppAst.NET
+[submodule "dep/CppAst.NET"]
+	path = dep/CppAst.NET
 	url = git@github.com:KevinGliewe/CppAst.NET.git
