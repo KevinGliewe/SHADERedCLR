@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -9,7 +9,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <OutputPath>$(SolutionDir)..\..\SHADERed\build\bin\Debug\plugins\SHADERedCLR\PluginManager</OutputPath>
+    <OutputPath>$(SolutionDir)\..\..\SHADERed\build\bin\Debug\plugins\SHADERedCLR\PluginManager</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   
@@ -19,6 +19,12 @@
   
   <ItemGroup>
     <ProjectReference Include="..\SHADERedCLR.Wrapper\SHADERedCLR.Wrapper.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="install_runtime.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

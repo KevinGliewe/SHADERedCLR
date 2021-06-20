@@ -1,3 +1,6 @@
 [submodule "dep/CppAst.NET"]
 	path = dep/CppAst.NET
 	url = git@github.com:KevinGliewe/CppAst.NET.git
+[submodule "dep/dotnet_runtime"]
+	path = dep/dotnet_runtime
+	url = git@github.com:KevinGliewe/dotnet_runtime.git
