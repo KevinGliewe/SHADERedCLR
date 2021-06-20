@@ -7,11 +7,11 @@ using WrapperGenerator.Helper;
 
 namespace WrapperGenerator.CS.PluginWrapper
 {
-    public class CS_PW_Field : SourceElement
+    public class CS_PW_Delegates_Field : SourceElement
     {
         private CppField _cppField;
         private int _counter;
-        public CS_PW_Field(SourceElement? parent, CppField cppField, int counter) : base(parent, cppField.Name) {
+        public CS_PW_Delegates_Field(SourceElement? parent, CppField cppField, int counter) : base(parent, cppField.Name) {
             _cppField = cppField;
             _counter = counter;
         }
@@ -29,18 +29,11 @@ namespace WrapperGenerator.CS.PluginWrapper
             if (ptrType is null)
                 throw new Exception(_cppField + " is not a CppPointerType!");
 
-            if (ptrType.ElementType is CppPrimitiveType primType)
+            if (ptrType.ElementType is CppFunctionType funcType)
             {
-                if(primType.Kind != CppPrimitiveKind.Void)
-                    throw new Exception(_cppField + " Type not supported!");
+                var delegateType = $"{_cppField.Name}Delegate";
 
-                writer.WriteLine($"public IntPtr {_cppField.Name} {{ get; protected set; }}");
-
-            } else if (ptrType.ElementType is CppFunctionType funcType)
-            {
-                var delegateType = $"{CS_PW_Class.DelegatesClassName}.{_cppField.Name}Delegate";
-
-                writer.WriteLine($"public {delegateType} {_cppField.Name} {{ get; protected set; }}");
+                writer.WriteLine($"public {funcType.GetDelegateDefinitionCS(delegateType)};");
             }
             else throw new Exception(_cppField + " Type not supported!");
 

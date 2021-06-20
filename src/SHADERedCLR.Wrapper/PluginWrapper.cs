@@ -18,6 +18,8 @@ namespace SHADERedCLR.Wrapper
 
         public IntPtr NativePlugin { get; protected set; }
 
+        protected Delegates __delegates { get; private set; } = new Delegates();
+
         public delegate void __SetUPCDelegate(UnmanagedPointerCollection a_UPC);
 
         public UnmanagedPointerCollection UnmanagedPointerCollection { get; protected set; }

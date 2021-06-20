@@ -3,6 +3,8 @@ using CppAst;
 using GCore.Source;
 using GCore.Source.CodeContexts;
 using GCore.Source.Generators;
+using GCore.Source.Generators.CSharp;
+using GCore.Source.Generators.CSharp.Elements;
 using GCore.Source.Generators.Extensions;
 using WrapperGenerator.Helper;
 
@@ -13,19 +15,30 @@ namespace WrapperGenerator.CS.PluginWrapper
         private CppClass _cppClass;
 
         public static readonly string ClassName = "PluginWrapper";
+        public static readonly string DelegatesClassName = "Delegates";
 
         public CS_PW_Class(SourceElement? parent, CppClass cppClass) : base(parent, cppClass.Name) {
             _cppClass = cppClass;
             Indent = 4;
 
+            var delegates = new CSharpClass(this, DelegatesClassName, null)
+            {
+                Modifier = CSharpModifier.Public
+            };
+
+            this.Add(delegates);
+
             int counter = 0;
             foreach (var field in _cppClass.CollectFields())
             {
+                delegates.Add(new CS_PW_Delegates_Field(delegates, field, counter));
                 this.Add(new CS_PW_Field(this, field, counter++));
             }
 
             counter = 0;
-            foreach (var cppFunction in cppClass.CollectFunctions()) {
+            foreach (var cppFunction in cppClass.CollectFunctions())
+            {
+                delegates.Add(new CS_PW_Delegates_Function(delegates, cppFunction, counter));
                 this.Add(new CS_PW_Function(this, cppFunction, counter++));
             }
         }
@@ -54,7 +67,7 @@ namespace WrapperGenerator.CS.PluginWrapper
                             if (ptrType.ElementType is CppFunctionType funcType)
                             {
                                 var upcMember = $"a_UPC.{field.Name}_{counter:D3}";
-                                var delegateType = $"{field.Name}Delegate";
+                                var delegateType = $"{CS_PW_Class.DelegatesClassName}.{field.Name}Delegate";
                                 writer.WriteLine($"if({upcMember} != IntPtr.Zero)");
                                 writer.Write("    ");
                                 writer.Write($"this.{field.Name} = ({delegateType})");
@@ -81,16 +94,15 @@ namespace WrapperGenerator.CS.PluginWrapper
                         if(function.Name == "GetVersion")
                             continue;
 
-                        var delegateType = $"{function.Name}Delegate_{counter:D3}";
+                        var delegateType = $"{DelegatesClassName}.{function.Name}Delegate_{counter:D3}";
+                        var delegateField = $"__delegates.{function.Name}_{counter:D3}";
                         var upcMember = $"{function.Name}_{counter:D3}";
+
+                        writer.WriteLine($"{delegateField} = new {delegateType}(this.{function.Name});");
 
                         writer.Write("mpc.");
                         writer.Write(upcMember);
-                        writer.Write(" = Marshal.GetFunctionPointerForDelegate(new ");
-                        writer.Write(delegateType);
-                        writer.Write("(this.");
-                        writer.Write(function.Name);
-                        writer.WriteLine("));");
+                        writer.WriteLine($" = Marshal.GetFunctionPointerForDelegate({delegateField});");
 
                         counter++;
                     }

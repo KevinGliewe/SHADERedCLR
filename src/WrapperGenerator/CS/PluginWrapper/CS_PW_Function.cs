@@ -18,11 +18,8 @@ namespace WrapperGenerator.CS.PluginWrapper
 
         public override void Render(CodeWriter writer)
         {
-            var delegateType = $"{_cppFunction.Name}Delegate_{_counter:D3}";
 
             writer.WriteLine($"// function {_cppFunction.Name}");
-
-            writer.WriteLine($"public {_cppFunction.GetDelegateDefinitionCS(delegateType)};");
 
             writer.Write("public virtual ");
             writer.Write(_cppFunction.ReturnType.GetFullyQualifiedCS());
