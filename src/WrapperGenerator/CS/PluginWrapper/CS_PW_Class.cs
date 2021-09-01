@@ -94,15 +94,32 @@ namespace WrapperGenerator.CS.PluginWrapper
                         if(function.Name == "GetVersion")
                             continue;
 
+                        //if (this.GetType().GetMethod("Init", new Type[] { typeof(bool), typeof(Int32) }).DeclaringType != typeof(PluginWrapper))
+                        //{
+                        //    __delegates.Init_000 = new Delegates.InitDelegate_000(this.Init);
+                        //    mpc.Init_000 = Marshal.GetFunctionPointerForDelegate(__delegates.Init_000);
+                        //}
+                        //else mpc.Init_000 = IntPtr.Zero;
+
                         var delegateType = $"{DelegatesClassName}.{function.Name}Delegate_{counter:D3}";
                         var delegateField = $"__delegates.{function.Name}_{counter:D3}";
                         var upcMember = $"{function.Name}_{counter:D3}";
 
-                        writer.WriteLine($"{delegateField} = new {delegateType}(this.{function.Name});");
+                        writer.Write($"if (this.GetType().GetMethod(\"{function.Name}\", new Type[] {{");
+                        writer.Write(string.Join(", ", function.Parameters.Select(p => $"typeof({p.Type.GetFullyQualifiedCS()})")));
+                        writer.WriteLine(" }).DeclaringType != typeof(PluginWrapper)) {");
 
-                        writer.Write("mpc.");
-                        writer.Write(upcMember);
-                        writer.WriteLine($" = Marshal.GetFunctionPointerForDelegate({delegateField});");
+                        using (new IndentContext(writer))
+                        {
+                            writer.WriteLine($"{delegateField} = new {delegateType}(this.{function.Name});");
+
+                            writer.Write("mpc.");
+                            writer.Write(upcMember);
+                            writer.WriteLine($" = Marshal.GetFunctionPointerForDelegate({delegateField});");
+                        }
+
+                        writer.WriteLine($"}} else mpc.{upcMember} = IntPtr.Zero;");
+                        writer.WriteLine();
 
                         counter++;
                     }

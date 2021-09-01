@@ -2151,340 +2151,841 @@ namespace SHADERedCLR.Wrapper {
         }
         protected SHADERedCLR.Wrapper.InteropData.ManagedPointerCollection __GetFunctionPointers() {
             var mpc = new SHADERedCLR.Wrapper.InteropData.ManagedPointerCollection();
-            __delegates.Init_000 = new Delegates.InitDelegate_000(this.Init);
-            mpc.Init_000 = Marshal.GetFunctionPointerForDelegate(__delegates.Init_000);
-            __delegates.InitUI_001 = new Delegates.InitUIDelegate_001(this.InitUI);
-            mpc.InitUI_001 = Marshal.GetFunctionPointerForDelegate(__delegates.InitUI_001);
-            __delegates.OnEvent_002 = new Delegates.OnEventDelegate_002(this.OnEvent);
-            mpc.OnEvent_002 = Marshal.GetFunctionPointerForDelegate(__delegates.OnEvent_002);
-            __delegates.Update_003 = new Delegates.UpdateDelegate_003(this.Update);
-            mpc.Update_003 = Marshal.GetFunctionPointerForDelegate(__delegates.Update_003);
-            __delegates.Destroy_004 = new Delegates.DestroyDelegate_004(this.Destroy);
-            mpc.Destroy_004 = Marshal.GetFunctionPointerForDelegate(__delegates.Destroy_004);
-            __delegates.IsRequired_005 = new Delegates.IsRequiredDelegate_005(this.IsRequired);
-            mpc.IsRequired_005 = Marshal.GetFunctionPointerForDelegate(__delegates.IsRequired_005);
-            __delegates.IsVersionCompatible_006 = new Delegates.IsVersionCompatibleDelegate_006(this.IsVersionCompatible);
-            mpc.IsVersionCompatible_006 = Marshal.GetFunctionPointerForDelegate(__delegates.IsVersionCompatible_006);
-            __delegates.BeginRender_007 = new Delegates.BeginRenderDelegate_007(this.BeginRender);
-            mpc.BeginRender_007 = Marshal.GetFunctionPointerForDelegate(__delegates.BeginRender_007);
-            __delegates.EndRender_008 = new Delegates.EndRenderDelegate_008(this.EndRender);
-            mpc.EndRender_008 = Marshal.GetFunctionPointerForDelegate(__delegates.EndRender_008);
-            __delegates.Project_BeginLoad_009 = new Delegates.Project_BeginLoadDelegate_009(this.Project_BeginLoad);
-            mpc.Project_BeginLoad_009 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_BeginLoad_009);
-            __delegates.Project_EndLoad_010 = new Delegates.Project_EndLoadDelegate_010(this.Project_EndLoad);
-            mpc.Project_EndLoad_010 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_EndLoad_010);
-            __delegates.Project_BeginSave_011 = new Delegates.Project_BeginSaveDelegate_011(this.Project_BeginSave);
-            mpc.Project_BeginSave_011 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_BeginSave_011);
-            __delegates.Project_EndSave_012 = new Delegates.Project_EndSaveDelegate_012(this.Project_EndSave);
-            mpc.Project_EndSave_012 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_EndSave_012);
-            __delegates.Project_HasAdditionalData_013 = new Delegates.Project_HasAdditionalDataDelegate_013(this.Project_HasAdditionalData);
-            mpc.Project_HasAdditionalData_013 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_HasAdditionalData_013);
-            __delegates.Project_ExportAdditionalData_014 = new Delegates.Project_ExportAdditionalDataDelegate_014(this.Project_ExportAdditionalData);
-            mpc.Project_ExportAdditionalData_014 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_ExportAdditionalData_014);
-            __delegates.Project_ImportAdditionalData_015 = new Delegates.Project_ImportAdditionalDataDelegate_015(this.Project_ImportAdditionalData);
-            mpc.Project_ImportAdditionalData_015 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_ImportAdditionalData_015);
-            __delegates.Project_CopyFilesOnSave_016 = new Delegates.Project_CopyFilesOnSaveDelegate_016(this.Project_CopyFilesOnSave);
-            mpc.Project_CopyFilesOnSave_016 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_CopyFilesOnSave_016);
-            __delegates.HasCustomMenuItem_017 = new Delegates.HasCustomMenuItemDelegate_017(this.HasCustomMenuItem);
-            mpc.HasCustomMenuItem_017 = Marshal.GetFunctionPointerForDelegate(__delegates.HasCustomMenuItem_017);
-            __delegates.HasMenuItems_018 = new Delegates.HasMenuItemsDelegate_018(this.HasMenuItems);
-            mpc.HasMenuItems_018 = Marshal.GetFunctionPointerForDelegate(__delegates.HasMenuItems_018);
-            __delegates.ShowMenuItems_019 = new Delegates.ShowMenuItemsDelegate_019(this.ShowMenuItems);
-            mpc.ShowMenuItems_019 = Marshal.GetFunctionPointerForDelegate(__delegates.ShowMenuItems_019);
-            __delegates.HasContextItems_020 = new Delegates.HasContextItemsDelegate_020(this.HasContextItems);
-            mpc.HasContextItems_020 = Marshal.GetFunctionPointerForDelegate(__delegates.HasContextItems_020);
-            __delegates.ShowContextItems_021 = new Delegates.ShowContextItemsDelegate_021(this.ShowContextItems);
-            mpc.ShowContextItems_021 = Marshal.GetFunctionPointerForDelegate(__delegates.ShowContextItems_021);
-            __delegates.SystemVariables_GetNameCount_022 = new Delegates.SystemVariables_GetNameCountDelegate_022(this.SystemVariables_GetNameCount);
-            mpc.SystemVariables_GetNameCount_022 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_GetNameCount_022);
-            __delegates.SystemVariables_GetName_023 = new Delegates.SystemVariables_GetNameDelegate_023(this.SystemVariables_GetName);
-            mpc.SystemVariables_GetName_023 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_GetName_023);
-            __delegates.SystemVariables_HasLastFrame_024 = new Delegates.SystemVariables_HasLastFrameDelegate_024(this.SystemVariables_HasLastFrame);
-            mpc.SystemVariables_HasLastFrame_024 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_HasLastFrame_024);
-            __delegates.SystemVariables_UpdateValue_025 = new Delegates.SystemVariables_UpdateValueDelegate_025(this.SystemVariables_UpdateValue);
-            mpc.SystemVariables_UpdateValue_025 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_UpdateValue_025);
-            __delegates.VariableFunctions_GetNameCount_026 = new Delegates.VariableFunctions_GetNameCountDelegate_026(this.VariableFunctions_GetNameCount);
-            mpc.VariableFunctions_GetNameCount_026 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_GetNameCount_026);
-            __delegates.VariableFunctions_GetName_027 = new Delegates.VariableFunctions_GetNameDelegate_027(this.VariableFunctions_GetName);
-            mpc.VariableFunctions_GetName_027 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_GetName_027);
-            __delegates.VariableFunctions_ShowArgumentEdit_028 = new Delegates.VariableFunctions_ShowArgumentEditDelegate_028(this.VariableFunctions_ShowArgumentEdit);
-            mpc.VariableFunctions_ShowArgumentEdit_028 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_ShowArgumentEdit_028);
-            __delegates.VariableFunctions_UpdateValue_029 = new Delegates.VariableFunctions_UpdateValueDelegate_029(this.VariableFunctions_UpdateValue);
-            mpc.VariableFunctions_UpdateValue_029 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_UpdateValue_029);
-            __delegates.VariableFunctions_GetArgsSize_030 = new Delegates.VariableFunctions_GetArgsSizeDelegate_030(this.VariableFunctions_GetArgsSize);
-            mpc.VariableFunctions_GetArgsSize_030 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_GetArgsSize_030);
-            __delegates.VariableFunctions_InitArguments_031 = new Delegates.VariableFunctions_InitArgumentsDelegate_031(this.VariableFunctions_InitArguments);
-            mpc.VariableFunctions_InitArguments_031 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_InitArguments_031);
-            __delegates.VariableFunctions_ExportArguments_032 = new Delegates.VariableFunctions_ExportArgumentsDelegate_032(this.VariableFunctions_ExportArguments);
-            mpc.VariableFunctions_ExportArguments_032 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_ExportArguments_032);
-            __delegates.VariableFunctions_ImportArguments_033 = new Delegates.VariableFunctions_ImportArgumentsDelegate_033(this.VariableFunctions_ImportArguments);
-            mpc.VariableFunctions_ImportArguments_033 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_ImportArguments_033);
-            __delegates.Object_HasPreview_034 = new Delegates.Object_HasPreviewDelegate_034(this.Object_HasPreview);
-            mpc.Object_HasPreview_034 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasPreview_034);
-            __delegates.Object_ShowPreview_035 = new Delegates.Object_ShowPreviewDelegate_035(this.Object_ShowPreview);
-            mpc.Object_ShowPreview_035 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowPreview_035);
-            __delegates.Object_IsBindable_036 = new Delegates.Object_IsBindableDelegate_036(this.Object_IsBindable);
-            mpc.Object_IsBindable_036 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_IsBindable_036);
-            __delegates.Object_IsBindableUAV_037 = new Delegates.Object_IsBindableUAVDelegate_037(this.Object_IsBindableUAV);
-            mpc.Object_IsBindableUAV_037 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_IsBindableUAV_037);
-            __delegates.Object_Remove_038 = new Delegates.Object_RemoveDelegate_038(this.Object_Remove);
-            mpc.Object_Remove_038 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Remove_038);
-            __delegates.Object_HasExtendedPreview_039 = new Delegates.Object_HasExtendedPreviewDelegate_039(this.Object_HasExtendedPreview);
-            mpc.Object_HasExtendedPreview_039 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasExtendedPreview_039);
-            __delegates.Object_ShowExtendedPreview_040 = new Delegates.Object_ShowExtendedPreviewDelegate_040(this.Object_ShowExtendedPreview);
-            mpc.Object_ShowExtendedPreview_040 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowExtendedPreview_040);
-            __delegates.Object_HasProperties_041 = new Delegates.Object_HasPropertiesDelegate_041(this.Object_HasProperties);
-            mpc.Object_HasProperties_041 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasProperties_041);
-            __delegates.Object_ShowProperties_042 = new Delegates.Object_ShowPropertiesDelegate_042(this.Object_ShowProperties);
-            mpc.Object_ShowProperties_042 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowProperties_042);
-            __delegates.Object_Bind_043 = new Delegates.Object_BindDelegate_043(this.Object_Bind);
-            mpc.Object_Bind_043 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Bind_043);
-            __delegates.Object_Export_044 = new Delegates.Object_ExportDelegate_044(this.Object_Export);
-            mpc.Object_Export_044 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Export_044);
-            __delegates.Object_Import_045 = new Delegates.Object_ImportDelegate_045(this.Object_Import);
-            mpc.Object_Import_045 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Import_045);
-            __delegates.Object_HasContext_046 = new Delegates.Object_HasContextDelegate_046(this.Object_HasContext);
-            mpc.Object_HasContext_046 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasContext_046);
-            __delegates.Object_ShowContext_047 = new Delegates.Object_ShowContextDelegate_047(this.Object_ShowContext);
-            mpc.Object_ShowContext_047 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowContext_047);
-            __delegates.PipelineItem_HasProperties_048 = new Delegates.PipelineItem_HasPropertiesDelegate_048(this.PipelineItem_HasProperties);
-            mpc.PipelineItem_HasProperties_048 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasProperties_048);
-            __delegates.PipelineItem_ShowProperties_049 = new Delegates.PipelineItem_ShowPropertiesDelegate_049(this.PipelineItem_ShowProperties);
-            mpc.PipelineItem_ShowProperties_049 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ShowProperties_049);
-            __delegates.PipelineItem_IsPickable_050 = new Delegates.PipelineItem_IsPickableDelegate_050(this.PipelineItem_IsPickable);
-            mpc.PipelineItem_IsPickable_050 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_IsPickable_050);
-            __delegates.PipelineItem_HasShaders_051 = new Delegates.PipelineItem_HasShadersDelegate_051(this.PipelineItem_HasShaders);
-            mpc.PipelineItem_HasShaders_051 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasShaders_051);
-            __delegates.PipelineItem_OpenInEditor_052 = new Delegates.PipelineItem_OpenInEditorDelegate_052(this.PipelineItem_OpenInEditor);
-            mpc.PipelineItem_OpenInEditor_052 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_OpenInEditor_052);
-            __delegates.PipelineItem_CanHaveChild_053 = new Delegates.PipelineItem_CanHaveChildDelegate_053(this.PipelineItem_CanHaveChild);
-            mpc.PipelineItem_CanHaveChild_053 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CanHaveChild_053);
-            __delegates.PipelineItem_GetInputLayoutSize_054 = new Delegates.PipelineItem_GetInputLayoutSizeDelegate_054(this.PipelineItem_GetInputLayoutSize);
-            mpc.PipelineItem_GetInputLayoutSize_054 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetInputLayoutSize_054);
-            __delegates.PipelineItem_GetInputLayoutItem_055 = new Delegates.PipelineItem_GetInputLayoutItemDelegate_055(this.PipelineItem_GetInputLayoutItem);
-            mpc.PipelineItem_GetInputLayoutItem_055 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetInputLayoutItem_055);
-            __delegates.PipelineItem_Remove_056 = new Delegates.PipelineItem_RemoveDelegate_056(this.PipelineItem_Remove);
-            mpc.PipelineItem_Remove_056 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Remove_056);
-            __delegates.PipelineItem_Rename_057 = new Delegates.PipelineItem_RenameDelegate_057(this.PipelineItem_Rename);
-            mpc.PipelineItem_Rename_057 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Rename_057);
-            __delegates.PipelineItem_AddChild_058 = new Delegates.PipelineItem_AddChildDelegate_058(this.PipelineItem_AddChild);
-            mpc.PipelineItem_AddChild_058 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_AddChild_058);
-            __delegates.PipelineItem_CanHaveChildren_059 = new Delegates.PipelineItem_CanHaveChildrenDelegate_059(this.PipelineItem_CanHaveChildren);
-            mpc.PipelineItem_CanHaveChildren_059 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CanHaveChildren_059);
-            __delegates.PipelineItem_CopyData_060 = new Delegates.PipelineItem_CopyDataDelegate_060(this.PipelineItem_CopyData);
-            mpc.PipelineItem_CopyData_060 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CopyData_060);
-            __delegates.PipelineItem_Execute_061 = new Delegates.PipelineItem_ExecuteDelegate_061(this.PipelineItem_Execute);
-            mpc.PipelineItem_Execute_061 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Execute_061);
-            __delegates.PipelineItem_Execute_062 = new Delegates.PipelineItem_ExecuteDelegate_062(this.PipelineItem_Execute);
-            mpc.PipelineItem_Execute_062 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Execute_062);
-            __delegates.PipelineItem_GetWorldMatrix_063 = new Delegates.PipelineItem_GetWorldMatrixDelegate_063(this.PipelineItem_GetWorldMatrix);
-            mpc.PipelineItem_GetWorldMatrix_063 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetWorldMatrix_063);
-            __delegates.PipelineItem_Intersect_064 = new Delegates.PipelineItem_IntersectDelegate_064(this.PipelineItem_Intersect);
-            mpc.PipelineItem_Intersect_064 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Intersect_064);
-            __delegates.PipelineItem_GetBoundingBox_065 = new Delegates.PipelineItem_GetBoundingBoxDelegate_065(this.PipelineItem_GetBoundingBox);
-            mpc.PipelineItem_GetBoundingBox_065 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetBoundingBox_065);
-            __delegates.PipelineItem_HasContext_066 = new Delegates.PipelineItem_HasContextDelegate_066(this.PipelineItem_HasContext);
-            mpc.PipelineItem_HasContext_066 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasContext_066);
-            __delegates.PipelineItem_ShowContext_067 = new Delegates.PipelineItem_ShowContextDelegate_067(this.PipelineItem_ShowContext);
-            mpc.PipelineItem_ShowContext_067 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ShowContext_067);
-            __delegates.PipelineItem_Export_068 = new Delegates.PipelineItem_ExportDelegate_068(this.PipelineItem_Export);
-            mpc.PipelineItem_Export_068 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Export_068);
-            __delegates.PipelineItem_Import_069 = new Delegates.PipelineItem_ImportDelegate_069(this.PipelineItem_Import);
-            mpc.PipelineItem_Import_069 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Import_069);
-            __delegates.PipelineItem_MoveDown_070 = new Delegates.PipelineItem_MoveDownDelegate_070(this.PipelineItem_MoveDown);
-            mpc.PipelineItem_MoveDown_070 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_MoveDown_070);
-            __delegates.PipelineItem_MoveUp_071 = new Delegates.PipelineItem_MoveUpDelegate_071(this.PipelineItem_MoveUp);
-            mpc.PipelineItem_MoveUp_071 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_MoveUp_071);
-            __delegates.PipelineItem_ApplyGizmoTransform_072 = new Delegates.PipelineItem_ApplyGizmoTransformDelegate_072(this.PipelineItem_ApplyGizmoTransform);
-            mpc.PipelineItem_ApplyGizmoTransform_072 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ApplyGizmoTransform_072);
-            __delegates.PipelineItem_GetTransform_073 = new Delegates.PipelineItem_GetTransformDelegate_073(this.PipelineItem_GetTransform);
-            mpc.PipelineItem_GetTransform_073 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetTransform_073);
-            __delegates.PipelineItem_DebugVertexExecute_074 = new Delegates.PipelineItem_DebugVertexExecuteDelegate_074(this.PipelineItem_DebugVertexExecute);
-            mpc.PipelineItem_DebugVertexExecute_074 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugVertexExecute_074);
-            __delegates.PipelineItem_DebugVertexExecute_075 = new Delegates.PipelineItem_DebugVertexExecuteDelegate_075(this.PipelineItem_DebugVertexExecute);
-            mpc.PipelineItem_DebugVertexExecute_075 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugVertexExecute_075);
-            __delegates.PipelineItem_DebugInstanceExecute_076 = new Delegates.PipelineItem_DebugInstanceExecuteDelegate_076(this.PipelineItem_DebugInstanceExecute);
-            mpc.PipelineItem_DebugInstanceExecute_076 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugInstanceExecute_076);
-            __delegates.PipelineItem_DebugInstanceExecute_077 = new Delegates.PipelineItem_DebugInstanceExecuteDelegate_077(this.PipelineItem_DebugInstanceExecute);
-            mpc.PipelineItem_DebugInstanceExecute_077 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugInstanceExecute_077);
-            __delegates.PipelineItem_GetVBO_078 = new Delegates.PipelineItem_GetVBODelegate_078(this.PipelineItem_GetVBO);
-            mpc.PipelineItem_GetVBO_078 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVBO_078);
-            __delegates.PipelineItem_GetVBOStride_079 = new Delegates.PipelineItem_GetVBOStrideDelegate_079(this.PipelineItem_GetVBOStride);
-            mpc.PipelineItem_GetVBOStride_079 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVBOStride_079);
-            __delegates.PipelineItem_CanChangeVariables_080 = new Delegates.PipelineItem_CanChangeVariablesDelegate_080(this.PipelineItem_CanChangeVariables);
-            mpc.PipelineItem_CanChangeVariables_080 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CanChangeVariables_080);
-            __delegates.PipelineItem_IsDebuggable_081 = new Delegates.PipelineItem_IsDebuggableDelegate_081(this.PipelineItem_IsDebuggable);
-            mpc.PipelineItem_IsDebuggable_081 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_IsDebuggable_081);
-            __delegates.PipelineItem_IsStageDebuggable_082 = new Delegates.PipelineItem_IsStageDebuggableDelegate_082(this.PipelineItem_IsStageDebuggable);
-            mpc.PipelineItem_IsStageDebuggable_082 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_IsStageDebuggable_082);
-            __delegates.PipelineItem_DebugExecute_083 = new Delegates.PipelineItem_DebugExecuteDelegate_083(this.PipelineItem_DebugExecute);
-            mpc.PipelineItem_DebugExecute_083 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugExecute_083);
-            __delegates.PipelineItem_GetTopology_084 = new Delegates.PipelineItem_GetTopologyDelegate_084(this.PipelineItem_GetTopology);
-            mpc.PipelineItem_GetTopology_084 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetTopology_084);
-            __delegates.PipelineItem_GetVariableCount_085 = new Delegates.PipelineItem_GetVariableCountDelegate_085(this.PipelineItem_GetVariableCount);
-            mpc.PipelineItem_GetVariableCount_085 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableCount_085);
-            __delegates.PipelineItem_GetVariableName_086 = new Delegates.PipelineItem_GetVariableNameDelegate_086(this.PipelineItem_GetVariableName);
-            mpc.PipelineItem_GetVariableName_086 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableName_086);
-            __delegates.PipelineItem_GetVariableType_087 = new Delegates.PipelineItem_GetVariableTypeDelegate_087(this.PipelineItem_GetVariableType);
-            mpc.PipelineItem_GetVariableType_087 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableType_087);
-            __delegates.PipelineItem_GetVariableValueFloat_088 = new Delegates.PipelineItem_GetVariableValueFloatDelegate_088(this.PipelineItem_GetVariableValueFloat);
-            mpc.PipelineItem_GetVariableValueFloat_088 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableValueFloat_088);
-            __delegates.PipelineItem_GetVariableValueInteger_089 = new Delegates.PipelineItem_GetVariableValueIntegerDelegate_089(this.PipelineItem_GetVariableValueInteger);
-            mpc.PipelineItem_GetVariableValueInteger_089 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableValueInteger_089);
-            __delegates.PipelineItem_GetVariableValueBoolean_090 = new Delegates.PipelineItem_GetVariableValueBooleanDelegate_090(this.PipelineItem_GetVariableValueBoolean);
-            mpc.PipelineItem_GetVariableValueBoolean_090 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableValueBoolean_090);
-            __delegates.PipelineItem_GetSPIRVSize_091 = new Delegates.PipelineItem_GetSPIRVSizeDelegate_091(this.PipelineItem_GetSPIRVSize);
-            mpc.PipelineItem_GetSPIRVSize_091 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetSPIRVSize_091);
-            __delegates.PipelineItem_GetSPIRV_092 = new Delegates.PipelineItem_GetSPIRVDelegate_092(this.PipelineItem_GetSPIRV);
-            mpc.PipelineItem_GetSPIRV_092 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetSPIRV_092);
-            __delegates.PipelineItem_DebugPrepareVariables_093 = new Delegates.PipelineItem_DebugPrepareVariablesDelegate_093(this.PipelineItem_DebugPrepareVariables);
-            mpc.PipelineItem_DebugPrepareVariables_093 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugPrepareVariables_093);
-            __delegates.PipelineItem_DebugUsesCustomTextures_094 = new Delegates.PipelineItem_DebugUsesCustomTexturesDelegate_094(this.PipelineItem_DebugUsesCustomTextures);
-            mpc.PipelineItem_DebugUsesCustomTextures_094 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugUsesCustomTextures_094);
-            __delegates.PipelineItem_DebugGetTexture_095 = new Delegates.PipelineItem_DebugGetTextureDelegate_095(this.PipelineItem_DebugGetTexture);
-            mpc.PipelineItem_DebugGetTexture_095 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugGetTexture_095);
-            __delegates.PipelineItem_DebugGetTextureSize_096 = new Delegates.PipelineItem_DebugGetTextureSizeDelegate_096(this.PipelineItem_DebugGetTextureSize);
-            mpc.PipelineItem_DebugGetTextureSize_096 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugGetTextureSize_096);
-            __delegates.Options_HasSection_097 = new Delegates.Options_HasSectionDelegate_097(this.Options_HasSection);
-            mpc.Options_HasSection_097 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_HasSection_097);
-            __delegates.Options_RenderSection_098 = new Delegates.Options_RenderSectionDelegate_098(this.Options_RenderSection);
-            mpc.Options_RenderSection_098 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_RenderSection_098);
-            __delegates.Options_Parse_099 = new Delegates.Options_ParseDelegate_099(this.Options_Parse);
-            mpc.Options_Parse_099 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_Parse_099);
-            __delegates.Options_GetCount_100 = new Delegates.Options_GetCountDelegate_100(this.Options_GetCount);
-            mpc.Options_GetCount_100 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_GetCount_100);
-            __delegates.Options_GetKey_101 = new Delegates.Options_GetKeyDelegate_101(this.Options_GetKey);
-            mpc.Options_GetKey_101 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_GetKey_101);
-            __delegates.Options_GetValue_102 = new Delegates.Options_GetValueDelegate_102(this.Options_GetValue);
-            mpc.Options_GetValue_102 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_GetValue_102);
-            __delegates.CustomLanguage_GetCount_103 = new Delegates.CustomLanguage_GetCountDelegate_103(this.CustomLanguage_GetCount);
-            mpc.CustomLanguage_GetCount_103 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_GetCount_103);
-            __delegates.CustomLanguage_GetName_104 = new Delegates.CustomLanguage_GetNameDelegate_104(this.CustomLanguage_GetName);
-            mpc.CustomLanguage_GetName_104 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_GetName_104);
-            __delegates.CustomLanguage_CompileToSPIRV_105 = new Delegates.CustomLanguage_CompileToSPIRVDelegate_105(this.CustomLanguage_CompileToSPIRV);
-            mpc.CustomLanguage_CompileToSPIRV_105 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_CompileToSPIRV_105);
-            __delegates.CustomLanguage_ProcessGeneratedGLSL_106 = new Delegates.CustomLanguage_ProcessGeneratedGLSLDelegate_106(this.CustomLanguage_ProcessGeneratedGLSL);
-            mpc.CustomLanguage_ProcessGeneratedGLSL_106 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_ProcessGeneratedGLSL_106);
-            __delegates.CustomLanguage_SupportsAutoUniforms_107 = new Delegates.CustomLanguage_SupportsAutoUniformsDelegate_107(this.CustomLanguage_SupportsAutoUniforms);
-            mpc.CustomLanguage_SupportsAutoUniforms_107 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_SupportsAutoUniforms_107);
-            __delegates.CustomLanguage_IsDebuggable_108 = new Delegates.CustomLanguage_IsDebuggableDelegate_108(this.CustomLanguage_IsDebuggable);
-            mpc.CustomLanguage_IsDebuggable_108 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_IsDebuggable_108);
-            __delegates.CustomLanguage_GetDefaultExtension_109 = new Delegates.CustomLanguage_GetDefaultExtensionDelegate_109(this.CustomLanguage_GetDefaultExtension);
-            mpc.CustomLanguage_GetDefaultExtension_109 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_GetDefaultExtension_109);
-            __delegates.ShaderEditor_Supports_110 = new Delegates.ShaderEditor_SupportsDelegate_110(this.ShaderEditor_Supports);
-            mpc.ShaderEditor_Supports_110 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Supports_110);
-            __delegates.ShaderEditor_Open_111 = new Delegates.ShaderEditor_OpenDelegate_111(this.ShaderEditor_Open);
-            mpc.ShaderEditor_Open_111 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Open_111);
-            __delegates.ShaderEditor_Render_112 = new Delegates.ShaderEditor_RenderDelegate_112(this.ShaderEditor_Render);
-            mpc.ShaderEditor_Render_112 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Render_112);
-            __delegates.ShaderEditor_Close_113 = new Delegates.ShaderEditor_CloseDelegate_113(this.ShaderEditor_Close);
-            mpc.ShaderEditor_Close_113 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Close_113);
-            __delegates.ShaderEditor_GetContent_114 = new Delegates.ShaderEditor_GetContentDelegate_114(this.ShaderEditor_GetContent);
-            mpc.ShaderEditor_GetContent_114 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_GetContent_114);
-            __delegates.ShaderEditor_IsChanged_115 = new Delegates.ShaderEditor_IsChangedDelegate_115(this.ShaderEditor_IsChanged);
-            mpc.ShaderEditor_IsChanged_115 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_IsChanged_115);
-            __delegates.ShaderEditor_ResetChangeState_116 = new Delegates.ShaderEditor_ResetChangeStateDelegate_116(this.ShaderEditor_ResetChangeState);
-            mpc.ShaderEditor_ResetChangeState_116 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_ResetChangeState_116);
-            __delegates.ShaderEditor_CanUndo_117 = new Delegates.ShaderEditor_CanUndoDelegate_117(this.ShaderEditor_CanUndo);
-            mpc.ShaderEditor_CanUndo_117 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_CanUndo_117);
-            __delegates.ShaderEditor_CanRedo_118 = new Delegates.ShaderEditor_CanRedoDelegate_118(this.ShaderEditor_CanRedo);
-            mpc.ShaderEditor_CanRedo_118 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_CanRedo_118);
-            __delegates.ShaderEditor_Undo_119 = new Delegates.ShaderEditor_UndoDelegate_119(this.ShaderEditor_Undo);
-            mpc.ShaderEditor_Undo_119 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Undo_119);
-            __delegates.ShaderEditor_Redo_120 = new Delegates.ShaderEditor_RedoDelegate_120(this.ShaderEditor_Redo);
-            mpc.ShaderEditor_Redo_120 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Redo_120);
-            __delegates.ShaderEditor_Cut_121 = new Delegates.ShaderEditor_CutDelegate_121(this.ShaderEditor_Cut);
-            mpc.ShaderEditor_Cut_121 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Cut_121);
-            __delegates.ShaderEditor_Paste_122 = new Delegates.ShaderEditor_PasteDelegate_122(this.ShaderEditor_Paste);
-            mpc.ShaderEditor_Paste_122 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Paste_122);
-            __delegates.ShaderEditor_Copy_123 = new Delegates.ShaderEditor_CopyDelegate_123(this.ShaderEditor_Copy);
-            mpc.ShaderEditor_Copy_123 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Copy_123);
-            __delegates.ShaderEditor_SelectAll_124 = new Delegates.ShaderEditor_SelectAllDelegate_124(this.ShaderEditor_SelectAll);
-            mpc.ShaderEditor_SelectAll_124 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_SelectAll_124);
-            __delegates.ShaderEditor_HasStats_125 = new Delegates.ShaderEditor_HasStatsDelegate_125(this.ShaderEditor_HasStats);
-            mpc.ShaderEditor_HasStats_125 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_HasStats_125);
-            __delegates.CodeEditor_SaveItem_126 = new Delegates.CodeEditor_SaveItemDelegate_126(this.CodeEditor_SaveItem);
-            mpc.CodeEditor_SaveItem_126 = Marshal.GetFunctionPointerForDelegate(__delegates.CodeEditor_SaveItem_126);
-            __delegates.CodeEditor_CloseItem_127 = new Delegates.CodeEditor_CloseItemDelegate_127(this.CodeEditor_CloseItem);
-            mpc.CodeEditor_CloseItem_127 = Marshal.GetFunctionPointerForDelegate(__delegates.CodeEditor_CloseItem_127);
-            __delegates.LanguageDefinition_Exists_128 = new Delegates.LanguageDefinition_ExistsDelegate_128(this.LanguageDefinition_Exists);
-            mpc.LanguageDefinition_Exists_128 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_Exists_128);
-            __delegates.LanguageDefinition_GetKeywordCount_129 = new Delegates.LanguageDefinition_GetKeywordCountDelegate_129(this.LanguageDefinition_GetKeywordCount);
-            mpc.LanguageDefinition_GetKeywordCount_129 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetKeywordCount_129);
-            __delegates.LanguageDefinition_GetKeywords_130 = new Delegates.LanguageDefinition_GetKeywordsDelegate_130(this.LanguageDefinition_GetKeywords);
-            mpc.LanguageDefinition_GetKeywords_130 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetKeywords_130);
-            __delegates.LanguageDefinition_GetTokenRegexCount_131 = new Delegates.LanguageDefinition_GetTokenRegexCountDelegate_131(this.LanguageDefinition_GetTokenRegexCount);
-            mpc.LanguageDefinition_GetTokenRegexCount_131 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetTokenRegexCount_131);
-            __delegates.LanguageDefinition_GetTokenRegex_132 = new Delegates.LanguageDefinition_GetTokenRegexDelegate_132(this.LanguageDefinition_GetTokenRegex);
-            mpc.LanguageDefinition_GetTokenRegex_132 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetTokenRegex_132);
-            __delegates.LanguageDefinition_GetIdentifierCount_133 = new Delegates.LanguageDefinition_GetIdentifierCountDelegate_133(this.LanguageDefinition_GetIdentifierCount);
-            mpc.LanguageDefinition_GetIdentifierCount_133 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetIdentifierCount_133);
-            __delegates.LanguageDefinition_GetIdentifier_134 = new Delegates.LanguageDefinition_GetIdentifierDelegate_134(this.LanguageDefinition_GetIdentifier);
-            mpc.LanguageDefinition_GetIdentifier_134 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetIdentifier_134);
-            __delegates.LanguageDefinition_GetIdentifierDesc_135 = new Delegates.LanguageDefinition_GetIdentifierDescDelegate_135(this.LanguageDefinition_GetIdentifierDesc);
-            mpc.LanguageDefinition_GetIdentifierDesc_135 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetIdentifierDesc_135);
-            __delegates.LanguageDefinition_GetCommentStart_136 = new Delegates.LanguageDefinition_GetCommentStartDelegate_136(this.LanguageDefinition_GetCommentStart);
-            mpc.LanguageDefinition_GetCommentStart_136 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetCommentStart_136);
-            __delegates.LanguageDefinition_GetCommentEnd_137 = new Delegates.LanguageDefinition_GetCommentEndDelegate_137(this.LanguageDefinition_GetCommentEnd);
-            mpc.LanguageDefinition_GetCommentEnd_137 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetCommentEnd_137);
-            __delegates.LanguageDefinition_GetLineComment_138 = new Delegates.LanguageDefinition_GetLineCommentDelegate_138(this.LanguageDefinition_GetLineComment);
-            mpc.LanguageDefinition_GetLineComment_138 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetLineComment_138);
-            __delegates.LanguageDefinition_IsCaseSensitive_139 = new Delegates.LanguageDefinition_IsCaseSensitiveDelegate_139(this.LanguageDefinition_IsCaseSensitive);
-            mpc.LanguageDefinition_IsCaseSensitive_139 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_IsCaseSensitive_139);
-            __delegates.LanguageDefinition_GetAutoIndent_140 = new Delegates.LanguageDefinition_GetAutoIndentDelegate_140(this.LanguageDefinition_GetAutoIndent);
-            mpc.LanguageDefinition_GetAutoIndent_140 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetAutoIndent_140);
-            __delegates.LanguageDefinition_GetName_141 = new Delegates.LanguageDefinition_GetNameDelegate_141(this.LanguageDefinition_GetName);
-            mpc.LanguageDefinition_GetName_141 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetName_141);
-            __delegates.LanguageDefinition_GetNameAbbreviation_142 = new Delegates.LanguageDefinition_GetNameAbbreviationDelegate_142(this.LanguageDefinition_GetNameAbbreviation);
-            mpc.LanguageDefinition_GetNameAbbreviation_142 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetNameAbbreviation_142);
-            __delegates.Autocomplete_GetCount_143 = new Delegates.Autocomplete_GetCountDelegate_143(this.Autocomplete_GetCount);
-            mpc.Autocomplete_GetCount_143 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetCount_143);
-            __delegates.Autocomplete_GetDisplayString_144 = new Delegates.Autocomplete_GetDisplayStringDelegate_144(this.Autocomplete_GetDisplayString);
-            mpc.Autocomplete_GetDisplayString_144 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetDisplayString_144);
-            __delegates.Autocomplete_GetSearchString_145 = new Delegates.Autocomplete_GetSearchStringDelegate_145(this.Autocomplete_GetSearchString);
-            mpc.Autocomplete_GetSearchString_145 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetSearchString_145);
-            __delegates.Autocomplete_GetValue_146 = new Delegates.Autocomplete_GetValueDelegate_146(this.Autocomplete_GetValue);
-            mpc.Autocomplete_GetValue_146 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetValue_146);
-            __delegates.ShaderFilePath_GetCount_147 = new Delegates.ShaderFilePath_GetCountDelegate_147(this.ShaderFilePath_GetCount);
-            mpc.ShaderFilePath_GetCount_147 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_GetCount_147);
-            __delegates.ShaderFilePath_Get_148 = new Delegates.ShaderFilePath_GetDelegate_148(this.ShaderFilePath_Get);
-            mpc.ShaderFilePath_Get_148 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_Get_148);
-            __delegates.ShaderFilePath_HasChanged_149 = new Delegates.ShaderFilePath_HasChangedDelegate_149(this.ShaderFilePath_HasChanged);
-            mpc.ShaderFilePath_HasChanged_149 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_HasChanged_149);
-            __delegates.ShaderFilePath_Update_150 = new Delegates.ShaderFilePath_UpdateDelegate_150(this.ShaderFilePath_Update);
-            mpc.ShaderFilePath_Update_150 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_Update_150);
-            __delegates.HandleDropFile_151 = new Delegates.HandleDropFileDelegate_151(this.HandleDropFile);
-            mpc.HandleDropFile_151 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleDropFile_151);
-            __delegates.HandleRecompile_152 = new Delegates.HandleRecompileDelegate_152(this.HandleRecompile);
-            mpc.HandleRecompile_152 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleRecompile_152);
-            __delegates.HandleRecompileFromSource_153 = new Delegates.HandleRecompileFromSourceDelegate_153(this.HandleRecompileFromSource);
-            mpc.HandleRecompileFromSource_153 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleRecompileFromSource_153);
-            __delegates.HandleShortcut_154 = new Delegates.HandleShortcutDelegate_154(this.HandleShortcut);
-            mpc.HandleShortcut_154 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleShortcut_154);
-            __delegates.HandlePluginMessage_155 = new Delegates.HandlePluginMessageDelegate_155(this.HandlePluginMessage);
-            mpc.HandlePluginMessage_155 = Marshal.GetFunctionPointerForDelegate(__delegates.HandlePluginMessage_155);
-            __delegates.HandleApplicationEvent_156 = new Delegates.HandleApplicationEventDelegate_156(this.HandleApplicationEvent);
-            mpc.HandleApplicationEvent_156 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleApplicationEvent_156);
-            __delegates.HandleNotification_157 = new Delegates.HandleNotificationDelegate_157(this.HandleNotification);
-            mpc.HandleNotification_157 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleNotification_157);
-            __delegates.PipelineItem_SupportsImmediateMode_158 = new Delegates.PipelineItem_SupportsImmediateModeDelegate_158(this.PipelineItem_SupportsImmediateMode);
-            mpc.PipelineItem_SupportsImmediateMode_158 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_SupportsImmediateMode_158);
-            __delegates.PipelineItem_HasCustomImmediateModeCompiler_159 = new Delegates.PipelineItem_HasCustomImmediateModeCompilerDelegate_159(this.PipelineItem_HasCustomImmediateModeCompiler);
-            mpc.PipelineItem_HasCustomImmediateModeCompiler_159 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasCustomImmediateModeCompiler_159);
-            __delegates.PipelineItem_ImmediateModeCompile_160 = new Delegates.PipelineItem_ImmediateModeCompileDelegate_160(this.PipelineItem_ImmediateModeCompile);
-            mpc.PipelineItem_ImmediateModeCompile_160 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ImmediateModeCompile_160);
-            __delegates.ImmediateMode_GetSPIRVSize_161 = new Delegates.ImmediateMode_GetSPIRVSizeDelegate_161(this.ImmediateMode_GetSPIRVSize);
-            mpc.ImmediateMode_GetSPIRVSize_161 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetSPIRVSize_161);
-            __delegates.ImmediateMode_GetSPIRV_162 = new Delegates.ImmediateMode_GetSPIRVDelegate_162(this.ImmediateMode_GetSPIRV);
-            mpc.ImmediateMode_GetSPIRV_162 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetSPIRV_162);
-            __delegates.ImmediateMode_GetVariableCount_163 = new Delegates.ImmediateMode_GetVariableCountDelegate_163(this.ImmediateMode_GetVariableCount);
-            mpc.ImmediateMode_GetVariableCount_163 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetVariableCount_163);
-            __delegates.ImmediateMode_GetVariableName_164 = new Delegates.ImmediateMode_GetVariableNameDelegate_164(this.ImmediateMode_GetVariableName);
-            mpc.ImmediateMode_GetVariableName_164 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetVariableName_164);
-            __delegates.ImmediateMode_GetResultID_165 = new Delegates.ImmediateMode_GetResultIDDelegate_165(this.ImmediateMode_GetResultID);
-            mpc.ImmediateMode_GetResultID_165 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetResultID_165);
-            __delegates.PluginManager_RegisterPlugins_166 = new Delegates.PluginManager_RegisterPluginsDelegate_166(this.PluginManager_RegisterPlugins);
-            mpc.PluginManager_RegisterPlugins_166 = Marshal.GetFunctionPointerForDelegate(__delegates.PluginManager_RegisterPlugins_166);
+            if (this.GetType().GetMethod("Init", new Type[] {typeof(bool), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Init_000 = new Delegates.InitDelegate_000(this.Init);
+                mpc.Init_000 = Marshal.GetFunctionPointerForDelegate(__delegates.Init_000);
+            } else mpc.Init_000 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("InitUI", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.InitUI_001 = new Delegates.InitUIDelegate_001(this.InitUI);
+                mpc.InitUI_001 = Marshal.GetFunctionPointerForDelegate(__delegates.InitUI_001);
+            } else mpc.InitUI_001 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("OnEvent", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.OnEvent_002 = new Delegates.OnEventDelegate_002(this.OnEvent);
+                mpc.OnEvent_002 = Marshal.GetFunctionPointerForDelegate(__delegates.OnEvent_002);
+            } else mpc.OnEvent_002 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Update", new Type[] {typeof(float) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Update_003 = new Delegates.UpdateDelegate_003(this.Update);
+                mpc.Update_003 = Marshal.GetFunctionPointerForDelegate(__delegates.Update_003);
+            } else mpc.Update_003 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Destroy", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Destroy_004 = new Delegates.DestroyDelegate_004(this.Destroy);
+                mpc.Destroy_004 = Marshal.GetFunctionPointerForDelegate(__delegates.Destroy_004);
+            } else mpc.Destroy_004 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("IsRequired", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.IsRequired_005 = new Delegates.IsRequiredDelegate_005(this.IsRequired);
+                mpc.IsRequired_005 = Marshal.GetFunctionPointerForDelegate(__delegates.IsRequired_005);
+            } else mpc.IsRequired_005 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("IsVersionCompatible", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.IsVersionCompatible_006 = new Delegates.IsVersionCompatibleDelegate_006(this.IsVersionCompatible);
+                mpc.IsVersionCompatible_006 = Marshal.GetFunctionPointerForDelegate(__delegates.IsVersionCompatible_006);
+            } else mpc.IsVersionCompatible_006 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("BeginRender", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.BeginRender_007 = new Delegates.BeginRenderDelegate_007(this.BeginRender);
+                mpc.BeginRender_007 = Marshal.GetFunctionPointerForDelegate(__delegates.BeginRender_007);
+            } else mpc.BeginRender_007 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("EndRender", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.EndRender_008 = new Delegates.EndRenderDelegate_008(this.EndRender);
+                mpc.EndRender_008 = Marshal.GetFunctionPointerForDelegate(__delegates.EndRender_008);
+            } else mpc.EndRender_008 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_BeginLoad", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_BeginLoad_009 = new Delegates.Project_BeginLoadDelegate_009(this.Project_BeginLoad);
+                mpc.Project_BeginLoad_009 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_BeginLoad_009);
+            } else mpc.Project_BeginLoad_009 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_EndLoad", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_EndLoad_010 = new Delegates.Project_EndLoadDelegate_010(this.Project_EndLoad);
+                mpc.Project_EndLoad_010 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_EndLoad_010);
+            } else mpc.Project_EndLoad_010 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_BeginSave", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_BeginSave_011 = new Delegates.Project_BeginSaveDelegate_011(this.Project_BeginSave);
+                mpc.Project_BeginSave_011 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_BeginSave_011);
+            } else mpc.Project_BeginSave_011 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_EndSave", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_EndSave_012 = new Delegates.Project_EndSaveDelegate_012(this.Project_EndSave);
+                mpc.Project_EndSave_012 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_EndSave_012);
+            } else mpc.Project_EndSave_012 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_HasAdditionalData", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_HasAdditionalData_013 = new Delegates.Project_HasAdditionalDataDelegate_013(this.Project_HasAdditionalData);
+                mpc.Project_HasAdditionalData_013 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_HasAdditionalData_013);
+            } else mpc.Project_HasAdditionalData_013 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_ExportAdditionalData", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_ExportAdditionalData_014 = new Delegates.Project_ExportAdditionalDataDelegate_014(this.Project_ExportAdditionalData);
+                mpc.Project_ExportAdditionalData_014 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_ExportAdditionalData_014);
+            } else mpc.Project_ExportAdditionalData_014 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_ImportAdditionalData", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_ImportAdditionalData_015 = new Delegates.Project_ImportAdditionalDataDelegate_015(this.Project_ImportAdditionalData);
+                mpc.Project_ImportAdditionalData_015 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_ImportAdditionalData_015);
+            } else mpc.Project_ImportAdditionalData_015 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Project_CopyFilesOnSave", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Project_CopyFilesOnSave_016 = new Delegates.Project_CopyFilesOnSaveDelegate_016(this.Project_CopyFilesOnSave);
+                mpc.Project_CopyFilesOnSave_016 = Marshal.GetFunctionPointerForDelegate(__delegates.Project_CopyFilesOnSave_016);
+            } else mpc.Project_CopyFilesOnSave_016 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HasCustomMenuItem", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HasCustomMenuItem_017 = new Delegates.HasCustomMenuItemDelegate_017(this.HasCustomMenuItem);
+                mpc.HasCustomMenuItem_017 = Marshal.GetFunctionPointerForDelegate(__delegates.HasCustomMenuItem_017);
+            } else mpc.HasCustomMenuItem_017 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HasMenuItems", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HasMenuItems_018 = new Delegates.HasMenuItemsDelegate_018(this.HasMenuItems);
+                mpc.HasMenuItems_018 = Marshal.GetFunctionPointerForDelegate(__delegates.HasMenuItems_018);
+            } else mpc.HasMenuItems_018 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShowMenuItems", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShowMenuItems_019 = new Delegates.ShowMenuItemsDelegate_019(this.ShowMenuItems);
+                mpc.ShowMenuItems_019 = Marshal.GetFunctionPointerForDelegate(__delegates.ShowMenuItems_019);
+            } else mpc.ShowMenuItems_019 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HasContextItems", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HasContextItems_020 = new Delegates.HasContextItemsDelegate_020(this.HasContextItems);
+                mpc.HasContextItems_020 = Marshal.GetFunctionPointerForDelegate(__delegates.HasContextItems_020);
+            } else mpc.HasContextItems_020 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShowContextItems", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShowContextItems_021 = new Delegates.ShowContextItemsDelegate_021(this.ShowContextItems);
+                mpc.ShowContextItems_021 = Marshal.GetFunctionPointerForDelegate(__delegates.ShowContextItems_021);
+            } else mpc.ShowContextItems_021 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("SystemVariables_GetNameCount", new Type[] {typeof(SHADERedCLR.Wrapper.VariableType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.SystemVariables_GetNameCount_022 = new Delegates.SystemVariables_GetNameCountDelegate_022(this.SystemVariables_GetNameCount);
+                mpc.SystemVariables_GetNameCount_022 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_GetNameCount_022);
+            } else mpc.SystemVariables_GetNameCount_022 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("SystemVariables_GetName", new Type[] {typeof(SHADERedCLR.Wrapper.VariableType), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.SystemVariables_GetName_023 = new Delegates.SystemVariables_GetNameDelegate_023(this.SystemVariables_GetName);
+                mpc.SystemVariables_GetName_023 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_GetName_023);
+            } else mpc.SystemVariables_GetName_023 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("SystemVariables_HasLastFrame", new Type[] {typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.SystemVariables_HasLastFrame_024 = new Delegates.SystemVariables_HasLastFrameDelegate_024(this.SystemVariables_HasLastFrame);
+                mpc.SystemVariables_HasLastFrame_024 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_HasLastFrame_024);
+            } else mpc.SystemVariables_HasLastFrame_024 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("SystemVariables_UpdateValue", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType), typeof(bool) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.SystemVariables_UpdateValue_025 = new Delegates.SystemVariables_UpdateValueDelegate_025(this.SystemVariables_UpdateValue);
+                mpc.SystemVariables_UpdateValue_025 = Marshal.GetFunctionPointerForDelegate(__delegates.SystemVariables_UpdateValue_025);
+            } else mpc.SystemVariables_UpdateValue_025 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_GetNameCount", new Type[] {typeof(SHADERedCLR.Wrapper.VariableType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_GetNameCount_026 = new Delegates.VariableFunctions_GetNameCountDelegate_026(this.VariableFunctions_GetNameCount);
+                mpc.VariableFunctions_GetNameCount_026 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_GetNameCount_026);
+            } else mpc.VariableFunctions_GetNameCount_026 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_GetName", new Type[] {typeof(SHADERedCLR.Wrapper.VariableType), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_GetName_027 = new Delegates.VariableFunctions_GetNameDelegate_027(this.VariableFunctions_GetName);
+                mpc.VariableFunctions_GetName_027 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_GetName_027);
+            } else mpc.VariableFunctions_GetName_027 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_ShowArgumentEdit", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_ShowArgumentEdit_028 = new Delegates.VariableFunctions_ShowArgumentEditDelegate_028(this.VariableFunctions_ShowArgumentEdit);
+                mpc.VariableFunctions_ShowArgumentEdit_028 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_ShowArgumentEdit_028);
+            } else mpc.VariableFunctions_ShowArgumentEdit_028 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_UpdateValue", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_UpdateValue_029 = new Delegates.VariableFunctions_UpdateValueDelegate_029(this.VariableFunctions_UpdateValue);
+                mpc.VariableFunctions_UpdateValue_029 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_UpdateValue_029);
+            } else mpc.VariableFunctions_UpdateValue_029 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_GetArgsSize", new Type[] {typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_GetArgsSize_030 = new Delegates.VariableFunctions_GetArgsSizeDelegate_030(this.VariableFunctions_GetArgsSize);
+                mpc.VariableFunctions_GetArgsSize_030 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_GetArgsSize_030);
+            } else mpc.VariableFunctions_GetArgsSize_030 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_InitArguments", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_InitArguments_031 = new Delegates.VariableFunctions_InitArgumentsDelegate_031(this.VariableFunctions_InitArguments);
+                mpc.VariableFunctions_InitArguments_031 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_InitArguments_031);
+            } else mpc.VariableFunctions_InitArguments_031 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_ExportArguments", new Type[] {typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_ExportArguments_032 = new Delegates.VariableFunctions_ExportArgumentsDelegate_032(this.VariableFunctions_ExportArguments);
+                mpc.VariableFunctions_ExportArguments_032 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_ExportArguments_032);
+            } else mpc.VariableFunctions_ExportArguments_032 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("VariableFunctions_ImportArguments", new Type[] {typeof(IntPtr), typeof(SHADERedCLR.Wrapper.VariableType), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.VariableFunctions_ImportArguments_033 = new Delegates.VariableFunctions_ImportArgumentsDelegate_033(this.VariableFunctions_ImportArguments);
+                mpc.VariableFunctions_ImportArguments_033 = Marshal.GetFunctionPointerForDelegate(__delegates.VariableFunctions_ImportArguments_033);
+            } else mpc.VariableFunctions_ImportArguments_033 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_HasPreview", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_HasPreview_034 = new Delegates.Object_HasPreviewDelegate_034(this.Object_HasPreview);
+                mpc.Object_HasPreview_034 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasPreview_034);
+            } else mpc.Object_HasPreview_034 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_ShowPreview", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_ShowPreview_035 = new Delegates.Object_ShowPreviewDelegate_035(this.Object_ShowPreview);
+                mpc.Object_ShowPreview_035 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowPreview_035);
+            } else mpc.Object_ShowPreview_035 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_IsBindable", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_IsBindable_036 = new Delegates.Object_IsBindableDelegate_036(this.Object_IsBindable);
+                mpc.Object_IsBindable_036 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_IsBindable_036);
+            } else mpc.Object_IsBindable_036 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_IsBindableUAV", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_IsBindableUAV_037 = new Delegates.Object_IsBindableUAVDelegate_037(this.Object_IsBindableUAV);
+                mpc.Object_IsBindableUAV_037 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_IsBindableUAV_037);
+            } else mpc.Object_IsBindableUAV_037 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_Remove", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_Remove_038 = new Delegates.Object_RemoveDelegate_038(this.Object_Remove);
+                mpc.Object_Remove_038 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Remove_038);
+            } else mpc.Object_Remove_038 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_HasExtendedPreview", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_HasExtendedPreview_039 = new Delegates.Object_HasExtendedPreviewDelegate_039(this.Object_HasExtendedPreview);
+                mpc.Object_HasExtendedPreview_039 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasExtendedPreview_039);
+            } else mpc.Object_HasExtendedPreview_039 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_ShowExtendedPreview", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_ShowExtendedPreview_040 = new Delegates.Object_ShowExtendedPreviewDelegate_040(this.Object_ShowExtendedPreview);
+                mpc.Object_ShowExtendedPreview_040 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowExtendedPreview_040);
+            } else mpc.Object_ShowExtendedPreview_040 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_HasProperties", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_HasProperties_041 = new Delegates.Object_HasPropertiesDelegate_041(this.Object_HasProperties);
+                mpc.Object_HasProperties_041 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasProperties_041);
+            } else mpc.Object_HasProperties_041 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_ShowProperties", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_ShowProperties_042 = new Delegates.Object_ShowPropertiesDelegate_042(this.Object_ShowProperties);
+                mpc.Object_ShowProperties_042 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowProperties_042);
+            } else mpc.Object_ShowProperties_042 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_Bind", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_Bind_043 = new Delegates.Object_BindDelegate_043(this.Object_Bind);
+                mpc.Object_Bind_043 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Bind_043);
+            } else mpc.Object_Bind_043 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_Export", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_Export_044 = new Delegates.Object_ExportDelegate_044(this.Object_Export);
+                mpc.Object_Export_044 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Export_044);
+            } else mpc.Object_Export_044 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_Import", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_Import_045 = new Delegates.Object_ImportDelegate_045(this.Object_Import);
+                mpc.Object_Import_045 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_Import_045);
+            } else mpc.Object_Import_045 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_HasContext", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_HasContext_046 = new Delegates.Object_HasContextDelegate_046(this.Object_HasContext);
+                mpc.Object_HasContext_046 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_HasContext_046);
+            } else mpc.Object_HasContext_046 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Object_ShowContext", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Object_ShowContext_047 = new Delegates.Object_ShowContextDelegate_047(this.Object_ShowContext);
+                mpc.Object_ShowContext_047 = Marshal.GetFunctionPointerForDelegate(__delegates.Object_ShowContext_047);
+            } else mpc.Object_ShowContext_047 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_HasProperties", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_HasProperties_048 = new Delegates.PipelineItem_HasPropertiesDelegate_048(this.PipelineItem_HasProperties);
+                mpc.PipelineItem_HasProperties_048 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasProperties_048);
+            } else mpc.PipelineItem_HasProperties_048 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_ShowProperties", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_ShowProperties_049 = new Delegates.PipelineItem_ShowPropertiesDelegate_049(this.PipelineItem_ShowProperties);
+                mpc.PipelineItem_ShowProperties_049 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ShowProperties_049);
+            } else mpc.PipelineItem_ShowProperties_049 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_IsPickable", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_IsPickable_050 = new Delegates.PipelineItem_IsPickableDelegate_050(this.PipelineItem_IsPickable);
+                mpc.PipelineItem_IsPickable_050 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_IsPickable_050);
+            } else mpc.PipelineItem_IsPickable_050 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_HasShaders", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_HasShaders_051 = new Delegates.PipelineItem_HasShadersDelegate_051(this.PipelineItem_HasShaders);
+                mpc.PipelineItem_HasShaders_051 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasShaders_051);
+            } else mpc.PipelineItem_HasShaders_051 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_OpenInEditor", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_OpenInEditor_052 = new Delegates.PipelineItem_OpenInEditorDelegate_052(this.PipelineItem_OpenInEditor);
+                mpc.PipelineItem_OpenInEditor_052 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_OpenInEditor_052);
+            } else mpc.PipelineItem_OpenInEditor_052 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_CanHaveChild", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.PipelineItemType) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_CanHaveChild_053 = new Delegates.PipelineItem_CanHaveChildDelegate_053(this.PipelineItem_CanHaveChild);
+                mpc.PipelineItem_CanHaveChild_053 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CanHaveChild_053);
+            } else mpc.PipelineItem_CanHaveChild_053 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetInputLayoutSize", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetInputLayoutSize_054 = new Delegates.PipelineItem_GetInputLayoutSizeDelegate_054(this.PipelineItem_GetInputLayoutSize);
+                mpc.PipelineItem_GetInputLayoutSize_054 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetInputLayoutSize_054);
+            } else mpc.PipelineItem_GetInputLayoutSize_054 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetInputLayoutItem", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(Int32), typeof(InputLayoutItem) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetInputLayoutItem_055 = new Delegates.PipelineItem_GetInputLayoutItemDelegate_055(this.PipelineItem_GetInputLayoutItem);
+                mpc.PipelineItem_GetInputLayoutItem_055 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetInputLayoutItem_055);
+            } else mpc.PipelineItem_GetInputLayoutItem_055 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_Remove", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_Remove_056 = new Delegates.PipelineItem_RemoveDelegate_056(this.PipelineItem_Remove);
+                mpc.PipelineItem_Remove_056 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Remove_056);
+            } else mpc.PipelineItem_Remove_056 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_Rename", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_Rename_057 = new Delegates.PipelineItem_RenameDelegate_057(this.PipelineItem_Rename);
+                mpc.PipelineItem_Rename_057 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Rename_057);
+            } else mpc.PipelineItem_Rename_057 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_AddChild", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.PipelineItemType), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_AddChild_058 = new Delegates.PipelineItem_AddChildDelegate_058(this.PipelineItem_AddChild);
+                mpc.PipelineItem_AddChild_058 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_AddChild_058);
+            } else mpc.PipelineItem_AddChild_058 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_CanHaveChildren", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_CanHaveChildren_059 = new Delegates.PipelineItem_CanHaveChildrenDelegate_059(this.PipelineItem_CanHaveChildren);
+                mpc.PipelineItem_CanHaveChildren_059 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CanHaveChildren_059);
+            } else mpc.PipelineItem_CanHaveChildren_059 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_CopyData", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_CopyData_060 = new Delegates.PipelineItem_CopyDataDelegate_060(this.PipelineItem_CopyData);
+                mpc.PipelineItem_CopyData_060 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CopyData_060);
+            } else mpc.PipelineItem_CopyData_060 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_Execute", new Type[] {typeof(IntPtr), typeof(SHADERedCLR.Wrapper.PipelineItemType), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_Execute_061 = new Delegates.PipelineItem_ExecuteDelegate_061(this.PipelineItem_Execute);
+                mpc.PipelineItem_Execute_061 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Execute_061);
+            } else mpc.PipelineItem_Execute_061 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_Execute", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_Execute_062 = new Delegates.PipelineItem_ExecuteDelegate_062(this.PipelineItem_Execute);
+                mpc.PipelineItem_Execute_062 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Execute_062);
+            } else mpc.PipelineItem_Execute_062 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetWorldMatrix", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(ArrPointer16<float>) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetWorldMatrix_063 = new Delegates.PipelineItem_GetWorldMatrixDelegate_063(this.PipelineItem_GetWorldMatrix);
+                mpc.PipelineItem_GetWorldMatrix_063 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetWorldMatrix_063);
+            } else mpc.PipelineItem_GetWorldMatrix_063 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_Intersect", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(float) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_Intersect_064 = new Delegates.PipelineItem_IntersectDelegate_064(this.PipelineItem_Intersect);
+                mpc.PipelineItem_Intersect_064 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Intersect_064);
+            } else mpc.PipelineItem_Intersect_064 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetBoundingBox", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(ArrPointer3<float>), typeof(ArrPointer3<float>) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetBoundingBox_065 = new Delegates.PipelineItem_GetBoundingBoxDelegate_065(this.PipelineItem_GetBoundingBox);
+                mpc.PipelineItem_GetBoundingBox_065 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetBoundingBox_065);
+            } else mpc.PipelineItem_GetBoundingBox_065 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_HasContext", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_HasContext_066 = new Delegates.PipelineItem_HasContextDelegate_066(this.PipelineItem_HasContext);
+                mpc.PipelineItem_HasContext_066 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasContext_066);
+            } else mpc.PipelineItem_HasContext_066 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_ShowContext", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_ShowContext_067 = new Delegates.PipelineItem_ShowContextDelegate_067(this.PipelineItem_ShowContext);
+                mpc.PipelineItem_ShowContext_067 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ShowContext_067);
+            } else mpc.PipelineItem_ShowContext_067 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_Export", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_Export_068 = new Delegates.PipelineItem_ExportDelegate_068(this.PipelineItem_Export);
+                mpc.PipelineItem_Export_068 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Export_068);
+            } else mpc.PipelineItem_Export_068 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_Import", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_Import_069 = new Delegates.PipelineItem_ImportDelegate_069(this.PipelineItem_Import);
+                mpc.PipelineItem_Import_069 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_Import_069);
+            } else mpc.PipelineItem_Import_069 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_MoveDown", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_MoveDown_070 = new Delegates.PipelineItem_MoveDownDelegate_070(this.PipelineItem_MoveDown);
+                mpc.PipelineItem_MoveDown_070 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_MoveDown_070);
+            } else mpc.PipelineItem_MoveDown_070 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_MoveUp", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_MoveUp_071 = new Delegates.PipelineItem_MoveUpDelegate_071(this.PipelineItem_MoveUp);
+                mpc.PipelineItem_MoveUp_071 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_MoveUp_071);
+            } else mpc.PipelineItem_MoveUp_071 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_ApplyGizmoTransform", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_ApplyGizmoTransform_072 = new Delegates.PipelineItem_ApplyGizmoTransformDelegate_072(this.PipelineItem_ApplyGizmoTransform);
+                mpc.PipelineItem_ApplyGizmoTransform_072 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ApplyGizmoTransform_072);
+            } else mpc.PipelineItem_ApplyGizmoTransform_072 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetTransform", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetTransform_073 = new Delegates.PipelineItem_GetTransformDelegate_073(this.PipelineItem_GetTransform);
+                mpc.PipelineItem_GetTransform_073 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetTransform_073);
+            } else mpc.PipelineItem_GetTransform_073 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugVertexExecute", new Type[] {typeof(IntPtr), typeof(SHADERedCLR.Wrapper.PipelineItemType), typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugVertexExecute_074 = new Delegates.PipelineItem_DebugVertexExecuteDelegate_074(this.PipelineItem_DebugVertexExecute);
+                mpc.PipelineItem_DebugVertexExecute_074 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugVertexExecute_074);
+            } else mpc.PipelineItem_DebugVertexExecute_074 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugVertexExecute", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(float), typeof(float), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugVertexExecute_075 = new Delegates.PipelineItem_DebugVertexExecuteDelegate_075(this.PipelineItem_DebugVertexExecute);
+                mpc.PipelineItem_DebugVertexExecute_075 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugVertexExecute_075);
+            } else mpc.PipelineItem_DebugVertexExecute_075 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugInstanceExecute", new Type[] {typeof(IntPtr), typeof(SHADERedCLR.Wrapper.PipelineItemType), typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugInstanceExecute_076 = new Delegates.PipelineItem_DebugInstanceExecuteDelegate_076(this.PipelineItem_DebugInstanceExecute);
+                mpc.PipelineItem_DebugInstanceExecute_076 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugInstanceExecute_076);
+            } else mpc.PipelineItem_DebugInstanceExecute_076 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugInstanceExecute", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(float), typeof(float), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugInstanceExecute_077 = new Delegates.PipelineItem_DebugInstanceExecuteDelegate_077(this.PipelineItem_DebugInstanceExecute);
+                mpc.PipelineItem_DebugInstanceExecute_077 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugInstanceExecute_077);
+            } else mpc.PipelineItem_DebugInstanceExecute_077 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVBO", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVBO_078 = new Delegates.PipelineItem_GetVBODelegate_078(this.PipelineItem_GetVBO);
+                mpc.PipelineItem_GetVBO_078 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVBO_078);
+            } else mpc.PipelineItem_GetVBO_078 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVBOStride", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVBOStride_079 = new Delegates.PipelineItem_GetVBOStrideDelegate_079(this.PipelineItem_GetVBOStride);
+                mpc.PipelineItem_GetVBOStride_079 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVBOStride_079);
+            } else mpc.PipelineItem_GetVBOStride_079 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_CanChangeVariables", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_CanChangeVariables_080 = new Delegates.PipelineItem_CanChangeVariablesDelegate_080(this.PipelineItem_CanChangeVariables);
+                mpc.PipelineItem_CanChangeVariables_080 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_CanChangeVariables_080);
+            } else mpc.PipelineItem_CanChangeVariables_080 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_IsDebuggable", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_IsDebuggable_081 = new Delegates.PipelineItem_IsDebuggableDelegate_081(this.PipelineItem_IsDebuggable);
+                mpc.PipelineItem_IsDebuggable_081 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_IsDebuggable_081);
+            } else mpc.PipelineItem_IsDebuggable_081 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_IsStageDebuggable", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.ShaderStage) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_IsStageDebuggable_082 = new Delegates.PipelineItem_IsStageDebuggableDelegate_082(this.PipelineItem_IsStageDebuggable);
+                mpc.PipelineItem_IsStageDebuggable_082 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_IsStageDebuggable_082);
+            } else mpc.PipelineItem_IsStageDebuggable_082 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugExecute", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr), typeof(Int32), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugExecute_083 = new Delegates.PipelineItem_DebugExecuteDelegate_083(this.PipelineItem_DebugExecute);
+                mpc.PipelineItem_DebugExecute_083 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugExecute_083);
+            } else mpc.PipelineItem_DebugExecute_083 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetTopology", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetTopology_084 = new Delegates.PipelineItem_GetTopologyDelegate_084(this.PipelineItem_GetTopology);
+                mpc.PipelineItem_GetTopology_084 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetTopology_084);
+            } else mpc.PipelineItem_GetTopology_084 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVariableCount", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVariableCount_085 = new Delegates.PipelineItem_GetVariableCountDelegate_085(this.PipelineItem_GetVariableCount);
+                mpc.PipelineItem_GetVariableCount_085 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableCount_085);
+            } else mpc.PipelineItem_GetVariableCount_085 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVariableName", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVariableName_086 = new Delegates.PipelineItem_GetVariableNameDelegate_086(this.PipelineItem_GetVariableName);
+                mpc.PipelineItem_GetVariableName_086 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableName_086);
+            } else mpc.PipelineItem_GetVariableName_086 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVariableType", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVariableType_087 = new Delegates.PipelineItem_GetVariableTypeDelegate_087(this.PipelineItem_GetVariableType);
+                mpc.PipelineItem_GetVariableType_087 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableType_087);
+            } else mpc.PipelineItem_GetVariableType_087 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVariableValueFloat", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32), typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVariableValueFloat_088 = new Delegates.PipelineItem_GetVariableValueFloatDelegate_088(this.PipelineItem_GetVariableValueFloat);
+                mpc.PipelineItem_GetVariableValueFloat_088 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableValueFloat_088);
+            } else mpc.PipelineItem_GetVariableValueFloat_088 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVariableValueInteger", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVariableValueInteger_089 = new Delegates.PipelineItem_GetVariableValueIntegerDelegate_089(this.PipelineItem_GetVariableValueInteger);
+                mpc.PipelineItem_GetVariableValueInteger_089 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableValueInteger_089);
+            } else mpc.PipelineItem_GetVariableValueInteger_089 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetVariableValueBoolean", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(UInt32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetVariableValueBoolean_090 = new Delegates.PipelineItem_GetVariableValueBooleanDelegate_090(this.PipelineItem_GetVariableValueBoolean);
+                mpc.PipelineItem_GetVariableValueBoolean_090 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetVariableValueBoolean_090);
+            } else mpc.PipelineItem_GetVariableValueBoolean_090 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetSPIRVSize", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.ShaderStage) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetSPIRVSize_091 = new Delegates.PipelineItem_GetSPIRVSizeDelegate_091(this.PipelineItem_GetSPIRVSize);
+                mpc.PipelineItem_GetSPIRVSize_091 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetSPIRVSize_091);
+            } else mpc.PipelineItem_GetSPIRVSize_091 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_GetSPIRV", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.ShaderStage) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_GetSPIRV_092 = new Delegates.PipelineItem_GetSPIRVDelegate_092(this.PipelineItem_GetSPIRV);
+                mpc.PipelineItem_GetSPIRV_092 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_GetSPIRV_092);
+            } else mpc.PipelineItem_GetSPIRV_092 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugPrepareVariables", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugPrepareVariables_093 = new Delegates.PipelineItem_DebugPrepareVariablesDelegate_093(this.PipelineItem_DebugPrepareVariables);
+                mpc.PipelineItem_DebugPrepareVariables_093 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugPrepareVariables_093);
+            } else mpc.PipelineItem_DebugPrepareVariables_093 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugUsesCustomTextures", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugUsesCustomTextures_094 = new Delegates.PipelineItem_DebugUsesCustomTexturesDelegate_094(this.PipelineItem_DebugUsesCustomTextures);
+                mpc.PipelineItem_DebugUsesCustomTextures_094 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugUsesCustomTextures_094);
+            } else mpc.PipelineItem_DebugUsesCustomTextures_094 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugGetTexture", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(Int32), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugGetTexture_095 = new Delegates.PipelineItem_DebugGetTextureDelegate_095(this.PipelineItem_DebugGetTexture);
+                mpc.PipelineItem_DebugGetTexture_095 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugGetTexture_095);
+            } else mpc.PipelineItem_DebugGetTexture_095 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_DebugGetTextureSize", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(Int32), typeof(IntPtr), typeof(Int32), typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_DebugGetTextureSize_096 = new Delegates.PipelineItem_DebugGetTextureSizeDelegate_096(this.PipelineItem_DebugGetTextureSize);
+                mpc.PipelineItem_DebugGetTextureSize_096 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_DebugGetTextureSize_096);
+            } else mpc.PipelineItem_DebugGetTextureSize_096 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Options_HasSection", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Options_HasSection_097 = new Delegates.Options_HasSectionDelegate_097(this.Options_HasSection);
+                mpc.Options_HasSection_097 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_HasSection_097);
+            } else mpc.Options_HasSection_097 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Options_RenderSection", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Options_RenderSection_098 = new Delegates.Options_RenderSectionDelegate_098(this.Options_RenderSection);
+                mpc.Options_RenderSection_098 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_RenderSection_098);
+            } else mpc.Options_RenderSection_098 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Options_Parse", new Type[] {typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Options_Parse_099 = new Delegates.Options_ParseDelegate_099(this.Options_Parse);
+                mpc.Options_Parse_099 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_Parse_099);
+            } else mpc.Options_Parse_099 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Options_GetCount", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Options_GetCount_100 = new Delegates.Options_GetCountDelegate_100(this.Options_GetCount);
+                mpc.Options_GetCount_100 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_GetCount_100);
+            } else mpc.Options_GetCount_100 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Options_GetKey", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Options_GetKey_101 = new Delegates.Options_GetKeyDelegate_101(this.Options_GetKey);
+                mpc.Options_GetKey_101 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_GetKey_101);
+            } else mpc.Options_GetKey_101 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Options_GetValue", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Options_GetValue_102 = new Delegates.Options_GetValueDelegate_102(this.Options_GetValue);
+                mpc.Options_GetValue_102 = Marshal.GetFunctionPointerForDelegate(__delegates.Options_GetValue_102);
+            } else mpc.Options_GetValue_102 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_GetCount", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_GetCount_103 = new Delegates.CustomLanguage_GetCountDelegate_103(this.CustomLanguage_GetCount);
+                mpc.CustomLanguage_GetCount_103 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_GetCount_103);
+            } else mpc.CustomLanguage_GetCount_103 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_GetName", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_GetName_104 = new Delegates.CustomLanguage_GetNameDelegate_104(this.CustomLanguage_GetName);
+                mpc.CustomLanguage_GetName_104 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_GetName_104);
+            } else mpc.CustomLanguage_GetName_104 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_CompileToSPIRV", new Type[] {typeof(Int32), typeof(IntPtr), typeof(UInt64), typeof(SHADERedCLR.Wrapper.ShaderStage), typeof(IntPtr), typeof(IntPtr), typeof(UInt64), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_CompileToSPIRV_105 = new Delegates.CustomLanguage_CompileToSPIRVDelegate_105(this.CustomLanguage_CompileToSPIRV);
+                mpc.CustomLanguage_CompileToSPIRV_105 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_CompileToSPIRV_105);
+            } else mpc.CustomLanguage_CompileToSPIRV_105 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_ProcessGeneratedGLSL", new Type[] {typeof(Int32), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_ProcessGeneratedGLSL_106 = new Delegates.CustomLanguage_ProcessGeneratedGLSLDelegate_106(this.CustomLanguage_ProcessGeneratedGLSL);
+                mpc.CustomLanguage_ProcessGeneratedGLSL_106 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_ProcessGeneratedGLSL_106);
+            } else mpc.CustomLanguage_ProcessGeneratedGLSL_106 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_SupportsAutoUniforms", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_SupportsAutoUniforms_107 = new Delegates.CustomLanguage_SupportsAutoUniformsDelegate_107(this.CustomLanguage_SupportsAutoUniforms);
+                mpc.CustomLanguage_SupportsAutoUniforms_107 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_SupportsAutoUniforms_107);
+            } else mpc.CustomLanguage_SupportsAutoUniforms_107 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_IsDebuggable", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_IsDebuggable_108 = new Delegates.CustomLanguage_IsDebuggableDelegate_108(this.CustomLanguage_IsDebuggable);
+                mpc.CustomLanguage_IsDebuggable_108 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_IsDebuggable_108);
+            } else mpc.CustomLanguage_IsDebuggable_108 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_GetDefaultExtension", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_GetDefaultExtension_109 = new Delegates.CustomLanguage_GetDefaultExtensionDelegate_109(this.CustomLanguage_GetDefaultExtension);
+                mpc.CustomLanguage_GetDefaultExtension_109 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_GetDefaultExtension_109);
+            } else mpc.CustomLanguage_GetDefaultExtension_109 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Supports", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Supports_110 = new Delegates.ShaderEditor_SupportsDelegate_110(this.ShaderEditor_Supports);
+                mpc.ShaderEditor_Supports_110 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Supports_110);
+            } else mpc.ShaderEditor_Supports_110 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Open", new Type[] {typeof(Int32), typeof(Int32), typeof(IntPtr), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Open_111 = new Delegates.ShaderEditor_OpenDelegate_111(this.ShaderEditor_Open);
+                mpc.ShaderEditor_Open_111 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Open_111);
+            } else mpc.ShaderEditor_Open_111 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Render", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Render_112 = new Delegates.ShaderEditor_RenderDelegate_112(this.ShaderEditor_Render);
+                mpc.ShaderEditor_Render_112 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Render_112);
+            } else mpc.ShaderEditor_Render_112 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Close", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Close_113 = new Delegates.ShaderEditor_CloseDelegate_113(this.ShaderEditor_Close);
+                mpc.ShaderEditor_Close_113 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Close_113);
+            } else mpc.ShaderEditor_Close_113 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_GetContent", new Type[] {typeof(Int32), typeof(Int32), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_GetContent_114 = new Delegates.ShaderEditor_GetContentDelegate_114(this.ShaderEditor_GetContent);
+                mpc.ShaderEditor_GetContent_114 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_GetContent_114);
+            } else mpc.ShaderEditor_GetContent_114 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_IsChanged", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_IsChanged_115 = new Delegates.ShaderEditor_IsChangedDelegate_115(this.ShaderEditor_IsChanged);
+                mpc.ShaderEditor_IsChanged_115 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_IsChanged_115);
+            } else mpc.ShaderEditor_IsChanged_115 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_ResetChangeState", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_ResetChangeState_116 = new Delegates.ShaderEditor_ResetChangeStateDelegate_116(this.ShaderEditor_ResetChangeState);
+                mpc.ShaderEditor_ResetChangeState_116 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_ResetChangeState_116);
+            } else mpc.ShaderEditor_ResetChangeState_116 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_CanUndo", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_CanUndo_117 = new Delegates.ShaderEditor_CanUndoDelegate_117(this.ShaderEditor_CanUndo);
+                mpc.ShaderEditor_CanUndo_117 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_CanUndo_117);
+            } else mpc.ShaderEditor_CanUndo_117 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_CanRedo", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_CanRedo_118 = new Delegates.ShaderEditor_CanRedoDelegate_118(this.ShaderEditor_CanRedo);
+                mpc.ShaderEditor_CanRedo_118 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_CanRedo_118);
+            } else mpc.ShaderEditor_CanRedo_118 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Undo", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Undo_119 = new Delegates.ShaderEditor_UndoDelegate_119(this.ShaderEditor_Undo);
+                mpc.ShaderEditor_Undo_119 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Undo_119);
+            } else mpc.ShaderEditor_Undo_119 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Redo", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Redo_120 = new Delegates.ShaderEditor_RedoDelegate_120(this.ShaderEditor_Redo);
+                mpc.ShaderEditor_Redo_120 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Redo_120);
+            } else mpc.ShaderEditor_Redo_120 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Cut", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Cut_121 = new Delegates.ShaderEditor_CutDelegate_121(this.ShaderEditor_Cut);
+                mpc.ShaderEditor_Cut_121 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Cut_121);
+            } else mpc.ShaderEditor_Cut_121 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Paste", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Paste_122 = new Delegates.ShaderEditor_PasteDelegate_122(this.ShaderEditor_Paste);
+                mpc.ShaderEditor_Paste_122 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Paste_122);
+            } else mpc.ShaderEditor_Paste_122 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_Copy", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_Copy_123 = new Delegates.ShaderEditor_CopyDelegate_123(this.ShaderEditor_Copy);
+                mpc.ShaderEditor_Copy_123 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_Copy_123);
+            } else mpc.ShaderEditor_Copy_123 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_SelectAll", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_SelectAll_124 = new Delegates.ShaderEditor_SelectAllDelegate_124(this.ShaderEditor_SelectAll);
+                mpc.ShaderEditor_SelectAll_124 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_SelectAll_124);
+            } else mpc.ShaderEditor_SelectAll_124 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_HasStats", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_HasStats_125 = new Delegates.ShaderEditor_HasStatsDelegate_125(this.ShaderEditor_HasStats);
+                mpc.ShaderEditor_HasStats_125 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_HasStats_125);
+            } else mpc.ShaderEditor_HasStats_125 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CodeEditor_SaveItem", new Type[] {typeof(IntPtr), typeof(Int32), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CodeEditor_SaveItem_126 = new Delegates.CodeEditor_SaveItemDelegate_126(this.CodeEditor_SaveItem);
+                mpc.CodeEditor_SaveItem_126 = Marshal.GetFunctionPointerForDelegate(__delegates.CodeEditor_SaveItem_126);
+            } else mpc.CodeEditor_SaveItem_126 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CodeEditor_CloseItem", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CodeEditor_CloseItem_127 = new Delegates.CodeEditor_CloseItemDelegate_127(this.CodeEditor_CloseItem);
+                mpc.CodeEditor_CloseItem_127 = Marshal.GetFunctionPointerForDelegate(__delegates.CodeEditor_CloseItem_127);
+            } else mpc.CodeEditor_CloseItem_127 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_Exists", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_Exists_128 = new Delegates.LanguageDefinition_ExistsDelegate_128(this.LanguageDefinition_Exists);
+                mpc.LanguageDefinition_Exists_128 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_Exists_128);
+            } else mpc.LanguageDefinition_Exists_128 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetKeywordCount", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetKeywordCount_129 = new Delegates.LanguageDefinition_GetKeywordCountDelegate_129(this.LanguageDefinition_GetKeywordCount);
+                mpc.LanguageDefinition_GetKeywordCount_129 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetKeywordCount_129);
+            } else mpc.LanguageDefinition_GetKeywordCount_129 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetKeywords", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetKeywords_130 = new Delegates.LanguageDefinition_GetKeywordsDelegate_130(this.LanguageDefinition_GetKeywords);
+                mpc.LanguageDefinition_GetKeywords_130 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetKeywords_130);
+            } else mpc.LanguageDefinition_GetKeywords_130 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetTokenRegexCount", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetTokenRegexCount_131 = new Delegates.LanguageDefinition_GetTokenRegexCountDelegate_131(this.LanguageDefinition_GetTokenRegexCount);
+                mpc.LanguageDefinition_GetTokenRegexCount_131 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetTokenRegexCount_131);
+            } else mpc.LanguageDefinition_GetTokenRegexCount_131 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetTokenRegex", new Type[] {typeof(Int32), typeof(SHADERedCLR.Wrapper.TextEditorPaletteIndex), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetTokenRegex_132 = new Delegates.LanguageDefinition_GetTokenRegexDelegate_132(this.LanguageDefinition_GetTokenRegex);
+                mpc.LanguageDefinition_GetTokenRegex_132 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetTokenRegex_132);
+            } else mpc.LanguageDefinition_GetTokenRegex_132 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetIdentifierCount", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetIdentifierCount_133 = new Delegates.LanguageDefinition_GetIdentifierCountDelegate_133(this.LanguageDefinition_GetIdentifierCount);
+                mpc.LanguageDefinition_GetIdentifierCount_133 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetIdentifierCount_133);
+            } else mpc.LanguageDefinition_GetIdentifierCount_133 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetIdentifier", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetIdentifier_134 = new Delegates.LanguageDefinition_GetIdentifierDelegate_134(this.LanguageDefinition_GetIdentifier);
+                mpc.LanguageDefinition_GetIdentifier_134 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetIdentifier_134);
+            } else mpc.LanguageDefinition_GetIdentifier_134 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetIdentifierDesc", new Type[] {typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetIdentifierDesc_135 = new Delegates.LanguageDefinition_GetIdentifierDescDelegate_135(this.LanguageDefinition_GetIdentifierDesc);
+                mpc.LanguageDefinition_GetIdentifierDesc_135 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetIdentifierDesc_135);
+            } else mpc.LanguageDefinition_GetIdentifierDesc_135 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetCommentStart", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetCommentStart_136 = new Delegates.LanguageDefinition_GetCommentStartDelegate_136(this.LanguageDefinition_GetCommentStart);
+                mpc.LanguageDefinition_GetCommentStart_136 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetCommentStart_136);
+            } else mpc.LanguageDefinition_GetCommentStart_136 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetCommentEnd", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetCommentEnd_137 = new Delegates.LanguageDefinition_GetCommentEndDelegate_137(this.LanguageDefinition_GetCommentEnd);
+                mpc.LanguageDefinition_GetCommentEnd_137 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetCommentEnd_137);
+            } else mpc.LanguageDefinition_GetCommentEnd_137 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetLineComment", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetLineComment_138 = new Delegates.LanguageDefinition_GetLineCommentDelegate_138(this.LanguageDefinition_GetLineComment);
+                mpc.LanguageDefinition_GetLineComment_138 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetLineComment_138);
+            } else mpc.LanguageDefinition_GetLineComment_138 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_IsCaseSensitive", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_IsCaseSensitive_139 = new Delegates.LanguageDefinition_IsCaseSensitiveDelegate_139(this.LanguageDefinition_IsCaseSensitive);
+                mpc.LanguageDefinition_IsCaseSensitive_139 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_IsCaseSensitive_139);
+            } else mpc.LanguageDefinition_IsCaseSensitive_139 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetAutoIndent", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetAutoIndent_140 = new Delegates.LanguageDefinition_GetAutoIndentDelegate_140(this.LanguageDefinition_GetAutoIndent);
+                mpc.LanguageDefinition_GetAutoIndent_140 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetAutoIndent_140);
+            } else mpc.LanguageDefinition_GetAutoIndent_140 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetName", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetName_141 = new Delegates.LanguageDefinition_GetNameDelegate_141(this.LanguageDefinition_GetName);
+                mpc.LanguageDefinition_GetName_141 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetName_141);
+            } else mpc.LanguageDefinition_GetName_141 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("LanguageDefinition_GetNameAbbreviation", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.LanguageDefinition_GetNameAbbreviation_142 = new Delegates.LanguageDefinition_GetNameAbbreviationDelegate_142(this.LanguageDefinition_GetNameAbbreviation);
+                mpc.LanguageDefinition_GetNameAbbreviation_142 = Marshal.GetFunctionPointerForDelegate(__delegates.LanguageDefinition_GetNameAbbreviation_142);
+            } else mpc.LanguageDefinition_GetNameAbbreviation_142 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Autocomplete_GetCount", new Type[] {typeof(SHADERedCLR.Wrapper.ShaderStage) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Autocomplete_GetCount_143 = new Delegates.Autocomplete_GetCountDelegate_143(this.Autocomplete_GetCount);
+                mpc.Autocomplete_GetCount_143 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetCount_143);
+            } else mpc.Autocomplete_GetCount_143 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Autocomplete_GetDisplayString", new Type[] {typeof(SHADERedCLR.Wrapper.ShaderStage), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Autocomplete_GetDisplayString_144 = new Delegates.Autocomplete_GetDisplayStringDelegate_144(this.Autocomplete_GetDisplayString);
+                mpc.Autocomplete_GetDisplayString_144 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetDisplayString_144);
+            } else mpc.Autocomplete_GetDisplayString_144 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Autocomplete_GetSearchString", new Type[] {typeof(SHADERedCLR.Wrapper.ShaderStage), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Autocomplete_GetSearchString_145 = new Delegates.Autocomplete_GetSearchStringDelegate_145(this.Autocomplete_GetSearchString);
+                mpc.Autocomplete_GetSearchString_145 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetSearchString_145);
+            } else mpc.Autocomplete_GetSearchString_145 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("Autocomplete_GetValue", new Type[] {typeof(SHADERedCLR.Wrapper.ShaderStage), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.Autocomplete_GetValue_146 = new Delegates.Autocomplete_GetValueDelegate_146(this.Autocomplete_GetValue);
+                mpc.Autocomplete_GetValue_146 = Marshal.GetFunctionPointerForDelegate(__delegates.Autocomplete_GetValue_146);
+            } else mpc.Autocomplete_GetValue_146 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderFilePath_GetCount", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderFilePath_GetCount_147 = new Delegates.ShaderFilePath_GetCountDelegate_147(this.ShaderFilePath_GetCount);
+                mpc.ShaderFilePath_GetCount_147 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_GetCount_147);
+            } else mpc.ShaderFilePath_GetCount_147 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderFilePath_Get", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderFilePath_Get_148 = new Delegates.ShaderFilePath_GetDelegate_148(this.ShaderFilePath_Get);
+                mpc.ShaderFilePath_Get_148 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_Get_148);
+            } else mpc.ShaderFilePath_Get_148 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderFilePath_HasChanged", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderFilePath_HasChanged_149 = new Delegates.ShaderFilePath_HasChangedDelegate_149(this.ShaderFilePath_HasChanged);
+                mpc.ShaderFilePath_HasChanged_149 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_HasChanged_149);
+            } else mpc.ShaderFilePath_HasChanged_149 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderFilePath_Update", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderFilePath_Update_150 = new Delegates.ShaderFilePath_UpdateDelegate_150(this.ShaderFilePath_Update);
+                mpc.ShaderFilePath_Update_150 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderFilePath_Update_150);
+            } else mpc.ShaderFilePath_Update_150 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HandleDropFile", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HandleDropFile_151 = new Delegates.HandleDropFileDelegate_151(this.HandleDropFile);
+                mpc.HandleDropFile_151 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleDropFile_151);
+            } else mpc.HandleDropFile_151 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HandleRecompile", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HandleRecompile_152 = new Delegates.HandleRecompileDelegate_152(this.HandleRecompile);
+                mpc.HandleRecompile_152 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleRecompile_152);
+            } else mpc.HandleRecompile_152 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HandleRecompileFromSource", new Type[] {typeof(IntPtr), typeof(Int32), typeof(IntPtr), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HandleRecompileFromSource_153 = new Delegates.HandleRecompileFromSourceDelegate_153(this.HandleRecompileFromSource);
+                mpc.HandleRecompileFromSource_153 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleRecompileFromSource_153);
+            } else mpc.HandleRecompileFromSource_153 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HandleShortcut", new Type[] {typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HandleShortcut_154 = new Delegates.HandleShortcutDelegate_154(this.HandleShortcut);
+                mpc.HandleShortcut_154 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleShortcut_154);
+            } else mpc.HandleShortcut_154 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HandlePluginMessage", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HandlePluginMessage_155 = new Delegates.HandlePluginMessageDelegate_155(this.HandlePluginMessage);
+                mpc.HandlePluginMessage_155 = Marshal.GetFunctionPointerForDelegate(__delegates.HandlePluginMessage_155);
+            } else mpc.HandlePluginMessage_155 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HandleApplicationEvent", new Type[] {typeof(SHADERedCLR.Wrapper.ApplicationEvent), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HandleApplicationEvent_156 = new Delegates.HandleApplicationEventDelegate_156(this.HandleApplicationEvent);
+                mpc.HandleApplicationEvent_156 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleApplicationEvent_156);
+            } else mpc.HandleApplicationEvent_156 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("HandleNotification", new Type[] {typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.HandleNotification_157 = new Delegates.HandleNotificationDelegate_157(this.HandleNotification);
+                mpc.HandleNotification_157 = Marshal.GetFunctionPointerForDelegate(__delegates.HandleNotification_157);
+            } else mpc.HandleNotification_157 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_SupportsImmediateMode", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.ShaderStage) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_SupportsImmediateMode_158 = new Delegates.PipelineItem_SupportsImmediateModeDelegate_158(this.PipelineItem_SupportsImmediateMode);
+                mpc.PipelineItem_SupportsImmediateMode_158 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_SupportsImmediateMode_158);
+            } else mpc.PipelineItem_SupportsImmediateMode_158 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_HasCustomImmediateModeCompiler", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.ShaderStage) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_HasCustomImmediateModeCompiler_159 = new Delegates.PipelineItem_HasCustomImmediateModeCompilerDelegate_159(this.PipelineItem_HasCustomImmediateModeCompiler);
+                mpc.PipelineItem_HasCustomImmediateModeCompiler_159 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_HasCustomImmediateModeCompiler_159);
+            } else mpc.PipelineItem_HasCustomImmediateModeCompiler_159 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PipelineItem_ImmediateModeCompile", new Type[] {typeof(IntPtr), typeof(IntPtr), typeof(SHADERedCLR.Wrapper.ShaderStage), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PipelineItem_ImmediateModeCompile_160 = new Delegates.PipelineItem_ImmediateModeCompileDelegate_160(this.PipelineItem_ImmediateModeCompile);
+                mpc.PipelineItem_ImmediateModeCompile_160 = Marshal.GetFunctionPointerForDelegate(__delegates.PipelineItem_ImmediateModeCompile_160);
+            } else mpc.PipelineItem_ImmediateModeCompile_160 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ImmediateMode_GetSPIRVSize", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ImmediateMode_GetSPIRVSize_161 = new Delegates.ImmediateMode_GetSPIRVSizeDelegate_161(this.ImmediateMode_GetSPIRVSize);
+                mpc.ImmediateMode_GetSPIRVSize_161 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetSPIRVSize_161);
+            } else mpc.ImmediateMode_GetSPIRVSize_161 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ImmediateMode_GetSPIRV", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ImmediateMode_GetSPIRV_162 = new Delegates.ImmediateMode_GetSPIRVDelegate_162(this.ImmediateMode_GetSPIRV);
+                mpc.ImmediateMode_GetSPIRV_162 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetSPIRV_162);
+            } else mpc.ImmediateMode_GetSPIRV_162 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ImmediateMode_GetVariableCount", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ImmediateMode_GetVariableCount_163 = new Delegates.ImmediateMode_GetVariableCountDelegate_163(this.ImmediateMode_GetVariableCount);
+                mpc.ImmediateMode_GetVariableCount_163 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetVariableCount_163);
+            } else mpc.ImmediateMode_GetVariableCount_163 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ImmediateMode_GetVariableName", new Type[] {typeof(UInt32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ImmediateMode_GetVariableName_164 = new Delegates.ImmediateMode_GetVariableNameDelegate_164(this.ImmediateMode_GetVariableName);
+                mpc.ImmediateMode_GetVariableName_164 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetVariableName_164);
+            } else mpc.ImmediateMode_GetVariableName_164 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ImmediateMode_GetResultID", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ImmediateMode_GetResultID_165 = new Delegates.ImmediateMode_GetResultIDDelegate_165(this.ImmediateMode_GetResultID);
+                mpc.ImmediateMode_GetResultID_165 = Marshal.GetFunctionPointerForDelegate(__delegates.ImmediateMode_GetResultID_165);
+            } else mpc.ImmediateMode_GetResultID_165 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("PluginManager_RegisterPlugins", new Type[] { }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.PluginManager_RegisterPlugins_166 = new Delegates.PluginManager_RegisterPluginsDelegate_166(this.PluginManager_RegisterPlugins);
+                mpc.PluginManager_RegisterPlugins_166 = Marshal.GetFunctionPointerForDelegate(__delegates.PluginManager_RegisterPlugins_166);
+            } else mpc.PluginManager_RegisterPlugins_166 = IntPtr.Zero;
+
             return mpc;
         }
     }
