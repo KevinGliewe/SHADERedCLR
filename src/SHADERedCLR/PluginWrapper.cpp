@@ -1006,6 +1006,18 @@ void PluginWrapper::PluginManager_RegisterPlugins() {
     ((void(*)())this->m_pMPC.PluginManager_RegisterPlugins_166)();
 } // Function PluginManager_RegisterPlugins
 
+const unsigned int* PluginWrapper::CustomLanguage_CompileToSPIRV2(void* item, int langID, const char* src, size_t src_len, ed::plugin::ShaderStage stage, const char* entry, ed::plugin::ShaderMacro* macros, size_t macroCount, size_t* spv_length, bool* compiled) {
+    if(!this->m_pMPC.CustomLanguage_CompileToSPIRV2_167)
+        return nullptr;
+    return ((const unsigned int*(*)(void*, int, const char*, size_t, ed::plugin::ShaderStage, const char*, ed::plugin::ShaderMacro*, size_t, size_t*, bool*))this->m_pMPC.CustomLanguage_CompileToSPIRV2_167)(item, langID, src, src_len, stage, entry, macros, macroCount, spv_length, compiled);
+} // Function CustomLanguage_CompileToSPIRV2
+
+void PluginWrapper::ShaderEditor_SetLineIndicator(int langID, int editorID, int line) {
+    if(!this->m_pMPC.ShaderEditor_SetLineIndicator_168)
+        return;
+    ((void(*)(int, int, int))this->m_pMPC.ShaderEditor_SetLineIndicator_168)(langID, editorID, line);
+} // Function ShaderEditor_SetLineIndicator
+
 void PluginWrapper::InitUPC() {
     m_sUPC.Renderer_000 = (void*)(this->Renderer);
     m_sUPC.Messages_001 = (void*)(this->Messages);
@@ -1130,6 +1142,13 @@ void PluginWrapper::InitUPC() {
     m_sUPC.ImGuiFileDialogGetPath_120 = (void*)(this->ImGuiFileDialogGetPath);
     m_sUPC.DebuggerImmediate_121 = (void*)(this->DebuggerImmediate);
     m_sUPC.RegisterPlugin_122 = (void*)(this->RegisterPlugin);
+    m_sUPC.GetEditorPipelineItem_123 = (void*)(this->GetEditorPipelineItem);
+    m_sUPC.SetViewportSize_124 = (void*)(this->SetViewportSize);
+    m_sUPC.IsObjectBound_125 = (void*)(this->IsObjectBound);
+    m_sUPC.DebuggerStepIntoPluginEditor_126 = (void*)(this->DebuggerStepIntoPluginEditor);
+    m_sUPC.DebuggerGetVariableValue_127 = (void*)(this->DebuggerGetVariableValue);
+    m_sUPC.DebuggerStopPluginEditor_128 = (void*)(this->DebuggerStopPluginEditor);
+    m_sUPC.DebuggerIsVMRunning_129 = (void*)(this->DebuggerIsVMRunning);
     m_sUPC.PluginInstance = (void*)this;
 }
 

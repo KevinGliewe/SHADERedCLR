@@ -40,6 +40,14 @@ namespace ed {
 			Tangent,
 			Binormal,
 			Color,
+			BufferFloat,
+			BufferFloat2,
+			BufferFloat3,
+			BufferFloat4,
+			BufferInt,
+			BufferInt2,
+			BufferInt3,
+			BufferInt4,
 			MaxCount
 		};
 
@@ -98,6 +106,8 @@ namespace ed {
 			Compute,
 			Audio,
 			Plugin,
+			TessellationControl,
+			TessellationEvaluation,
 			Count
 		};
 

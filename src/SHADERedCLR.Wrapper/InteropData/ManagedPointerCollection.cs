@@ -171,6 +171,8 @@ namespace SHADERedCLR.Wrapper.InteropData {
         [FieldOffset(1312)] public IntPtr ImmediateMode_GetVariableName_164;
         [FieldOffset(1320)] public IntPtr ImmediateMode_GetResultID_165;
         [FieldOffset(1328)] public IntPtr PluginManager_RegisterPlugins_166;
-    [FieldOffset(1336)] public IntPtr __SetUPC;
+        [FieldOffset(1336)] public IntPtr CustomLanguage_CompileToSPIRV2_167;
+        [FieldOffset(1344)] public IntPtr ShaderEditor_SetLineIndicator_168;
+    [FieldOffset(1352)] public IntPtr __SetUPC;
     }
 }

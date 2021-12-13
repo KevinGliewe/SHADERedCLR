@@ -215,6 +215,8 @@ namespace sc
 
 		// IPlugin3
 		virtual void PluginManager_RegisterPlugins();
+		virtual const unsigned int* CustomLanguage_CompileToSPIRV2(void* item, int langID, const char* src, size_t src_len, ed::plugin::ShaderStage stage, const char* entry, ed::plugin::ShaderMacro* macros, size_t macroCount, size_t* spv_length, bool* compiled) { return nullptr; }
+		virtual void ShaderEditor_SetLineIndicator(int langID, int editorID, int line) { }
 
 		PluginCLR() { }
 		~PluginCLR();

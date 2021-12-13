@@ -24,6 +24,8 @@ namespace SHADERedCLR.Wrapper
 
         public UnmanagedPointerCollection UnmanagedPointerCollection { get; protected set; }
 
+        public CStringContainer CStr { get; private set; } = new CStringContainer();
+
         public void __SetUPC(UnmanagedPointerCollection a_UPC)
         {
             this.UnmanagedPointerCollection = a_UPC;
@@ -41,6 +43,7 @@ namespace SHADERedCLR.Wrapper
 
         public void Dispose()
         {
+            CStr.Dispose();
             PluginWrappers.Remove(this);
 
             NativePlugin = IntPtr.Zero;

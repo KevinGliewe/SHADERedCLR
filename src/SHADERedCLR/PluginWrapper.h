@@ -127,6 +127,13 @@ public:
         void* ImGuiFileDialogGetPath_120 = nullptr;
         void* DebuggerImmediate_121 = nullptr;
         void* RegisterPlugin_122 = nullptr;
+        void* GetEditorPipelineItem_123 = nullptr;
+        void* SetViewportSize_124 = nullptr;
+        void* IsObjectBound_125 = nullptr;
+        void* DebuggerStepIntoPluginEditor_126 = nullptr;
+        void* DebuggerGetVariableValue_127 = nullptr;
+        void* DebuggerStopPluginEditor_128 = nullptr;
+        void* DebuggerIsVMRunning_129 = nullptr;
         void* PluginInstance = nullptr;
     };
     struct ManagedPointerCollection {
@@ -297,6 +304,8 @@ public:
         void* ImmediateMode_GetVariableName_164 = nullptr;
         void* ImmediateMode_GetResultID_165 = nullptr;
         void* PluginManager_RegisterPlugins_166 = nullptr;
+        void* CustomLanguage_CompileToSPIRV2_167 = nullptr;
+        void* ShaderEditor_SetLineIndicator_168 = nullptr;
         void* __SetUPC = nullptr;
     };
 
@@ -641,4 +650,8 @@ public:
     int ImmediateMode_GetResultID() override;
 
     void PluginManager_RegisterPlugins() override;
+
+    const unsigned int* CustomLanguage_CompileToSPIRV2(void* item, int langID, const char* src, size_t src_len, ed::plugin::ShaderStage stage, const char* entry, ed::plugin::ShaderMacro* macros, size_t macroCount, size_t* spv_length, bool* compiled) override;
+
+    void ShaderEditor_SetLineIndicator(int langID, int editorID, int line) override;
 }; // class PluginWrapper

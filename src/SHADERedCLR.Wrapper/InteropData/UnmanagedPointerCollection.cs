@@ -127,6 +127,13 @@ namespace SHADERedCLR.Wrapper.InteropData {
             [FieldOffset(960)] public IntPtr ImGuiFileDialogGetPath_120;
             [FieldOffset(968)] public IntPtr DebuggerImmediate_121;
             [FieldOffset(976)] public IntPtr RegisterPlugin_122;
-            [FieldOffset(984)] public IntPtr PluginInstance;
+            [FieldOffset(984)] public IntPtr GetEditorPipelineItem_123;
+            [FieldOffset(992)] public IntPtr SetViewportSize_124;
+            [FieldOffset(1000)] public IntPtr IsObjectBound_125;
+            [FieldOffset(1008)] public IntPtr DebuggerStepIntoPluginEditor_126;
+            [FieldOffset(1016)] public IntPtr DebuggerGetVariableValue_127;
+            [FieldOffset(1024)] public IntPtr DebuggerStopPluginEditor_128;
+            [FieldOffset(1032)] public IntPtr DebuggerIsVMRunning_129;
+            [FieldOffset(1040)] public IntPtr PluginInstance;
         }
 }

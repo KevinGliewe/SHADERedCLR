@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+//using ImGuiNET;
 using SHADERedCLR.Wrapper;
 
 namespace PluginManager
@@ -12,6 +13,8 @@ namespace PluginManager
     {
         public static List<string> AssemblyResolveDirs = new List<string>();
 
+        public List<PluginWrapper> _plugins = new List<PluginWrapper>();
+
         public override bool Init(bool isWeb, int sedVersion)
         {
             AssemblyResolveDirs.Add(Path.GetDirectoryName(GetType().Assembly.Location));
@@ -19,6 +22,16 @@ namespace PluginManager
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomainOnAssemblyResolve;
 
             return true;
+        }
+
+        public override bool Options_HasSection()
+        {
+            return true;
+        }
+
+        public override void Options_RenderSection()
+        {
+            //ImGui.Text("Loaded Plugins: " + _plugins.Count);
         }
 
         private Assembly? CurrentDomainOnAssemblyResolve(object? sender, ResolveEventArgs args)
@@ -90,6 +103,8 @@ namespace PluginManager
                                 IntPtr.Zero);
                         }
                     }
+
+                    _plugins.Add(plugin);
                 }
             }
         }

@@ -242,6 +242,20 @@ namespace SHADERedCLR.Wrapper {
 
             public delegate void RegisterPluginDelegate(IntPtr pluginManager, IntPtr plugin, IntPtr pname, Int32 apiVer, Int32 pluginVer, IntPtr procDLL);
 
+            public delegate IntPtr GetEditorPipelineItemDelegate(IntPtr UI, IntPtr plugin, Int32 langID, Int32 editorID);
+
+            public delegate void SetViewportSizeDelegate(float w, float h);
+
+            public delegate Int32 IsObjectBoundDelegate(IntPtr Objects, IntPtr name, IntPtr pipelineItem);
+
+            public delegate void DebuggerStepIntoPluginEditorDelegate(IntPtr Debugger, IntPtr Code, IntPtr Plugin, Int32 lang, Int32 editor);
+
+            public delegate void DebuggerGetVariableValueDelegate(IntPtr Debugger, IntPtr name, IntPtr value, Int32 valueLength);
+
+            public delegate void DebuggerStopPluginEditorDelegate(IntPtr Debugger, IntPtr Code, IntPtr Plugin, Int32 lang, Int32 editor);
+
+            public delegate bool DebuggerIsVMRunningDelegate(IntPtr Debugger);
+
             // function Init
             public delegate bool InitDelegate_000(bool isWeb, Int32 sedVersion);
             public InitDelegate_000 Init_000;
@@ -910,6 +924,14 @@ namespace SHADERedCLR.Wrapper {
             public delegate void PluginManager_RegisterPluginsDelegate_166();
             public PluginManager_RegisterPluginsDelegate_166 PluginManager_RegisterPlugins_166;
 
+            // function CustomLanguage_CompileToSPIRV2
+            public delegate IntPtr CustomLanguage_CompileToSPIRV2Delegate_167(IntPtr item, Int32 langID, IntPtr src, UInt64 src_len, SHADERedCLR.Wrapper.ShaderStage stage, IntPtr entry, IntPtr macros, UInt64 macroCount, IntPtr spv_length, IntPtr compiled);
+            public CustomLanguage_CompileToSPIRV2Delegate_167 CustomLanguage_CompileToSPIRV2_167;
+
+            // function ShaderEditor_SetLineIndicator
+            public delegate void ShaderEditor_SetLineIndicatorDelegate_168(Int32 langID, Int32 editorID, Int32 line);
+            public ShaderEditor_SetLineIndicatorDelegate_168 ShaderEditor_SetLineIndicator_168;
+
 
         }
 
@@ -1149,6 +1171,20 @@ namespace SHADERedCLR.Wrapper {
         public Delegates.DebuggerImmediateDelegate DebuggerImmediate { get; protected set; }
 
         public Delegates.RegisterPluginDelegate RegisterPlugin { get; protected set; }
+
+        public Delegates.GetEditorPipelineItemDelegate GetEditorPipelineItem { get; protected set; }
+
+        public Delegates.SetViewportSizeDelegate SetViewportSize { get; protected set; }
+
+        public Delegates.IsObjectBoundDelegate IsObjectBound { get; protected set; }
+
+        public Delegates.DebuggerStepIntoPluginEditorDelegate DebuggerStepIntoPluginEditor { get; protected set; }
+
+        public Delegates.DebuggerGetVariableValueDelegate DebuggerGetVariableValue { get; protected set; }
+
+        public Delegates.DebuggerStopPluginEditorDelegate DebuggerStopPluginEditor { get; protected set; }
+
+        public Delegates.DebuggerIsVMRunningDelegate DebuggerIsVMRunning { get; protected set; }
 
         // function Init
         public virtual bool Init(bool isWeb, Int32 sedVersion) {
@@ -1917,6 +1953,15 @@ namespace SHADERedCLR.Wrapper {
         // function PluginManager_RegisterPlugins
         public virtual void PluginManager_RegisterPlugins() {
         }
+
+        // function CustomLanguage_CompileToSPIRV2
+        public virtual IntPtr CustomLanguage_CompileToSPIRV2(IntPtr item, Int32 langID, IntPtr src, UInt64 src_len, SHADERedCLR.Wrapper.ShaderStage stage, IntPtr entry, IntPtr macros, UInt64 macroCount, IntPtr spv_length, IntPtr compiled) {
+            return IntPtr.Zero;
+        }
+
+        // function ShaderEditor_SetLineIndicator
+        public virtual void ShaderEditor_SetLineIndicator(Int32 langID, Int32 editorID, Int32 line) {
+        }
         protected void __SetDelegates(SHADERedCLR.Wrapper.InteropData.UnmanagedPointerCollection a_UPC) {
             if(a_UPC.AddObject_008 != IntPtr.Zero)
                 this.AddObject = (Delegates.AddObjectDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.AddObject_008,typeof(Delegates.AddObjectDelegate));
@@ -2148,6 +2193,20 @@ namespace SHADERedCLR.Wrapper {
                 this.DebuggerImmediate = (Delegates.DebuggerImmediateDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.DebuggerImmediate_121,typeof(Delegates.DebuggerImmediateDelegate));
             if(a_UPC.RegisterPlugin_122 != IntPtr.Zero)
                 this.RegisterPlugin = (Delegates.RegisterPluginDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.RegisterPlugin_122,typeof(Delegates.RegisterPluginDelegate));
+            if(a_UPC.GetEditorPipelineItem_123 != IntPtr.Zero)
+                this.GetEditorPipelineItem = (Delegates.GetEditorPipelineItemDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.GetEditorPipelineItem_123,typeof(Delegates.GetEditorPipelineItemDelegate));
+            if(a_UPC.SetViewportSize_124 != IntPtr.Zero)
+                this.SetViewportSize = (Delegates.SetViewportSizeDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.SetViewportSize_124,typeof(Delegates.SetViewportSizeDelegate));
+            if(a_UPC.IsObjectBound_125 != IntPtr.Zero)
+                this.IsObjectBound = (Delegates.IsObjectBoundDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.IsObjectBound_125,typeof(Delegates.IsObjectBoundDelegate));
+            if(a_UPC.DebuggerStepIntoPluginEditor_126 != IntPtr.Zero)
+                this.DebuggerStepIntoPluginEditor = (Delegates.DebuggerStepIntoPluginEditorDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.DebuggerStepIntoPluginEditor_126,typeof(Delegates.DebuggerStepIntoPluginEditorDelegate));
+            if(a_UPC.DebuggerGetVariableValue_127 != IntPtr.Zero)
+                this.DebuggerGetVariableValue = (Delegates.DebuggerGetVariableValueDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.DebuggerGetVariableValue_127,typeof(Delegates.DebuggerGetVariableValueDelegate));
+            if(a_UPC.DebuggerStopPluginEditor_128 != IntPtr.Zero)
+                this.DebuggerStopPluginEditor = (Delegates.DebuggerStopPluginEditorDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.DebuggerStopPluginEditor_128,typeof(Delegates.DebuggerStopPluginEditorDelegate));
+            if(a_UPC.DebuggerIsVMRunning_129 != IntPtr.Zero)
+                this.DebuggerIsVMRunning = (Delegates.DebuggerIsVMRunningDelegate)Marshal.GetDelegateForFunctionPointer(a_UPC.DebuggerIsVMRunning_129,typeof(Delegates.DebuggerIsVMRunningDelegate));
         }
         protected SHADERedCLR.Wrapper.InteropData.ManagedPointerCollection __GetFunctionPointers() {
             var mpc = new SHADERedCLR.Wrapper.InteropData.ManagedPointerCollection();
@@ -2985,6 +3044,16 @@ namespace SHADERedCLR.Wrapper {
                 __delegates.PluginManager_RegisterPlugins_166 = new Delegates.PluginManager_RegisterPluginsDelegate_166(this.PluginManager_RegisterPlugins);
                 mpc.PluginManager_RegisterPlugins_166 = Marshal.GetFunctionPointerForDelegate(__delegates.PluginManager_RegisterPlugins_166);
             } else mpc.PluginManager_RegisterPlugins_166 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("CustomLanguage_CompileToSPIRV2", new Type[] {typeof(IntPtr), typeof(Int32), typeof(IntPtr), typeof(UInt64), typeof(SHADERedCLR.Wrapper.ShaderStage), typeof(IntPtr), typeof(IntPtr), typeof(UInt64), typeof(IntPtr), typeof(IntPtr) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.CustomLanguage_CompileToSPIRV2_167 = new Delegates.CustomLanguage_CompileToSPIRV2Delegate_167(this.CustomLanguage_CompileToSPIRV2);
+                mpc.CustomLanguage_CompileToSPIRV2_167 = Marshal.GetFunctionPointerForDelegate(__delegates.CustomLanguage_CompileToSPIRV2_167);
+            } else mpc.CustomLanguage_CompileToSPIRV2_167 = IntPtr.Zero;
+
+            if (this.GetType().GetMethod("ShaderEditor_SetLineIndicator", new Type[] {typeof(Int32), typeof(Int32), typeof(Int32) }).DeclaringType != typeof(PluginWrapper)) {
+                __delegates.ShaderEditor_SetLineIndicator_168 = new Delegates.ShaderEditor_SetLineIndicatorDelegate_168(this.ShaderEditor_SetLineIndicator);
+                mpc.ShaderEditor_SetLineIndicator_168 = Marshal.GetFunctionPointerForDelegate(__delegates.ShaderEditor_SetLineIndicator_168);
+            } else mpc.ShaderEditor_SetLineIndicator_168 = IntPtr.Zero;
 
             return mpc;
         }

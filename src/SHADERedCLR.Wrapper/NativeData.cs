@@ -43,7 +43,15 @@ namespace SHADERedCLR.Wrapper {
         Tangent = 3,
         Binormal = 4,
         Color = 5,
-        MaxCount = 6,
+        BufferFloat = 6,
+        BufferFloat2 = 7,
+        BufferFloat3 = 8,
+        BufferFloat4 = 9,
+        BufferInt = 10,
+        BufferInt2 = 11,
+        BufferInt3 = 12,
+        BufferInt4 = 13,
+        MaxCount = 14,
     }
 
     // ed::plugin::MessageType
@@ -98,7 +106,9 @@ namespace SHADERedCLR.Wrapper {
         Compute = 3,
         Audio = 4,
         Plugin = 5,
-        Count = 6,
+        TessellationControl = 6,
+        TessellationEvaluation = 7,
+        Count = 8,
     }
 
     // ed::plugin::ApplicationEvent
